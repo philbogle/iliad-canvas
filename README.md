@@ -8,29 +8,33 @@ The application features:
 - Interlinear word-for-word morphology glosses with popup deep-dives (grammatical parsing, lemmas, and Indo-European roots).
 - A clean, distraction-free reading mode.
 
-> **Disclaimer:** I've just started learning about Ancient Greek and built this canvas as a personal study tool. Because of the sheer volume of linguistic data being processed, there are probably inaccuracies or mis-parsed words on these pages. Bug reports, corrections, and pull requests are very much appreciated!
+## 📜 Credits, Thanks, & Disclaimer
+
+> **Disclaimer:** I am just beginning my journey learning Ancient Greek and built this canvas primarily as a personal study tool. The depth and functionality of this project are entirely dependent on the incredible work of classical philologists, educators, and open-source linguistic projects. Because of the sheer volume of linguistic data being processed, there are probably inaccuracies or mis-parsed words on these pages. Bug reports, corrections, and pull requests are very much appreciated!
+
+I want to extend a massive thank you to the following authoritative sources that made this canvas possible:
+
+- **[Luke Ranieri (polýMATHY)](https://www.youtube.com/@polymathy)**: The entire audio and video foundation of this canvas relies on Luke's monumental `#KephalosChallenge` recitations and his reconstructed 3-pitch restored chanting methodology. His full recording of [Iliad Book 1, lines 1-100](https://luke-ranieri.myshopify.com/products/iliad-100-homers-iliad-book-1-lines-1-100) is available on his store.
+- **[The Perseids Project](https://perseids.org/) (Tufts University)**: All of the deep, automated grammatical parsing (Part of Speech, Voice, Mood, Case) and dictionary Lemmas were fetched using their incredibly powerful Morpheus API.
+- **[Hypotactic](https://hypotactic.com/)**: The dactylic hexameter scansion logic (accurate syllable lengths, positional lengthening, and hiatus) was sourced directly from their rigorous metrical CSV datasets.
+- **[Perseus Digital Library](http://www.perseus.tufts.edu/hopper/)**: For hosting the canonical Oxford Classical Text (Monro & Allen, 1920) that forms the base Greek of this project.
+- **[Geoffrey Steadman](https://geoffreysteadman.com/homers-iliad-1-6/)**: Whose *Homer's Iliad 1* commentary served as an invaluable cross-reference for the literal word-for-word glosses.
 
 ## How this was created
 
-This project was built iteratively to combine rich classical philology data with a modern web interface.
+This project was built iteratively to combine the rich classical philology data credited above with a modern web interface.
 
 ### 1. The Greek Text & Translations
-- The primary Greek text is based on the standard Oxford Classical Text (D. B. Monro and T. W. Allen, 1920) available via the [Perseus Digital Library](http://www.perseus.tufts.edu/hopper/).
-- The literary translations and literal word-for-word glosses were compiled from standard public domain translations and cross-referenced with Geoffrey Steadman's [*Homer's Iliad 1*](https://geoffreysteadman.com/homers-iliad-1-6/) commentary.
+The primary Greek text is based on the OCT. The literary translations and literal glosses were compiled from standard public domain translations and cross-referenced with Steadman's commentary.
 
 ### 2. Video Links & Audio Alignment
-- The audio/video recitations are sourced from [Luke Ranieri's (polýMATHY) YouTube channel](https://www.youtube.com/@polymathy), utilizing his reconstructed 3-pitch restored chanting methodology.
-- The full recording of [Iliad Book 1, lines 1-100](https://luke-ranieri.myshopify.com/products/iliad-100-homers-iliad-book-1-lines-1-100) is available on the polýMATHY store.
-- The timestamps for lines 1-21 were manually aligned and embedded. Each line correlates directly to either a standalone YouTube Short or an exact timestamp slice of the master recitation video. 
+The timestamps for lines 1-21 were manually aligned and embedded. Each line correlates directly to either a standalone YouTube Short or an exact timestamp slice of Luke Ranieri's master recitation video.
 
 ### 3. Morphology & Etymology
-- The deep grammatical parsing (Part of Speech, Voice, Mood, Case, etc.) and dictionary Lemmas for each word were automatically fetched using the [Perseids Project's Morpheus API](https://perseids.org/).
-- Indo-European roots were cross-referenced with standard etymological lexicons to provide historical linguistic context for individual words.
+The morphological metadata was retrieved automatically via the Morpheus API. Indo-European roots were manually cross-referenced with standard etymological lexicons to provide historical linguistic context for individual words.
 
 ### 4. Metrical Scansion
-- Scansion data (dactylic hexameter feet and syllable lengths) is sourced directly from the metrical CSV datasets provided by **[Hypotactic](https://hypotactic.com/)**, ensuring academically rigorous positional lengthening, hiatus, and correption.
-- Phonetic IPA transcriptions and Latin transliterations were programmatically generated on top of the base scansion data.
-- The syllable lengths dictate the visual layout of the metrical pills under each word, mapping perfectly to the recitation's rhythm.
+Scansion data (dactylic hexameter feet and syllable lengths) is sourced from the Hypotactic CSV datasets. Phonetic IPA transcriptions and Latin transliterations were programmatically generated on top of that base scansion data. The syllable lengths dictate the visual layout of the metrical pills under each word, mapping perfectly to the recitation's rhythm.
 
 ## Running Locally
 
