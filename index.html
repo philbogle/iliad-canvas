@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<!-- 
+  Homer's Iliad - Interactive Study Canvas
+  A vanilla HTML/JS single-page application for learning and reciting the opening lines of Homer's Iliad.
+  Features an embedded YouTube player, metrical scansion breakdowns, and interlinear word-for-word morphology glosses.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homer's Iliad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Refined Warm Alabaster & Terracotta Palette */
+      --bg: #f9f8f5;
+      --surface: #ffffff;
+      --surface-subtle: #f3f1eb;
+      --surface-active: #eae7de;
+      --text-main: #23201c;
+      --text-muted: #6b655b;
+      --text-light: #8e877c;
+      
+      --accent: #8f3822;
+      --accent-soft: #fbf0ec;
+      --accent-border: #ebd3ca;
+      
+      --long-bg: #fdf2ed;
+      --long-text: #8c3620;
+      --long-border: #f5d6c8;
+      
+      --short-bg: #f2f4f7;
+      --short-text: #475569;
+      --short-border: #e2e8f0;
+
+      --border: #e7e4dc;
+      --border-subtle: #f0eee8;
+      
+      --shadow-sm: 0 1px 3px rgba(35, 32, 28, 0.04);
+      --shadow-md: 0 8px 24px rgba(35, 32, 28, 0.05);
+      --shadow-lg: 0 20px 40px rgba(35, 32, 28, 0.08);
+      
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+
+    html {
+      overflow-y: scroll;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+    }
+
+    /* Compact Top Nav with Integrated Line Selector */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(249, 248, 245, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 1.25rem;
+    }
+
+    .nav-container {
+      max-width: 1020px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      white-space: nowrap;
+    }
+
+    /* Line Selector in Header */
+    .header-line-picker {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .line-pills {
+      display: flex;
+      gap: 0.25rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .line-pills::-webkit-scrollbar { display: none; }
+
+    .line-btn {
+      padding: 0.25rem 0;
+      width: 70px;
+      text-align: center;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .line-btn:hover {
+      border-color: var(--text-light);
+      color: var(--text-main);
+    }
+
+    .line-btn.active {
+      background: var(--text-main);
+      color: var(--bg);
+      border-color: var(--text-main);
+    }
+
+    .arrow-btn {
+      width: 70px;
+      height: 28px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+    
+    .arrow-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .arrow-btn:hover {
+      background: var(--surface-subtle);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1020px;
+      width: 100%;
+      margin: 1.25rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    /* Unified Canvas Card */
+    .canvas-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    @media (max-width: 700px) {
+      .canvas-panel { padding: 1.25rem; }
+    }
+
+    /* Unified Hero Panel: Greek + Literary + Literal on Left, Video on Right */
+    .unified-hero-card {
+      background: var(--surface-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.5rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--accent);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 120px;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 680px) {
+      .unified-hero-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+        padding: 1.15rem;
+      }
+      .hero-video-col {
+        max-width: 130px;
+        margin: 0 auto;
+        order: 2;
+      }
+      .hero-content-col {
+        order: 1;
+      }
+    }
+
+    .hero-content-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .greek-hero-text {
+      font-family: 'Gentium Plus', serif;
+      font-size: 2.15rem;
+      line-height: 1.3;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+      margin-bottom: 0.2rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    @media (max-width: 700px) {
+      .greek-hero-text { font-size: 1.65rem; }
+    }
+
+    .next-line-btn {
+      background: none;
+      color: var(--text-muted);
+      border: none;
+      padding: 0.5rem 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .next-line-btn:hover {
+      color: var(--accent);
+      transform: translateX(2px);
+    }
+
+    .translation-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .trans-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .literary-text {
+      font-family: 'Newsreader', serif;
+      font-size: 1.55rem;
+      line-height: 1.4;
+      font-style: italic;
+      color: var(--text-main);
+    }
+
+    .literal-text {
+      font-size: 1.25rem;
+      color: var(--text-main);
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    .hero-video-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .player-container {
+      width: 100%;
+      max-width: 111px;
+      aspect-ratio: 9/16;
+      max-height: 199px;
+      background: #000000;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .player-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .replay-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.2rem 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-main);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    
+    .replay-btn:hover {
+      background: var(--surface-active);
+      border-color: var(--text-light);
+    }
+    
+    .video-credit-link {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-top: 0.4rem;
+      display: block;
+      text-align: center;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+    
+    .video-credit-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    /* Section Headers */
+    .section-header {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.65rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hint-click {
+      font-size: 0.68rem;
+      text-transform: none;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    /* Word-by-Word Interlinear Display */
+    .interlinear-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .word-tile {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.85rem;
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .word-tile:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      background: var(--surface-subtle);
+    }
+
+    .wt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.15rem;
+    }
+
+    .wt-greek {
+      font-family: 'Gentium Plus', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .wt-trans {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      font-style: italic;
+      margin-bottom: 0.35rem;
+    }
+
+    .wt-gloss {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.35;
+    }
+
+    /* Scansion Section */
+    .scansion-section {
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .scansion-capsules {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.35rem 0.45rem;
+      padding: 0.85rem;
+      background: var(--surface-subtle);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .scansion-pill {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.32rem 0.55rem;
+      border-radius: var(--radius-sm);
+      min-width: 40px;
+      text-align: center;
+      border: 1px solid transparent;
+    }
+
+    .scansion-pill.long {
+      background: var(--long-bg);
+      color: var(--long-text);
+      border-color: var(--long-border);
+    }
+
+    .scansion-pill.short {
+      background: var(--short-bg);
+      color: var(--short-text);
+      border-color: var(--short-border);
+    }
+
+    .sp-sym { font-size: 0.88rem; font-weight: 900; line-height: 1; }
+    .sp-grk { font-family: 'Gentium Plus', serif; font-size: 0.98rem; font-weight: 700; margin: 0.12rem 0; }
+    .sp-ipa { font-family: monospace; font-size: 0.64rem; font-weight: 600; opacity: 0.9; }
+    .sp-trans { font-size: 0.64rem; opacity: 0.8; }
+
+    /* Word Modal */
+    .modal-backdrop {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .modal-backdrop.open { display: flex; }
+
+    .modal-container {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      max-width: 480px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+    }
+
+    .modal-bar {
+      padding: 0.75rem 1.15rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    .word-popup-body {
+      padding: 1.25rem 1.35rem;
+      line-height: 1.5;
+    }
+
+    .wp-header-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.65rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .wp-greek {
+      font-family: 'Gentium Plus', serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .wp-ipa {
+      font-family: monospace;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .wp-field {
+      margin-bottom: 0.75rem;
+    }
+
+    .wp-field-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .wp-field-value {
+      font-size: 0.88rem;
+      color: var(--text-main);
+    }
+
+    .wp-field-value.highlight {
+      font-weight: 600;
+    }
+
+    .wp-field-value.root-text {
+      font-style: italic;
+      color: #000000;
+      font-weight: 600;
+    }
+
+    /* Credits Modal */
+    .credits-container {
+      max-width: 620px;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .credits-scroll {
+      padding: 1.25rem;
+      overflow-y: auto;
+      font-size: 0.82rem;
+      color: #000000;
+      line-height: 1.55;
+    }
+
+    .credits-scroll h4 {
+      color: var(--text-main);
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .credits-scroll ul {
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .credits-scroll li { margin-bottom: 0.35rem; }
+
+    .credits-scroll a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .credits-scroll a:hover { text-decoration: underline; }
+
+    /* Hamburger Menu */
+    .menu-container {
+      position: relative;
+      display: inline-block;
+      margin-left: 0.5rem;
+    }
+
+    .hamburger-btn {
+      background: none;
+      border: none;
+      font-size: 1.25rem;
+      cursor: pointer;
+      color: var(--text-main);
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+    
+    .hamburger-btn:hover {
+      background-color: var(--surface-subtle);
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: var(--surface);
+      min-width: 180px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      z-index: 101;
+      padding: 0.5rem 0;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    .dropdown-menu a {
+      color: var(--text-main);
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .dropdown-menu a:hover {
+      background-color: var(--surface-subtle);
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Nav with Integrated Line Selector -->
+  <nav>
+    <div class="nav-container">
+      <span class="brand-title">Homer's Iliad</span>
+
+      <div style="display: flex; align-items: center;">
+        <div class="header-line-picker">
+          <button class="arrow-btn" id="prevBtn" onclick="prevLine()" title="Previous (←)">❮</button>
+          <div class="line-pills" id="linePills"></div>
+          <button class="arrow-btn" id="nextBtn" onclick="nextLine()" title="Next (→)">❯</button>
+        </div>
+        
+        <div class="menu-container">
+          <button class="hamburger-btn" onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
+          <div id="dropdown" class="dropdown-menu">
+            <a href="javascript:void(0)" onclick="openCredits()">📜 Credits and Thanks</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Canvas Panel -->
+    <div class="canvas-panel">
+      <!-- 1. Unified Hero Card: Greek Text + Literary Translation + Literal Gloss on Left; Compact Video on Right -->
+      <div class="unified-hero-card">
+        <!-- Content Column (Left) -->
+        <div class="hero-content-col">
+          <div class="greek-hero-text" id="greekLine">Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος</div>
+          
+          <div class="translation-item">
+            <div class="literary-text" id="idiomaticText">Sing, goddess, the ruinous wrath of Achilles, son of Peleus,</div>
+          </div>
+          
+
+        </div>
+
+        <!-- Video Column (Right, No YouTube link underneath) -->
+        <div class="hero-video-col">
+          <div class="player-container" id="playerContainer" onclick="loadYoutubeVideo()" style="cursor: pointer;">
+            <img id="videoThumb" src="" alt="Video Thumbnail" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <div id="playOverlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 48px; height: 48px; background: rgba(0,0,0,0.6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; pointer-events: none;">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px; margin-left: 4px;"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <iframe
+              id="mainVideoIframe"
+              style="display: none;"
+              title="Line Recitation"
+              referrerpolicy="no-referrer-when-downgrade"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div style="display: flex; gap: 0.5rem; justify-content: center; align-items: center; margin-top: 0.4rem;">
+            <button onclick="replayVideo()" class="replay-btn" title="Replay line">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg>
+            </button>
+            <a id="videoCreditLink" href="https://youtube.com/watch?v=-XkCyIRmdFg" target="_blank" rel="noopener" class="video-credit-link" style="margin-top: 0;">polýMATHY</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Word-by-Word Parsing Grid (Clean & Clickable for Popups) -->
+      <div class="section-header">
+        <span>Word-by-Word Parsing</span>
+        <span class="hint-click">Click any word for morphology & etymology</span>
+      </div>
+      <div class="interlinear-row" id="interlinearRow"></div>
+
+      <!-- 3. Scansion Section -->
+      <div class="scansion-section">
+        <div class="section-header">
+          <span>Scansion</span>
+        </div>
+        <div class="scansion-capsules" id="scansionCapsules"></div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Word Details Popup Modal -->
+  <div class="modal-backdrop" id="wordModal" onclick="closeWordOnBackdrop(event)">
+    <div class="modal-container">
+      <div class="modal-bar">
+        <span>Morphological & Etymological Analysis</span>
+        <button class="modal-close" onclick="closeWordModal()">&times;</button>
+      </div>
+      <div class="word-popup-body" id="wordPopupBody"></div>
+    </div>
+  </div>
+
+  <!-- Credits Modal -->
+  <div class="modal-backdrop" id="creditsModal" onclick="closeCreditsOnBackdrop(event)">
+    <div class="modal-container credits-container">
+      <div class="modal-bar">
+        <span>📜 Credits and thanks</span>
+        <button class="modal-close" onclick="closeCredits()">&times;</button>
+      </div>
+      <div class="credits-scroll">
+        <p style="margin-bottom: 1.25rem;">
+          I've just started learning about Ancient Greek and rely on a variety of resources to build this canvas.
+        </p>
+
+        <h4>Video credits</h4>
+        <ul>
+          <li><strong>Luke Ranieri</strong> (<a href="https://www.youtube.com/@polymathy" target="_blank" rel="noopener">polýMATHY</a> / <em>ScorpioMartianus</em>) — Luke is one of the best resources I've found for Greek and Latin. He is the creator of the <strong>#KephalosChallenge</strong> and the reconstructed 3-pitch restored chanting methodology used here.</li>
+          <li><strong>Audiobook</strong> — Luke's full recording of <a href="https://luke-ranieri.myshopify.com/products/iliad-100-homers-iliad-book-1-lines-1-100" target="_blank" rel="noopener">Iliad 100: Homer's Iliad Book 1, lines 1-100</a> is available on the polýMATHY store.</li>
+          <li><strong>Michael Kopf</strong> (<em>Κέφαλος</em>) — Educator who inspired the Kephalos oral memorization method.</li>
+        </ul>
+
+        <h4>2. Classical Attic Pronunciation (5th c. BC)</h4>
+        <ul>
+          <li><strong>W. Sidney Allen</strong>, <a href="https://www.amazon.com/s?k=Vox+Graeca+Sidney+Allen" target="_blank" rel="noopener"><em>Vox Graeca: The Pronunciation of Classical Greek</em></a> (3rd ed., Cambridge University Press, 1987) — Standard authority on Classical Attic aspirated plosives [tʰ, pʰ, kʰ], monophthongs [eː, uː], front-rounded [y], and pitch accents.</li>
+          <li><strong>A. M. Devine & Laurence D. Stephens</strong>, <a href="https://www.amazon.com/s?k=The+Prosody+of+Greek+Speech+Devine+Stephens" target="_blank" rel="noopener"><em>The Prosody of Greek Speech</em></a> (Oxford University Press, 1994) — Empirical treatise on ancient Greek tonal pitch contours.</li>
+        </ul>
+
+        <h4>3. Metrical Scansion & Critical Text Editions</h4>
+        <ul>
+          <li><strong>D. B. Monro & T. W. Allen (eds.)</strong>, <a href="https://www.amazon.com/s?k=Homeri+Opera+Tomus+I+Monro+Allen" target="_blank" rel="noopener"><em>Homeri Opera, Tomus I: Ilias I–XII</em></a> (Oxford Classical Texts / Clarendon Press).</li>
+          <li><strong>Martin L. West</strong>, <a href="https://www.amazon.com/s?k=Greek+Metre+Martin+L.+West" target="_blank" rel="noopener"><em>Greek Metre</em></a> (Oxford University Press, 1982) & <em>Homeri Ilias</em> (Bibliotheca Teubneriana, 1998) — Canonical scholarship on dactylic hexameter, caesurae, synizesis, and correption.</li>
+          <li><strong>Corinne Ondine Pache (ed.)</strong>, <a href="https://www.amazon.com/s?k=The+Cambridge+Guide+to+Homer+Pache" target="_blank" rel="noopener"><em>The Cambridge Guide to Homer</em></a> (Cambridge University Press, 2020) — Chapter on Homeric Meter.</li>
+          <li><strong>Geoffrey Steadman</strong>, <a href="https://www.amazon.com/s?k=Geoffrey+Steadman+Homer+Iliad" target="_blank" rel="noopener"><em>Homer's Iliad 1: Greek Text with Facing Vocabulary and Commentary</em></a> (2013).</li>
+          <li><strong>Perseus Digital Library</strong> (<a href="http://www.perseus.tufts.edu/hopper/" target="_blank" rel="noopener">Tufts University, ed. Gregory Crane</a>).</li>
+          <li><strong>Perseids Project</strong> — The Morpheus API for automated morphological parsing.</li>
+          <li><strong>Hypotactic</strong> (<a href="https://hypotactic.com/" target="_blank" rel="noopener">hypotactic.com</a>) — Scansion data (dactylic hexameter feet and syllable lengths) was extracted from the Hypotactic Iliad CSV datasets.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    let currentIdx = 0;
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.hamburger-btn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-menu");
+        for (let i = 0; i < dropdowns.length; i++) {
+          if (dropdowns[i].classList.contains('show')) {
+            dropdowns[i].classList.remove('show');
+          }
+        }
+      }
+    };
+
+    function init() {
+      const params = new URLSearchParams(window.location.search);
+      const lineParam = params.get('line');
+      if (lineParam) {
+        const foundIdx = data.findIndex(d => d.num === parseInt(lineParam));
+        if (foundIdx !== -1) {
+          currentIdx = foundIdx;
+        }
+      }
+
+      renderPills();
+      renderLine();
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') nextLine();
+        else if (e.key === 'ArrowLeft') prevLine();
+        else if (e.key >= '1' && e.key <= '7') goToLine(parseInt(e.key) - 1);
+        else if (e.key === 'Escape') {
+          closeWordModal();
+          closeCredits();
+        }
+      });
+    }
+
+    function renderPills() {
+      const container = document.getElementById('linePills');
+      container.innerHTML = '';
+      
+      const windowSize = 3;
+      let startIdx = Math.max(0, currentIdx - windowSize);
+      let endIdx = Math.min(data.length - 1, currentIdx + windowSize);
+      
+      const totalPills = windowSize * 2 + 1;
+      if (endIdx - startIdx + 1 < totalPills) {
+        if (startIdx === 0) {
+          endIdx = Math.min(data.length - 1, startIdx + totalPills - 1);
+        } else if (endIdx === data.length - 1) {
+          startIdx = Math.max(0, endIdx - totalPills + 1);
+        }
+      }
+
+      for (let idx = startIdx; idx <= endIdx; idx++) {
+        const item = data[idx];
+        const btn = document.createElement('button');
+        btn.className = `line-btn ${idx === currentIdx ? 'active' : ''}`;
+        btn.textContent = `Line ${item.num}`;
+        btn.onclick = () => goToLine(idx);
+        container.appendChild(btn);
+      }
+      
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      if (prevBtn) prevBtn.disabled = (currentIdx === 0);
+      if (nextBtn) nextBtn.disabled = (currentIdx === data.length - 1);
+    }
+
+    function renderLine() {
+      const l = data[currentIdx];
+      renderPills();
+
+      // Greek Line
+      document.getElementById('greekLine').textContent = l.greek;
+
+      // Update embedded iframe and credit link
+      // Update video thumbnail
+      const thumb = document.getElementById('videoThumb');
+      if (thumb) {
+        thumb.src = `https://img.youtube.com/vi/${l.video_id}/hqdefault.jpg`;
+        thumb.style.display = 'block';
+        document.getElementById('playOverlay').style.display = 'flex';
+      }
+      
+      const iframe = document.getElementById('mainVideoIframe');
+      if (iframe) {
+        iframe.style.display = 'none';
+        iframe.src = '';
+      }
+      
+      const creditLink = document.getElementById('videoCreditLink');
+      if (creditLink) {
+        creditLink.href = `https://youtube.com/watch?v=${l.video_id}`;
+      }
+
+      // Translation
+      document.getElementById('idiomaticText').textContent = l.idiomatic;
+
+      // Word Tiles (Clean on main page, clickable for full morphology in popup)
+      const flow = document.getElementById('interlinearRow');
+      flow.innerHTML = '';
+      l.words.forEach((w, wIdx) => {
+        const tile = document.createElement('div');
+        tile.className = 'word-tile';
+        tile.onclick = () => openWordModal(wIdx);
+        tile.innerHTML = `
+          <div class="wt-header">
+            <span class="wt-greek">${w.greek}</span>
+          </div>
+          <div class="wt-trans">${w.translit}</div>
+          <div class="wt-gloss">${w.gloss.split('/')[0].trim()}</div>
+        `;
+        flow.appendChild(tile);
+      });
+
+      // Scansion Capsules
+      const strip = document.getElementById('scansionCapsules');
+      strip.innerHTML = '';
+      l.feet.forEach((foot, fIdx) => {
+        foot.sylls.forEach((syll, sIdx) => {
+          if (syll.grk === '—') return;
+          const pill = document.createElement('div');
+          pill.className = `scansion-pill ${syll.q}`;
+          pill.innerHTML = `
+            <span class="sp-sym">${syll.sym}</span>
+            <span class="sp-grk">${syll.grk}</span>
+            <span class="sp-ipa">${syll.ipa}</span>
+            <span class="sp-trans">${syll.trans}</span>
+          `;
+          strip.appendChild(pill);
+        });
+      });
+
+
+    }
+
+    function openWordModal(wIdx) {
+      const l = data[currentIdx];
+      const w = l.words[wIdx];
+      const modal = document.getElementById('wordModal');
+      const body = document.getElementById('wordPopupBody');
+
+      body.innerHTML = `
+        <div class="wp-header-area">
+          <div class="wp-greek">${w.greek}</div>
+          <div class="wp-ipa">${w.ipa} (${w.translit})</div>
+        </div>
+
+        <div class="wp-field">
+          <div class="wp-field-label">Meaning / Gloss</div>
+          <div class="wp-field-value">${w.gloss}</div>
+        </div>
+
+        <div class="wp-field">
+          <div class="wp-field-label">Linguistic & Homeric Context</div>
+          <div class="wp-field-value" style="font-size:0.84rem; color:#000000;">${w.note}</div>
+        </div>
+
+        <div class="wp-field">
+          <div class="wp-field-label">Grammatical Parsing</div>
+          <div class="wp-field-value highlight">${w.pos}</div>
+        </div>
+
+        <div class="wp-field" style="margin-bottom:0;">
+          <div class="wp-field-label">Proto-Indo-European Root & Cognates</div>
+          <div class="wp-field-value root-text">${w.root}</div>
+        </div>
+      `;
+
+      modal.classList.add('open');
+    }
+
+    function closeWordModal() {
+      document.getElementById('wordModal').classList.remove('open');
+    }
+
+    function goToLine(idx) {
+      if (idx >= 0 && idx < data.length) {
+        currentIdx = idx;
+        const newUrl = new URL(window.location);
+        newUrl.searchParams.set('line', data[idx].num);
+        window.history.replaceState(null, '', newUrl);
+        renderLine();
+      }
+    }
+
+    function loadYoutubeVideo() {
+      const l = data[currentIdx];
+      const iframe = document.getElementById('mainVideoIframe');
+      const thumb = document.getElementById('videoThumb');
+      const overlay = document.getElementById('playOverlay');
+      
+      if (iframe && iframe.style.display === 'none') {
+        thumb.style.display = 'none';
+        overlay.style.display = 'none';
+        iframe.src = `https://www.youtube.com/embed/${l.video_id}?start=${l.start_sec}&end=${l.end_sec}&playsinline=1&enablejsapi=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&autoplay=1`;
+        iframe.style.display = 'block';
+      }
+    }
+
+    function replayVideo() {
+      const iframe = document.getElementById('mainVideoIframe');
+      if (iframe.style.display === 'none') {
+        loadYoutubeVideo();
+        return;
+      }
+      const l = data[currentIdx];
+      // Send postMessage to YouTube player to seek to start and play
+      iframe.contentWindow.postMessage(JSON.stringify({
+        event: 'command',
+        func: 'seekTo',
+        args: [l.start_sec, true]
+      }), '*');
+      iframe.contentWindow.postMessage(JSON.stringify({
+        event: 'command',
+        func: 'playVideo',
+        args: []
+      }), '*');
+    }
+
+    function nextLine() {
+      goToLine((currentIdx + 1) % data.length);
+    }
+
+    function prevLine() {
+      goToLine((currentIdx - 1 + data.length) % data.length);
+    }
+
+    function openCredits() {
+      document.getElementById('creditsModal').classList.add('open');
+    }
+
+    function closeCredits() {
+      document.getElementById('creditsModal').classList.remove('open');
+    }
+
+    function closeWordOnBackdrop(e) {
+      if (e.target.id === 'wordModal') closeWordModal();
+    }
+
+    function closeCreditsOnBackdrop(e) {
+      if (e.target.id === 'creditsModal') closeCredits();
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>
