@@ -2180,7 +2180,7 @@ const data = [
         "pos": "Noun • Accusative Singular Feminine",
         "gloss": "disease",
         "root": "Lemma: νόσος",
-        "note": ""
+        "note": "Ionic form of νόσος. Apollo's plague sent upon the Greek camp."
       },
       {
         "greek": "ἀνὰ",
@@ -2189,7 +2189,7 @@ const data = [
         "pos": "Preposition",
         "gloss": "up/through",
         "root": "Lemma: ἀνά",
-        "note": ""
+        "note": "On top of, or along."
       },
       {
         "greek": "στρατὸν",
@@ -2198,7 +2198,7 @@ const data = [
         "pos": "Noun • Accusative Singular Masculine",
         "gloss": "army",
         "root": "Lemma: στρατός",
-        "note": ""
+        "note": "The encamped army of the Greeks at Troy."
       },
       {
         "greek": "ὦρσε",
@@ -2207,7 +2207,7 @@ const data = [
         "pos": "Verb • Aorist Active Indicative Singular 3rd",
         "gloss": "roused",
         "root": "Lemma: ὄρνυμι",
-        "note": ""
+        "note": "Aorist of ὄρνυμι. The plague was actively 'roused' or 'stirred up' by Apollo."
       },
       {
         "greek": "κακήν",
@@ -2216,7 +2216,7 @@ const data = [
         "pos": "Adjective • Accusative Singular Feminine",
         "gloss": "evil",
         "root": "Lemma: κακός",
-        "note": ""
+        "note": "Feminine accusative adjective agreeing with νοῦσον."
       },
       {
         "greek": "ὀλέκοντο",
@@ -2225,7 +2225,7 @@ const data = [
         "pos": "Verb • Imperfect Mediopassive Indicative Plural 3rd",
         "gloss": "were perishing",
         "root": "Lemma: ὀλέκω",
-        "note": ""
+        "note": "Imperfect passive of ὀλέκω, indicating the ongoing, continuous perishing of the troops."
       },
       {
         "greek": "δὲ",
@@ -2234,7 +2234,7 @@ const data = [
         "pos": "Particle",
         "gloss": "and/but",
         "root": "Lemma: δέ",
-        "note": ""
+        "note": "And/but."
       },
       {
         "greek": "λαοί",
@@ -2243,7 +2243,7 @@ const data = [
         "pos": "Noun • Nominative Plural Masculine",
         "gloss": "people",
         "root": "Lemma: λαός",
-        "note": ""
+        "note": "The common soldiers or host, distinct from the leaders."
       }
     ]
   },
@@ -2418,7 +2418,7 @@ const data = [
         "pos": "Conjunction",
         "gloss": "because",
         "root": "Lemma: οὕνεκα",
-        "note": ""
+        "note": "Conjunction meaning 'because' or 'on account of which'."
       },
       {
         "greek": "τὸν",
@@ -2427,7 +2427,7 @@ const data = [
         "pos": "Article • Accusative Singular Masculine",
         "gloss": "the",
         "root": "Lemma: ὁ",
-        "note": ""
+        "note": "Demonstrative pronoun used here as an article or demonstrative."
       },
       {
         "greek": "Χρύσην",
@@ -2436,7 +2436,7 @@ const data = [
         "pos": "Noun • Accusative Singular Masculine",
         "gloss": "Chryses",
         "root": "Lemma: Χρύσης",
-        "note": ""
+        "note": "Chryses, the priest of Apollo whose daughter was taken by Agamemnon."
       },
       {
         "greek": "ἠτίμασεν",
@@ -2445,7 +2445,7 @@ const data = [
         "pos": "Verb • Aorist Active Indicative Singular 3rd",
         "gloss": "dishonored",
         "root": "Lemma: ἀτιμάω",
-        "note": ""
+        "note": "Aorist of ἀτιμάζω. The core offense of Agamemnon: dishonoring a priest."
       },
       {
         "greek": "ἀρητῆρα",
@@ -2454,7 +2454,7 @@ const data = [
         "pos": "Noun • Accusative Singular Feminine",
         "gloss": "priest",
         "root": "Lemma: ἀρητήρ",
-        "note": ""
+        "note": "Priest or one who prays (from ἀράομαι)."
       }
     ]
   },
@@ -2653,7 +2653,7 @@ const data = [
         "pos": "Noun • Nominative Singular Masculine",
         "gloss": "son of Atreus",
         "root": "Lemma: Ἀτρείδης",
-        "note": ""
+        "note": "Patronymic for the son of Atreus (Agamemnon)."
       },
       {
         "greek": "ὃ",
@@ -2662,7 +2662,7 @@ const data = [
         "pos": "Article • Nominative Singular Masculine",
         "gloss": "he (Apollo)",
         "root": "Lemma: ὁ",
-        "note": ""
+        "note": "Demonstrative pronoun referring to Chryses."
       },
       {
         "greek": "γὰρ",
@@ -2671,7 +2671,7 @@ const data = [
         "pos": "Particle",
         "gloss": "for",
         "root": "Lemma: γάρ",
-        "note": ""
+        "note": "Explanatory particle."
       },
       {
         "greek": "ἦλθε",
@@ -2680,7 +2680,7 @@ const data = [
         "pos": "Verb • Aorist Active Indicative Singular 3rd",
         "gloss": "came",
         "root": "Lemma: ἔρχομαι",
-        "note": ""
+        "note": "Aorist of ἔρχομαι."
       },
       {
         "greek": "θοὰς",
@@ -2689,7 +2689,7 @@ const data = [
         "pos": "Noun • Nominative Singular Feminine",
         "gloss": "swift",
         "root": "Lemma: θοάς",
-        "note": ""
+        "note": "Standard Homeric epithet for ships: 'swift' or 'pointed'."
       },
       {
         "greek": "ἐπὶ",
@@ -2698,7 +2698,7 @@ const data = [
         "pos": "Preposition",
         "gloss": "to/upon",
         "root": "Lemma: ἐπί",
-        "note": ""
+        "note": "Preposition indicating motion towards."
       },
       {
         "greek": "νῆας",
@@ -2707,7 +2707,7 @@ const data = [
         "pos": "Noun • Accusative Plural Feminine",
         "gloss": "ships",
         "root": "Lemma: ναῦς",
-        "note": ""
+        "note": "Accusative plural of ναῦς (ships)."
       },
       {
         "greek": "Ἀχαιῶν",
@@ -2716,7 +2716,7 @@ const data = [
         "pos": "Noun • Genitive Plural Feminine",
         "gloss": "of the Achaeans",
         "root": "Lemma: ἀχαιά",
-        "note": ""
+        "note": "The general Homeric name for the Greeks."
       }
     ]
   },
@@ -2915,7 +2915,7 @@ const data = [
         "pos": "Verb participle • Future Middle Participle Nominative Singular Masculine",
         "gloss": "about to ransom",
         "root": "Lemma: λύω",
-        "note": ""
+        "note": "Future middle participle of λύω, expressing purpose: 'in order to ransom'."
       },
       {
         "greek": "τε",
@@ -2924,7 +2924,7 @@ const data = [
         "pos": "Particle",
         "gloss": "and",
         "root": "Lemma: τε",
-        "note": ""
+        "note": "Enclitic conjunction (and)."
       },
       {
         "greek": "θύγατρα",
@@ -2933,7 +2933,7 @@ const data = [
         "pos": "Noun • Accusative Singular Feminine",
         "gloss": "daughter",
         "root": "Lemma: θυγάτηρ",
-        "note": ""
+        "note": "Accusative of θυγάτηρ (daughter), referring to Chryseis."
       },
       {
         "greek": "φέρων",
@@ -2942,7 +2942,7 @@ const data = [
         "pos": "Verb participle • Present Active Participle Nominative Singular Masculine",
         "gloss": "bringing",
         "root": "Lemma: φέρω",
-        "note": ""
+        "note": "Present participle of φέρω (bearing)."
       },
       {
         "greek": "τ᾽",
@@ -2951,7 +2951,7 @@ const data = [
         "pos": "Particle",
         "gloss": "and",
         "root": "Lemma: τε",
-        "note": ""
+        "note": "Elided form of τε."
       },
       {
         "greek": "ἀπερείσι᾽",
@@ -2960,7 +2960,7 @@ const data = [
         "pos": "Noun • Dative Singular Feminine",
         "gloss": "boundless/countless",
         "root": "Lemma: ἄπερεισις",
-        "note": ""
+        "note": "Elided form of ἀπερείσια (boundless, countless)."
       },
       {
         "greek": "ἄποινα",
@@ -2969,7 +2969,7 @@ const data = [
         "pos": "Noun • Nominative Plural Neuter",
         "gloss": "ransom",
         "root": "Lemma: ἄποινα",
-        "note": ""
+        "note": "Ransom."
       }
     ]
   },
@@ -3152,7 +3152,7 @@ const data = [
         "pos": "Noun • Accusative Plural Neuter",
         "gloss": "fillets/wreaths",
         "root": "Lemma: στέμμα",
-        "note": ""
+        "note": "The sacred woolen bands (stémmata) identifying him as a priest."
       },
       {
         "greek": "ἔχων",
@@ -3161,7 +3161,7 @@ const data = [
         "pos": "Verb participle • Present Active Participle Nominative Singular Masculine",
         "gloss": "holding / having",
         "root": "Lemma: ἔχω",
-        "note": ""
+        "note": "Present participle of ἔχω."
       },
       {
         "greek": "ἐν",
@@ -3170,7 +3170,7 @@ const data = [
         "pos": "Preposition",
         "gloss": "in",
         "root": "Lemma: ἐν",
-        "note": ""
+        "note": "Preposition 'in'."
       },
       {
         "greek": "χερσὶν",
@@ -3179,7 +3179,7 @@ const data = [
         "pos": "Noun • Dative Plural Feminine",
         "gloss": "hands",
         "root": "Lemma: χείρ",
-        "note": ""
+        "note": "Dative plural of χείρ (hands)."
       },
       {
         "greek": "ἑκηβόλου",
@@ -3188,7 +3188,7 @@ const data = [
         "pos": "Adjective • Genitive Singular Masculine",
         "gloss": "of the far-shooter",
         "root": "Lemma: ἑκηβόλος",
-        "note": ""
+        "note": "Standard epithet of Apollo: 'far-shooting'."
       },
       {
         "greek": "Ἀπόλλωνος",
@@ -3197,7 +3197,7 @@ const data = [
         "pos": "Noun • Genitive Singular Masculine",
         "gloss": "of Apollo",
         "root": "Lemma: Ἀπόλλων",
-        "note": ""
+        "note": "Genitive of Apollo."
       }
     ]
   },
@@ -3380,7 +3380,7 @@ const data = [
         "pos": "Adjective • Dative Singular Masculine",
         "gloss": "golden",
         "root": "Lemma: χρύσεος",
-        "note": ""
+        "note": "Dative of χρύσεος (golden)."
       },
       {
         "greek": "ἀνὰ",
@@ -3389,7 +3389,7 @@ const data = [
         "pos": "Preposition",
         "gloss": "up/through",
         "root": "Lemma: ἀνά",
-        "note": ""
+        "note": "On top of, or along."
       },
       {
         "greek": "σκήπτρῳ",
@@ -3398,7 +3398,7 @@ const data = [
         "pos": "Noun • Dative Singular Neuter",
         "gloss": "staff",
         "root": "Lemma: σκῆπτρον",
-        "note": ""
+        "note": "The staff or scepter marking religious or royal authority."
       },
       {
         "greek": "καὶ",
@@ -3407,7 +3407,7 @@ const data = [
         "pos": "Conjunction",
         "gloss": "and",
         "root": "Lemma: καί",
-        "note": ""
+        "note": "Conjunction (and)."
       },
       {
         "greek": "λίσσετο",
@@ -3416,7 +3416,7 @@ const data = [
         "pos": "Verb • Imperfect Mediopassive Indicative Singular 3rd",
         "gloss": "begged/entreated",
         "root": "Lemma: λίσσομαι",
-        "note": ""
+        "note": "Imperfect of λίσσομαι (begged, entreated)."
       },
       {
         "greek": "πάντας",
@@ -3425,7 +3425,7 @@ const data = [
         "pos": "Adjective • Accusative Plural Masculine",
         "gloss": "all",
         "root": "Lemma: πᾶς",
-        "note": ""
+        "note": "Accusative plural of πᾶς (all)."
       },
       {
         "greek": "Ἀχαιούς",
@@ -3434,7 +3434,7 @@ const data = [
         "pos": "Noun • Accusative Plural Masculine",
         "gloss": "Achaeans",
         "root": "Lemma: Ἀχαιός",
-        "note": ""
+        "note": "The Achaeans (Greeks)."
       }
     ]
   },
@@ -3625,7 +3625,7 @@ const data = [
         "pos": "Noun • Accusative Dual Masculine",
         "gloss": "two sons of Atreus",
         "root": "Lemma: Ἀτρείδης",
-        "note": ""
+        "note": "Dual form referring specifically to the two sons of Atreus (Agamemnon and Menelaus)."
       },
       {
         "greek": "δὲ",
@@ -3634,7 +3634,7 @@ const data = [
         "pos": "Particle",
         "gloss": "and/but",
         "root": "Lemma: δέ",
-        "note": ""
+        "note": "And/but."
       },
       {
         "greek": "μάλιστα",
@@ -3643,7 +3643,7 @@ const data = [
         "pos": "Adverb",
         "gloss": "most of all",
         "root": "Lemma: μάλιστα",
-        "note": ""
+        "note": "Superlative adverb (especially)."
       },
       {
         "greek": "δύω",
@@ -3652,7 +3652,7 @@ const data = [
         "pos": "Numeral",
         "gloss": "two",
         "root": "Lemma: δύο",
-        "note": ""
+        "note": "Two (dual)."
       },
       {
         "greek": "κοσμήτορε",
@@ -3661,7 +3661,7 @@ const data = [
         "pos": "Noun • Nominative Dual Masculine",
         "gloss": "marshals/commanders",
         "root": "Lemma: κοσμήτωρ",
-        "note": ""
+        "note": "Dual vocative of κοσμήτωρ (marshallers or commanders)."
       },
       {
         "greek": "λαῶν",
@@ -3670,7 +3670,7 @@ const data = [
         "pos": "Noun • Genitive Plural Masculine",
         "gloss": "of the people",
         "root": "Lemma: λαός",
-        "note": ""
+        "note": "Genitive plural of λαός."
       }
     ]
   },
@@ -3861,7 +3861,7 @@ const data = [
         "pos": "Noun • Nominative Plural Masculine",
         "gloss": "sons of Atreus",
         "root": "Lemma: Ἀτρείδης",
-        "note": ""
+        "note": "Vocative plural patronymic (sons of Atreus)."
       },
       {
         "greek": "τε",
@@ -3870,7 +3870,7 @@ const data = [
         "pos": "Particle",
         "gloss": "and",
         "root": "Lemma: τε",
-        "note": ""
+        "note": "Enclitic conjunction (and)."
       },
       {
         "greek": "καὶ",
@@ -3879,7 +3879,7 @@ const data = [
         "pos": "Conjunction",
         "gloss": "and",
         "root": "Lemma: καί",
-        "note": ""
+        "note": "Conjunction (and)."
       },
       {
         "greek": "ἄλλοι",
@@ -3888,7 +3888,7 @@ const data = [
         "pos": "Pronoun • Nominative Plural Masculine",
         "gloss": "other",
         "root": "Lemma: ἄλλος",
-        "note": ""
+        "note": "Nominative plural (other)."
       },
       {
         "greek": "ἐϋκνήμιδες",
@@ -3897,7 +3897,7 @@ const data = [
         "pos": "Noun • Nominative Plural Feminine",
         "gloss": "well-greaved",
         "root": "Lemma: ἐυκνήμις",
-        "note": ""
+        "note": "Standard Homeric epithet: 'well-greaved'."
       },
       {
         "greek": "Ἀχαιοί",
@@ -3906,7 +3906,7 @@ const data = [
         "pos": "Noun • Nominative Plural Masculine",
         "gloss": "Achaeans",
         "root": "Lemma: Ἀχαιός",
-        "note": ""
+        "note": "Vocative plural."
       }
     ]
   },
@@ -4089,7 +4089,7 @@ const data = [
         "pos": "Pronoun • Dative Plural 2nd",
         "gloss": "to you",
         "root": "Lemma: σύ",
-        "note": ""
+        "note": "Dative plural (to you)."
       },
       {
         "greek": "μὲν",
@@ -4098,7 +4098,7 @@ const data = [
         "pos": "Particle",
         "gloss": "on the one hand",
         "root": "Lemma: μέν",
-        "note": ""
+        "note": "Particle setting up a contrast with δὲ."
       },
       {
         "greek": "θεοὶ",
@@ -4107,7 +4107,7 @@ const data = [
         "pos": "Noun • Nominative Plural Masculine",
         "gloss": "gods",
         "root": "Lemma: θεός",
-        "note": ""
+        "note": "Nominative plural (gods)."
       },
       {
         "greek": "δοῖεν",
@@ -4116,7 +4116,7 @@ const data = [
         "pos": "Verb • Aorist Active Optative Plural 3rd",
         "gloss": "may they give",
         "root": "Lemma: δίδωμι",
-        "note": ""
+        "note": "Optative of δίδωμι, expressing a wish."
       },
       {
         "greek": "Ὀλύμπια",
@@ -4125,7 +4125,7 @@ const data = [
         "pos": "Adjective • Accusative Plural Neuter",
         "gloss": "Olympian",
         "root": "Lemma: Ὀλύμπιος",
-        "note": ""
+        "note": "Neuter plural adjective (Olympian)."
       },
       {
         "greek": "δώματ᾽",
@@ -4134,7 +4134,7 @@ const data = [
         "pos": "Noun • Accusative Plural Neuter",
         "gloss": "homes/halls",
         "root": "Lemma: δῶμα",
-        "note": ""
+        "note": "Elided form of δώματα (homes, mansions)."
       },
       {
         "greek": "ἔχοντες",
@@ -4143,7 +4143,7 @@ const data = [
         "pos": "Verb participle • Present Active Participle Nominative Plural Masculine",
         "gloss": "having/holding",
         "root": "Lemma: ἔχω",
-        "note": ""
+        "note": "Participle (having, holding)."
       }
     ]
   },
@@ -4326,7 +4326,7 @@ const data = [
         "pos": "Verb • Aorist Active Infinitive",
         "gloss": "to sack completely",
         "root": "Lemma: ἐκπέρθω",
-        "note": ""
+        "note": "Aorist active infinitive of ἐκπέρθω (to sack completely)."
       },
       {
         "greek": "Πριάμοιο",
@@ -4335,7 +4335,7 @@ const data = [
         "pos": "Noun • Genitive Singular Masculine",
         "gloss": "of Priam",
         "root": "Lemma: Πρίαμος",
-        "note": ""
+        "note": "Homeric genitive of Priam."
       },
       {
         "greek": "πόλιν",
@@ -4344,7 +4344,7 @@ const data = [
         "pos": "Noun • Accusative Singular Feminine",
         "gloss": "city",
         "root": "Lemma: πόλις",
-        "note": ""
+        "note": "Accusative of πόλις (city)."
       },
       {
         "greek": "εὖ",
@@ -4353,7 +4353,7 @@ const data = [
         "pos": "Adverb",
         "gloss": "well/safely",
         "root": "Lemma: εὖ",
-        "note": ""
+        "note": "Adverb (well)."
       },
       {
         "greek": "δ᾽",
@@ -4362,7 +4362,7 @@ const data = [
         "pos": "Particle",
         "gloss": "and/but",
         "root": "Lemma: δέ",
-        "note": ""
+        "note": "Elided δὲ."
       },
       {
         "greek": "οἴκαδ᾽",
@@ -4371,7 +4371,7 @@ const data = [
         "pos": "Adverb",
         "gloss": "homeward",
         "root": "Lemma: οἴκαδε",
-        "note": ""
+        "note": "Elided οἴκαδε (homeward)."
       },
       {
         "greek": "ἱκέσθαι",
@@ -4380,7 +4380,7 @@ const data = [
         "pos": "Verb • Aorist Middle Infinitive",
         "gloss": "to arrive",
         "root": "Lemma: ἱκνέομαι",
-        "note": ""
+        "note": "Aorist middle infinitive of ἱκνέομαι (to arrive)."
       }
     ]
   },
@@ -4571,7 +4571,7 @@ const data = [
         "pos": "Noun • Accusative Singular Masculine",
         "gloss": "child",
         "root": "Lemma: παῖς",
-        "note": ""
+        "note": "Accusative of παῖς (child)."
       },
       {
         "greek": "δ᾽",
@@ -4580,7 +4580,7 @@ const data = [
         "pos": "Particle",
         "gloss": "and/but",
         "root": "Lemma: δέ",
-        "note": ""
+        "note": "Elided δὲ."
       },
       {
         "greek": "ἐμοὶ",
@@ -4589,7 +4589,7 @@ const data = [
         "pos": "Pronoun • Dative Singular Masculine 1st",
         "gloss": "to me",
         "root": "Lemma: ἐγώ",
-        "note": ""
+        "note": "Dative of ἐγώ (to me)."
       },
       {
         "greek": "λύσαιτε",
@@ -4598,7 +4598,7 @@ const data = [
         "pos": "Verb • Aorist Active Optative Plural 2nd",
         "gloss": "may you release",
         "root": "Lemma: λύω",
-        "note": ""
+        "note": "Aorist active optative of λύω, expressing a polite request."
       },
       {
         "greek": "φίλην",
@@ -4607,7 +4607,7 @@ const data = [
         "pos": "Adjective • Accusative Singular Feminine",
         "gloss": "dear",
         "root": "Lemma: φίλος",
-        "note": ""
+        "note": "Accusative feminine of φίλος (dear, one's own)."
       },
       {
         "greek": "τὰ",
@@ -4616,7 +4616,7 @@ const data = [
         "pos": "Article • Accusative Plural Neuter",
         "gloss": "the/this",
         "root": "Lemma: ὁ",
-        "note": ""
+        "note": "Accusative neuter plural."
       },
       {
         "greek": "δ᾽",
@@ -4625,7 +4625,7 @@ const data = [
         "pos": "Particle",
         "gloss": "and/but",
         "root": "Lemma: δέ",
-        "note": ""
+        "note": "Elided δὲ."
       },
       {
         "greek": "ἄποινα",
@@ -4634,7 +4634,7 @@ const data = [
         "pos": "Noun • Nominative Plural Neuter",
         "gloss": "ransom",
         "root": "Lemma: ἄποινα",
-        "note": ""
+        "note": "Ransom."
       },
       {
         "greek": "δέχεσθαι",
@@ -4643,7 +4643,7 @@ const data = [
         "pos": "Verb • Present Mediopassive Infinitive",
         "gloss": "to accept",
         "root": "Lemma: δέχομαι",
-        "note": ""
+        "note": "Present middle infinitive (accept)."
       }
     ]
   },
@@ -4834,7 +4834,7 @@ const data = [
         "pos": "Verb participle • Present Mediopassive Participle Nominative Plural Masculine",
         "gloss": "revering/standing in awe of",
         "root": "Lemma: ἅζομαι",
-        "note": ""
+        "note": "Present middle participle (revering, standing in awe of)."
       },
       {
         "greek": "Διὸς",
@@ -4843,7 +4843,7 @@ const data = [
         "pos": "Noun • Genitive Singular Masculine",
         "gloss": "of Zeus",
         "root": "Lemma: Ζεύς",
-        "note": ""
+        "note": "Genitive of Zeus."
       },
       {
         "greek": "υἱὸν",
@@ -4852,7 +4852,7 @@ const data = [
         "pos": "Noun • Accusative Singular Masculine",
         "gloss": "son",
         "root": "Lemma: υἱός",
-        "note": ""
+        "note": "Accusative of υἱός (son)."
       },
       {
         "greek": "ἑκηβόλον",
@@ -4861,7 +4861,7 @@ const data = [
         "pos": "Adjective • Accusative Singular Masculine",
         "gloss": "far-shooting",
         "root": "Lemma: ἑκηβόλος",
-        "note": ""
+        "note": "Accusative of the epithet 'far-shooting'."
       },
       {
         "greek": "Ἀπόλλωνα",
@@ -4870,7 +4870,7 @@ const data = [
         "pos": "Noun • Accusative Singular Masculine",
         "gloss": "Apollo",
         "root": "Lemma: Ἀπόλλων",
-        "note": ""
+        "note": "Accusative of Apollo."
       }
     ]
   }
