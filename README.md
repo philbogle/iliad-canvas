@@ -1,20 +1,20 @@
 # Homer's Iliad - Interactive Study Canvas
 
-A vanilla HTML, CSS, and JavaScript single-page application designed for learning and reciting the opening lines of Homer's *Iliad* (Book 1, Lines 1-21).
+A single-page web application designed for learning and reciting the opening lines of Homer's *Iliad* (Book 1, Lines 1-21).
 
 The application features:
-- An embedded YouTube player that auto-seeks to the exact line being recited.
+- An embedded YouTube player that auto-seeks to the exact line being recited, using Luke Ranieri's superb Kephalos challenge recitation.
 - Metrical scansion breakdowns showing long/short syllables and dactylic hexameter feet.
 - Interlinear word-for-word morphology glosses with popup deep-dives (grammatical parsing, lemmas, and Indo-European roots).
 - A clean, distraction-free reading mode.
 
 ## 📜 Credits, Thanks, & Disclaimer
 
-> **Disclaimer:** I am just beginning my journey learning Ancient Greek and built this canvas primarily as a personal study tool. The depth and functionality of this project are entirely dependent on the incredible work of classical philologists, educators, and open-source linguistic projects. Because of the sheer volume of linguistic data being processed, there are probably inaccuracies or mis-parsed words on these pages. Bug reports, corrections, and pull requests are very much appreciated!
+> **Disclaimer:** I am just beginning my journey learning Ancient Greek and built this canvas primarily as a personal study tool. The depth and functionality of this project are entirely dependent on the work of classical philologists, educators, and open-source linguistic projects. Because of my limited knowledge, there are undoubtedly inaccuracies on these pages. Bug reports, corrections, and pull requests are very much appreciated!
 
-I want to extend a massive thank you to the following authoritative sources that made this canvas possible:
+I want to extend a sincere thank you to the following authoritative sources that made this canvas possible:
 
-- **[Luke Ranieri (polýMATHY)](https://www.youtube.com/@polymathy)**: The entire audio and video foundation of this canvas relies on Luke's monumental `#KephalosChallenge` recitations and his reconstructed 3-pitch restored chanting methodology. His full recording of [Iliad Book 1, lines 1-100](https://luke-ranieri.myshopify.com/products/iliad-100-homers-iliad-book-1-lines-1-100) is available on his store.
+- **[Luke Ranieri (polýMATHY)](https://www.youtube.com/@polymathy)**: The entire audio and video foundation of this canvas relies on Luke's `#KephalosChallenge` recitations and his reconstructed 3-pitch restored chanting methodology. His full recording of [Iliad Book 1, lines 1-100](https://luke-ranieri.myshopify.com/products/iliad-100-homers-iliad-book-1-lines-1-100) is available on his store.
 - **[The Perseids Project](https://perseids.org/) (Tufts University)**: All of the deep, automated grammatical parsing (Part of Speech, Voice, Mood, Case) and dictionary Lemmas were fetched using their incredibly powerful Morpheus API.
 - **[Hypotactic](https://hypotactic.com/)**: The dactylic hexameter scansion logic (accurate syllable lengths, positional lengthening, and hiatus) was sourced directly from their rigorous metrical CSV datasets.
 - **[Perseus Digital Library](http://www.perseus.tufts.edu/hopper/)**: For hosting the canonical Oxford Classical Text (Monro & Allen, 1920) that forms the base Greek of this project.
