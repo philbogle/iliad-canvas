@@ -676,7 +676,7 @@
         <div class="menu-container">
           <button class="hamburger-btn" onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
           <div id="dropdown" class="dropdown-menu">
-            <a href="javascript:void(0)" onclick="openCredits()">📜 Credits and Thanks</a>
+            <a href="javascript:void(0)" onclick="openCredits()">❓ Help and Credits</a>
           </div>
         </div>
       </div>
@@ -758,12 +758,22 @@
   <div class="modal-backdrop" id="creditsModal" onclick="closeCreditsOnBackdrop(event)">
     <div class="modal-container credits-container">
       <div class="modal-bar">
-        <span>📜 Credits and thanks</span>
+        <span>❓ Help and Credits</span>
         <button class="modal-close" onclick="closeCredits()">&times;</button>
       </div>
       <div class="credits-scroll">
+        <div style="margin-bottom: 1.5rem; background: var(--surface-subtle); padding: 1.25rem; border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
+          <h4 style="margin-top: 0;">How to use this canvas</h4>
+          <p style="margin-top: 0.5rem; color: #000000;">
+            This is an interactive study application for learning and reciting the opening lines of Homer's <em>Iliad</em>. 
+            Use the <strong>arrow buttons</strong> (or your keyboard's left/right arrows) to step through the text line-by-line. 
+            Click the <strong>Play button</strong> on the video to hear the correct reconstructed ancient pronunciation and pitch accents. 
+            You can <strong>click any word</strong> in the parsing grid to view a deep-dive popup containing its dictionary lemma, grammatical parsing, and Proto-Indo-European etymology.
+          </p>
+        </div>
+
         <p style="margin-bottom: 1.25rem;">
-          I've just started learning about Ancient Greek and rely on a variety of resources to build this canvas.
+          <em>Note: I am just beginning my journey learning Ancient Greek and rely on a variety of resources to build this canvas. Bug reports and corrections are welcome.</em>
         </p>
 
         <h4>Video credits</h4>
