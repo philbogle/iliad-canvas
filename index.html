@@ -218,18 +218,10 @@
 
     @media (max-width: 680px) {
       .unified-hero-card {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 1rem;
+        grid-template-columns: minmax(0, 1fr) 90px;
+        gap: 0.85rem;
         padding: 0.85rem;
         margin-bottom: 1rem;
-      }
-      .hero-video-col {
-        max-width: 130px;
-        margin: 0 auto;
-        order: 2;
-      }
-      .hero-content-col {
-        order: 1;
       }
     }
 
@@ -252,7 +244,7 @@
     }
 
     @media (max-width: 700px) {
-      .greek-hero-text { font-size: 1.65rem; }
+      .greek-hero-text { font-size: 1.4rem; }
     }
 
     .next-line-btn {
@@ -491,6 +483,20 @@
     .sp-grk { font-family: 'Gentium Plus', serif; font-size: 0.9rem; font-weight: 700; margin: 0.12rem 0; }
     .sp-ipa { font-family: monospace; font-size: 0.6rem; font-weight: 600; opacity: 0.9; }
     .sp-trans { font-size: 0.6rem; opacity: 0.8; }
+
+    @media (max-width: 600px) {
+      .scansion-pill {
+        padding: 0.15rem 0.25rem;
+        min-width: 30px;
+      }
+      .sp-sym { font-size: 0.75rem; }
+      .sp-grk { font-size: 0.8rem; }
+      .sp-ipa { font-size: 0.5rem; }
+      .sp-trans { font-size: 0.5rem; }
+      .scansion-capsules {
+        gap: 0.25rem 0.45rem;
+      }
+    }
 
     /* Word Modal */
     .modal-backdrop {
