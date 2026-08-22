@@ -45,3 +45,7 @@ python3 -m http.server 8200
 ```
 
 Then open `http://localhost:8200` in your web browser.
+
+## License
+
+This project is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/). See the [LICENSE](LICENSE) file for more details.
