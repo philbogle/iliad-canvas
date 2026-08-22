@@ -7,6 +7,7 @@ The application features:
 - Metrical scansion breakdowns showing long/short syllables and dactylic hexameter feet.
 - Interlinear word-for-word definitions with popup deep-dives.
 - A clean, distraction-free reading mode.
+- Fully responsive design that works beautifully on mobile devices.
 
 ## 📜 Credits, Thanks, & Disclaimer
 
