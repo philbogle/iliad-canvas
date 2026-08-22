@@ -5,14 +5,18 @@
   Features an embedded YouTube player, metrical scansion breakdowns, and interlinear word-for-word morphology glosses.
 -->
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homer's Iliad</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       /* Refined Warm Alabaster & Terracotta Palette */
@@ -23,26 +27,26 @@
       --text-main: #23201c;
       --text-muted: #6b655b;
       --text-light: #8e877c;
-      
+
       --accent: #8f3822;
       --accent-soft: #fbf0ec;
       --accent-border: #ebd3ca;
-      
+
       --short-bg: #fdf2ed;
       --short-text: #8c3620;
       --short-border: #f5d6c8;
-      
+
       --long-bg: #f2f4f7;
       --long-text: #475569;
       --long-border: #e2e8f0;
 
       --border: #e7e4dc;
       --border-subtle: #f0eee8;
-      
+
       --shadow-sm: 0 1px 3px rgba(35, 32, 28, 0.04);
       --shadow-md: 0 8px 24px rgba(35, 32, 28, 0.05);
       --shadow-lg: 0 20px 40px rgba(35, 32, 28, 0.08);
-      
+
       --radius-sm: 6px;
       --radius-md: 12px;
       --radius-lg: 18px;
@@ -50,7 +54,12 @@
       --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
 
     html {
       overflow-y: scroll;
@@ -79,7 +88,9 @@
     }
 
     @media (max-width: 600px) {
-      nav { padding: 0.5rem 0.65rem; }
+      nav {
+        padding: 0.5rem 0.65rem;
+      }
     }
 
     .nav-container {
@@ -113,7 +124,10 @@
       overflow-x: auto;
       scrollbar-width: none;
     }
-    .line-pills::-webkit-scrollbar { display: none; }
+
+    .line-pills::-webkit-scrollbar {
+      display: none;
+    }
 
     .line-btn {
       padding: 0.25rem 0;
@@ -162,7 +176,7 @@
       font-weight: 700;
       transition: var(--transition);
     }
-    
+
     .arrow-btn:disabled {
       opacity: 0.3;
       cursor: not-allowed;
@@ -200,7 +214,10 @@
     }
 
     @media (max-width: 700px) {
-      .canvas-panel { padding: 0.75rem; border-radius: var(--radius-md); }
+      .canvas-panel {
+        padding: 0.75rem;
+        border-radius: var(--radius-md);
+      }
     }
 
     /* Unified Hero Panel: Greek + Literary + Literal on Left, Video on Right */
@@ -245,9 +262,17 @@
     }
 
     @media (max-width: 700px) {
-      .greek-hero-text { font-size: 1.15rem; }
-      .literary-text { font-size: 1.05rem !important; }
-      .literal-text { font-size: 0.95rem !important; }
+      .greek-hero-text {
+        font-size: 1.15rem;
+      }
+
+      .literary-text {
+        font-size: 1.05rem !important;
+      }
+
+      .literal-text {
+        font-size: 0.95rem !important;
+      }
     }
 
     .next-line-btn {
@@ -262,7 +287,7 @@
       display: inline-flex;
       align-items: center;
     }
-    
+
     .next-line-btn:hover {
       color: var(--accent);
       transform: translateX(2px);
@@ -322,7 +347,7 @@
       height: 100%;
       border: none;
     }
-    
+
     .replay-btn {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -337,12 +362,12 @@
       align-items: center;
       gap: 0.2rem;
     }
-    
+
     .replay-btn:hover {
       background: var(--surface-active);
       border-color: var(--text-light);
     }
-    
+
     .video-controls {
       display: flex;
       gap: 0.5rem;
@@ -360,16 +385,24 @@
       transition: var(--transition);
       font-weight: 500;
     }
-    
+
     .video-credit-link:hover {
       color: var(--accent);
       text-decoration: underline;
     }
 
     @media (max-width: 600px) {
-      .video-controls { gap: 0.25rem; }
-      .replay-btn { padding: 0.15rem 0.3rem; }
-      .video-credit-link { font-size: 0.65rem; }
+      .video-controls {
+        gap: 0.25rem;
+      }
+
+      .replay-btn {
+        padding: 0.15rem 0.3rem;
+      }
+
+      .video-credit-link {
+        font-size: 0.65rem;
+      }
     }
 
     /* Section Headers */
@@ -414,11 +447,25 @@
     }
 
     @media (max-width: 850px) {
-      .word-tile { padding: 0.35rem 0.5rem; }
-      .interlinear-row { gap: 0.35rem; }
-      .wt-greek { font-size: 1.05rem; }
-      .wt-trans { font-size: 0.65rem; }
-      .wt-gloss { font-size: 0.75rem; }
+      .word-tile {
+        padding: 0.35rem 0.5rem;
+      }
+
+      .interlinear-row {
+        gap: 0.35rem;
+      }
+
+      .wt-greek {
+        font-size: 1.05rem;
+      }
+
+      .wt-trans {
+        font-size: 0.65rem;
+      }
+
+      .wt-gloss {
+        font-size: 0.75rem;
+      }
     }
 
     .word-tile:hover {
@@ -498,27 +545,45 @@
       border-color: var(--short-border);
     }
 
-    .sp-sym { font-size: 0.95rem; font-weight: 900; line-height: 1; }
-    .sp-grk { font-family: 'Gentium Plus', serif; font-size: 1.05rem; font-weight: 700; margin: 0.12rem 0; }
-    .sp-ipa { font-family: monospace; font-size: 0.65rem; font-weight: 600; opacity: 0.9; }
-    .sp-trans { font-size: 0.65rem; opacity: 0.8; }
+    .sp-sym {
+      font-size: 0.95rem;
+      font-weight: 900;
+      line-height: 1;
+    }
 
-    @media (max-width: 850px) {
-      .scansion-capsules {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        justify-content: center;
-        gap: 0.5rem 0.25rem;
-      }
-      .scansion-foot {
-        justify-content: center;
-      }
+    .sp-grk {
+      font-family: 'Gentium Plus', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0.12rem 0;
+    }
+
+    .sp-ipa {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+
+    .sp-trans {
+      font-size: 0.65rem;
+      opacity: 0.8;
+    }
+
+    .scansion-half {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: 0.65rem;
     }
 
     /* Word Modal */
     .modal-backdrop {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
@@ -529,7 +594,9 @@
       padding: 1rem;
     }
 
-    .modal-backdrop.open { display: flex; }
+    .modal-backdrop.open {
+      display: flex;
+    }
 
     .modal-container {
       background: var(--surface);
@@ -582,10 +649,12 @@
       padding: 0.5rem;
       transition: var(--transition);
     }
+
     .nav-arrow:hover:not(:disabled) {
       color: var(--accent);
       transform: scale(1.1);
     }
+
     .nav-arrow:disabled {
       opacity: 0.2;
       cursor: not-allowed;
@@ -655,14 +724,19 @@
       margin-bottom: 1rem;
     }
 
-    .credits-scroll li { margin-bottom: 0.35rem; }
+    .credits-scroll li {
+      margin-bottom: 0.35rem;
+    }
 
     .credits-scroll a {
       color: var(--accent);
       text-decoration: none;
       font-weight: 600;
     }
-    .credits-scroll a:hover { text-decoration: underline; }
+
+    .credits-scroll a:hover {
+      text-decoration: underline;
+    }
 
     /* Hamburger Menu */
     .menu-container {
@@ -681,7 +755,7 @@
       border-radius: var(--radius-sm);
       transition: var(--transition);
     }
-    
+
     .hamburger-btn:hover {
       background-color: var(--surface-subtle);
     }
@@ -720,6 +794,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Top Nav with Integrated Line Selector -->
@@ -733,9 +808,10 @@
           <div class="line-pills" id="linePills"></div>
           <button class="arrow-btn" id="nextBtn" onclick="nextLine()" title="Next (→)">❯</button>
         </div>
-        
+
         <div class="menu-container">
-          <button class="hamburger-btn" onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
+          <button class="hamburger-btn"
+            onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
           <div id="dropdown" class="dropdown-menu">
             <a href="javascript:void(0)" onclick="openCredits()">❓ Help</a>
           </div>
@@ -752,25 +828,27 @@
         <!-- Content Column (Left) -->
         <div class="hero-content-col">
           <div class="greek-hero-text" id="greekLine">Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος</div>
-          
+
           <div class="translation-item">
-            <div class="literary-text" id="idiomaticText">Sing, goddess, the ruinous wrath of Achilles, son of Peleus,</div>
+            <div class="literary-text" id="idiomaticText">Sing, goddess, the ruinous wrath of Achilles, son of Peleus,
+            </div>
           </div>
-          
+
 
         </div>
 
         <!-- Video Column (Right, No YouTube link underneath) -->
         <div class="hero-video-col">
           <div class="player-container" id="playerContainer" onclick="loadYoutubeVideo()" style="cursor: pointer;">
-            <img id="videoThumb" src="" alt="Video Thumbnail" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-            <div id="playOverlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 48px; height: 48px; background: rgba(0,0,0,0.6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; pointer-events: none;">
-              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px; margin-left: 4px;"><path d="M8 5v14l11-7z"/></svg>
+            <img id="videoThumb" src="" alt="Video Thumbnail"
+              style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <div id="playOverlay"
+              style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 48px; height: 48px; background: rgba(0,0,0,0.6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; pointer-events: none;">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px; margin-left: 4px;">
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </div>
-            <iframe
-              id="mainVideoIframe"
-              style="display: none;"
-              title="Line Recitation"
+            <iframe id="mainVideoIframe" style="display: none;" title="Line Recitation"
               referrerpolicy="no-referrer-when-downgrade"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
@@ -778,9 +856,14 @@
           </div>
           <div class="video-controls">
             <button onclick="replayVideo()" class="replay-btn" title="Replay line">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 2v6h6"></path>
+                <path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path>
+              </svg>
             </button>
-            <a id="videoCreditLink" href="https://youtube.com/watch?v=-XkCyIRmdFg" target="_blank" rel="noopener" class="video-credit-link">polýMATHY</a>
+            <a id="videoCreditLink" href="https://youtube.com/watch?v=-XkCyIRmdFg" target="_blank" rel="noopener"
+              class="video-credit-link">polýMATHY</a>
           </div>
         </div>
       </div>
@@ -816,40 +899,64 @@
         <button class="modal-close" onclick="closeCredits()">&times;</button>
       </div>
       <div class="credits-scroll">
-        <div style="margin-bottom: 1.5rem; background: var(--surface-subtle); padding: 1.25rem; border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
+        <div
+          style="margin-bottom: 1.5rem; background: var(--surface-subtle); padding: 1.25rem; border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
           <h4 style="margin-top: 0;">How to use this canvas</h4>
           <p style="margin-top: 0.5rem; color: #000000;">
-            This is an interactive study application for learning and reciting the opening lines of Homer's <em>Iliad</em>. 
-            Use the <strong>arrow buttons</strong> (or your keyboard's left/right arrows) to step through the text line-by-line. 
-            Click the <strong>Play button</strong> on the video to hear the correct reconstructed ancient pronunciation and pitch accents.
+            This is an interactive study application for learning and reciting the opening lines of Homer's
+            <em>Iliad</em>.
+            Use the <strong>arrow buttons</strong> (or your keyboard's left/right arrows) to step through the text
+            line-by-line.
+            Click the <strong>Play button</strong> on the video to hear the correct reconstructed ancient pronunciation
+            and pitch accents.
           </p>
           <p style="margin-top: 0.5rem; color: #000000;">
-            The <strong>metrical scansion</strong> below the text breaks the line into six feet (dactylic hexameter). 
-            Long syllables (—) are shown in <span style="font-weight: 600; color: var(--long-text);">cool grey</span>, while short syllables (⏑) are in <span style="font-weight: 600; color: var(--short-text);">warm red</span>. This helps you follow the rhythm of the poem.
+            The <strong>metrical scansion</strong> below the text breaks the line into six feet (dactylic hexameter).
+            Long syllables (—) are shown in <span style="font-weight: 600; color: var(--long-text);">cool grey</span>,
+            while short syllables (⏑) are in <span style="font-weight: 600; color: var(--short-text);">warm red</span>.
+            This helps you follow the rhythm of the poem.
           </p>
           <p style="margin-top: 0.5rem; color: #000000;">
-            You can <strong>click any word</strong> in the parsing grid to view a deep-dive popup containing its dictionary lemma, grammatical parsing, and Proto-Indo-European etymology.
+            You can <strong>click any word</strong> in the parsing grid to view a deep-dive popup containing its
+            dictionary lemma, grammatical parsing, and Proto-Indo-European etymology.
           </p>
         </div>
 
         <p style="margin-bottom: 1.25rem;">
-          <em>Note: I am just beginning my journey learning Ancient Greek and rely on a variety of resources to build this canvas. Bug reports and corrections are welcome.</em>
+          <em>Note: I am just beginning my journey learning Ancient Greek and rely on a variety of resources to build
+            this canvas. Bug reports and corrections are welcome.</em>
         </p>
 
         <h4>Additional Helpful Resources</h4>
         <ul>
-          <li><strong>polýMATHY #KephalosChallenge</strong>: <a href="https://www.youtube.com/watch?v=KY9IjWJkmAg" target="_blank" rel="noopener">Reciting Homer's Iliad from Memory</a> — The full video showing the recitation of the first 100 lines using the restored Classical Greek pronunciation.</li>
-          <li><strong>David Chamberlain's Hypotactic</strong>: <a href="https://hypotactic.com/homer/iliad1.html" target="_blank" rel="noopener">Homer's Iliad 1</a> — An incredibly detailed and mathematically rigorous breakdown of the metrical scansion for every line.</li>
-          <li><strong>The Open University</strong>: <a href="https://www.open.edu/openlearn/history-the-arts/introducing-homers-iliad/content-section-0?intro=1" target="_blank" rel="noopener">Introducing Homer's Iliad</a> — A free, short online course providing context on the Trojan War, the "anger of Achilles", and Homeric themes.</li>
-          <li><strong>Pitch Accents & Pronunciation</strong>: <a href="https://www.youtube.com/watch?v=ge-mq6ZnceU&t=766s" target="_blank" rel="noopener">How to Sound Out Ancient Greek Words - Your First Ancient Greek Lesson!</a> — A fantastic YouTube video by Luke Ranieri explaining how to naturally read the acute, grave, and circumflex musical pitch accents.</li>
-          <li><strong>Dactylic Hexameter</strong>: <a href="https://www.youtube.com/watch?v=TXtLoGORAq0&t=566s" target="_blank" rel="noopener">The Iliad – What did Ancient Greek poetry sound like?</a> — A practical demonstration of how to chant and recite dactylic hexameter.</li>
+          <li><strong>polýMATHY #KephalosChallenge</strong>: <a href="https://www.youtube.com/watch?v=KY9IjWJkmAg"
+              target="_blank" rel="noopener">Reciting Homer's Iliad from Memory</a> — The full video showing the
+            recitation of the first 100 lines using the restored Classical Greek pronunciation.</li>
+          <li><strong>David Chamberlain's Hypotactic</strong>: <a href="https://hypotactic.com/homer/iliad1.html"
+              target="_blank" rel="noopener">Homer's Iliad 1</a> — A detailed breakdown of the metrical scansion for
+            every line with audio.</li>
+          <li><strong>Pitch Accents & Pronunciation</strong>: <a
+              href="https://www.youtube.com/watch?v=ge-mq6ZnceU&t=766s" target="_blank" rel="noopener">How to Sound Out
+              Ancient Greek Words</a> — Luke Ranieri's guide</li>
+          <li><strong>Dactylic Hexameter</strong>: <a href="https://www.youtube.com/watch?v=TXtLoGORAq0&t=566s"
+              target="_blank" rel="noopener">The Iliad – What did Ancient Greek poetry sound like?</a> — A practical
+            demonstration of how to chant and recite dactylic hexameter.</li>
+          <li><strong>The Open University</strong>: <a
+              href="https://www.open.edu/openlearn/history-the-arts/introducing-homers-iliad/content-section-0?intro=1"
+              target="_blank" rel="noopener">Introducing Homer's Iliad</a> — A free, short online course providing
+            context on the Trojan War, the "anger of Achilles", and Homeric themes.</li>
         </ul>
 
         <h4 style="margin-top: 1.5rem;">Academic References</h4>
         <ul>
-          <li><strong>W. Sidney Allen</strong>, <a href="https://www.amazon.com/s?k=Vox+Graeca+Sidney+Allen" target="_blank" rel="noopener"><em>Vox Graeca: The Pronunciation of Classical Greek</em></a> (3rd ed., Cambridge, 1987).</li>
-          <li><strong>D. B. Monro & T. W. Allen (eds.)</strong>, <a href="https://www.amazon.com/s?k=Homeri+Opera+Tomus+I+Monro+Allen" target="_blank" rel="noopener"><em>Homeri Opera, Tomus I: Ilias I–XII</em></a> (Oxford Classical Texts).</li>
-          <li><strong>Martin L. West</strong>, <a href="https://www.amazon.com/s?k=Greek+Metre+Martin+L.+West" target="_blank" rel="noopener"><em>Greek Metre</em></a> (Oxford University Press, 1982).</li>
+          <li><strong>W. Sidney Allen</strong>, <a href="https://www.amazon.com/s?k=Vox+Graeca+Sidney+Allen"
+              target="_blank" rel="noopener"><em>Vox Graeca: The Pronunciation of Classical Greek</em></a> (3rd ed.,
+            Cambridge, 1987).</li>
+          <li><strong>D. B. Monro & T. W. Allen (eds.)</strong>, <a
+              href="https://www.amazon.com/s?k=Homeri+Opera+Tomus+I+Monro+Allen" target="_blank"
+              rel="noopener"><em>Homeri Opera, Tomus I: Ilias I–XII</em></a> (Oxford Classical Texts).</li>
+          <li><strong>Martin L. West</strong>, <a href="https://www.amazon.com/s?k=Greek+Metre+Martin+L.+West"
+              target="_blank" rel="noopener"><em>Greek Metre</em></a> (Oxford University Press, 1982).</li>
         </ul>
       </div>
     </div>
@@ -860,7 +967,7 @@
     let currentIdx = 0;
     let currentWordIdx = -1;
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
       if (!event.target.matches('.hamburger-btn')) {
         const dropdowns = document.getElementsByClassName("dropdown-menu");
         for (let i = 0; i < dropdowns.length; i++) {
@@ -886,7 +993,7 @@
 
       document.addEventListener('keydown', (e) => {
         const wordModalOpen = document.getElementById('wordModal').classList.contains('open');
-        
+
         if (wordModalOpen) {
           if (e.key === 'ArrowRight' || e.key === ' ') nextWord();
           else if (e.key === 'ArrowLeft') prevWord();
@@ -919,11 +1026,11 @@
     function renderPills() {
       const container = document.getElementById('linePills');
       container.innerHTML = '';
-      
+
       const windowSize = 3;
       let startIdx = Math.max(0, currentIdx - windowSize);
       let endIdx = Math.min(data.length - 1, currentIdx + windowSize);
-      
+
       const totalPills = windowSize * 2 + 1;
       if (endIdx - startIdx + 1 < totalPills) {
         if (startIdx === 0) {
@@ -941,7 +1048,7 @@
         btn.onclick = () => goToLine(idx);
         container.appendChild(btn);
       }
-      
+
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
       if (prevBtn) prevBtn.disabled = (currentIdx === 0);
@@ -963,13 +1070,13 @@
         thumb.style.display = 'block';
         document.getElementById('playOverlay').style.display = 'flex';
       }
-      
+
       const iframe = document.getElementById('mainVideoIframe');
       if (iframe) {
         iframe.style.display = 'none';
         iframe.src = '';
       }
-      
+
       const creditLink = document.getElementById('videoCreditLink');
       if (creditLink) {
         creditLink.href = `https://youtube.com/watch?v=${l.video_id}`;
@@ -998,10 +1105,16 @@
       // Scansion Capsules
       const strip = document.getElementById('scansionCapsules');
       strip.innerHTML = '';
+      
+      const half1 = document.createElement('div');
+      half1.className = 'scansion-half';
+      const half2 = document.createElement('div');
+      half2.className = 'scansion-half';
+
       l.feet.forEach((foot, fIdx) => {
         const footContainer = document.createElement('div');
         footContainer.className = 'scansion-foot';
-        
+
         foot.sylls.forEach((syll, sIdx) => {
           if (syll.grk === '—') return;
           const pill = document.createElement('div');
@@ -1016,9 +1129,16 @@
         });
 
         if (footContainer.childElementCount > 0) {
-          strip.appendChild(footContainer);
+          if (fIdx < 3) {
+            half1.appendChild(footContainer);
+          } else {
+            half2.appendChild(footContainer);
+          }
         }
       });
+      
+      if (half1.childElementCount > 0) strip.appendChild(half1);
+      if (half2.childElementCount > 0) strip.appendChild(half2);
 
 
     }
@@ -1083,7 +1203,7 @@
       const iframe = document.getElementById('mainVideoIframe');
       const thumb = document.getElementById('videoThumb');
       const overlay = document.getElementById('playOverlay');
-      
+
       if (iframe && iframe.style.display === 'none') {
         thumb.style.display = 'none';
         overlay.style.display = 'none';
@@ -1139,4 +1259,5 @@
     window.onload = init;
   </script>
 </body>
+
 </html>
