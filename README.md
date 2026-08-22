@@ -15,7 +15,7 @@ The application features:
 
 I want to extend my thanks to the following authoritative sources that made this canvas possible:
 
-- **[Luke Ranieri (polýMATHY)](https://www.youtube.com/@polymathy)**: The entire audio and video foundation of this canvas relies on Luke's `#KephalosChallenge` recitations and his reconstructed 3-pitch restored chanting methodology. His full recording of [Iliad Book 1, lines 1-100](https://luke-ranieri.myshopify.com/products/iliad-100-homers-iliad-book-1-lines-1-100) is available on his store.
+- **[Luke Ranieri (polýMATHY)](https://www.youtube.com/@polymathy)**: The audio and video rely on Luke's `#KephalosChallenge` recitations and his 3-pitch restored chanting method. His full recording of [Iliad Book 1, lines 1-100](https://luke-ranieri.myshopify.com/products/iliad-100-homers-iliad-book-1-lines-1-100) is available on his store.
 - **[The Perseids Project](https://perseids.org/) (Tufts University)**: All of the automated grammatical parsing (Part of Speech, Voice, Mood, Case) and dictionary Lemmas were fetched using their Morpheus API.
 - **[Hypotactic](https://hypotactic.com/)**: The dactylic hexameter scansion logic (accurate syllable lengths, positional lengthening, and hiatus) was sourced directly from their metrical CSV datasets.
 - **[Perseus Digital Library](http://www.perseus.tufts.edu/hopper/)**: For hosting the canonical Oxford Classical Text (Monro & Allen, 1920) that forms the base Greek of this project.
@@ -29,7 +29,7 @@ This project was built iteratively to combine the classical philology data credi
 The primary Greek text is based on the OCT. The literary translations and literal glosses were compiled from standard public domain translations and cross-referenced with Steadman's commentary.
 
 ### 2. Video Links & Audio Alignment
-The timestamps for lines 1-21 were manually aligned and embedded. Each line correlates directly to either a standalone YouTube Short or an exact timestamp slice of Luke Ranieri's master recitation video.
+The timestamps for lines 1-21 were manually aligned and embedded. Each line correlates directly to a timestamp slice of Luke Ranieri's videos.
 
 ### 3. Morphology & Etymology
 The morphological metadata was retrieved automatically via the Morpheus API. Indo-European roots were manually cross-referenced with standard etymological lexicons to provide historical linguistic context for individual words.
