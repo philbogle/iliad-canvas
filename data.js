@@ -337,16 +337,16 @@ const data = [
             "sym": "—"
           },
           {
-            "grk": "γε᾽‿ἔ",
-            "ipa": "ge.e",
-            "trans": "geh-eh",
+            "grk": "γε᾽",
+            "ipa": "ge",
+            "trans": "geh",
             "q": "short",
             "sym": "⏑"
           },
           {
-            "grk": "θη",
-            "ipa": "tʰɛː",
-            "trans": "thē",
+            "grk": "ἔ",
+            "ipa": "e",
+            "trans": "eh",
             "q": "short",
             "sym": "⏑"
           }
@@ -357,16 +357,16 @@ const data = [
         "type": "Spondee",
         "sylls": [
           {
-            "grk": "κε",
-            "ipa": "ke",
-            "trans": "keh",
+            "grk": "θη",
+            "ipa": "tʰɛː",
+            "trans": "thē",
             "q": "long",
             "sym": "—"
           },
           {
-            "grk": "—",
-            "ipa": "-",
-            "trans": "-",
+            "grk": "κε",
+            "ipa": "ke",
+            "trans": "keh",
             "q": "long",
             "sym": "—"
           }
