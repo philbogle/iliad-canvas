@@ -454,8 +454,14 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.25rem 0.35rem;
+      gap: 0.35rem 0.65rem;
       padding-bottom: 1.25rem;
+    }
+
+    .scansion-foot {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.25rem;
     }
 
     .scansion-pill {
@@ -972,6 +978,9 @@
       const strip = document.getElementById('scansionCapsules');
       strip.innerHTML = '';
       l.feet.forEach((foot, fIdx) => {
+        const footContainer = document.createElement('div');
+        footContainer.className = 'scansion-foot';
+        
         foot.sylls.forEach((syll, sIdx) => {
           if (syll.grk === '—') return;
           const pill = document.createElement('div');
@@ -982,8 +991,12 @@
             <span class="sp-ipa">${syll.ipa}</span>
             <span class="sp-trans">${syll.trans}</span>
           `;
-          strip.appendChild(pill);
+          footContainer.appendChild(pill);
         });
+
+        if (footContainer.childElementCount > 0) {
+          strip.appendChild(footContainer);
+        }
       });
 
 
