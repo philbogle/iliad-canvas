@@ -77,6 +77,10 @@
       padding: 0.6rem 1.25rem;
     }
 
+    @media (max-width: 600px) {
+      nav { padding: 0.5rem 0.65rem; }
+    }
+
     .nav-container {
       max-width: 1020px;
       margin: 0 auto;
@@ -176,6 +180,13 @@
       flex: 1;
     }
 
+    @media (max-width: 600px) {
+      main {
+        margin: 0.75rem auto;
+        padding: 0 0.5rem;
+      }
+    }
+
     /* Unified Canvas Card */
     .canvas-panel {
       background: var(--surface);
@@ -188,7 +199,7 @@
     }
 
     @media (max-width: 700px) {
-      .canvas-panel { padding: 1.25rem; }
+      .canvas-panel { padding: 0.75rem; border-radius: var(--radius-md); }
     }
 
     /* Unified Hero Panel: Greek + Literary + Literal on Left, Video on Right */
@@ -208,8 +219,9 @@
     @media (max-width: 680px) {
       .unified-hero-card {
         grid-template-columns: minmax(0, 1fr);
-        gap: 1.25rem;
-        padding: 1.15rem;
+        gap: 1rem;
+        padding: 0.85rem;
+        margin-bottom: 1rem;
       }
       .hero-video-col {
         max-width: 130px;
@@ -391,6 +403,11 @@
       cursor: pointer;
       position: relative;
       transition: var(--transition);
+    }
+
+    @media (max-width: 600px) {
+      .word-tile { padding: 0.5rem 0.65rem; }
+      .interlinear-row { gap: 0.4rem; }
     }
 
     .word-tile:hover {
