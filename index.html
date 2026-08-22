@@ -737,7 +737,7 @@
         <div class="menu-container">
           <button class="hamburger-btn" onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
           <div id="dropdown" class="dropdown-menu">
-            <a href="javascript:void(0)" onclick="openCredits()">❓ Help and Credits</a>
+            <a href="javascript:void(0)" onclick="openCredits()">❓ Help</a>
           </div>
         </div>
       </div>
@@ -812,7 +812,7 @@
   <div class="modal-backdrop" id="creditsModal" onclick="closeCreditsOnBackdrop(event)">
     <div class="modal-container credits-container">
       <div class="modal-bar">
-        <span>❓ Help and Credits</span>
+        <span>❓ Help & Resources</span>
         <button class="modal-close" onclick="closeCredits()">&times;</button>
       </div>
       <div class="credits-scroll">
@@ -830,28 +830,20 @@
           <em>Note: I am just beginning my journey learning Ancient Greek and rely on a variety of resources to build this canvas. Bug reports and corrections are welcome.</em>
         </p>
 
-        <h4>Video credits</h4>
+        <h4>Additional Helpful Resources</h4>
         <ul>
-          <li><strong>Luke Ranieri</strong> (<a href="https://www.youtube.com/@polymathy" target="_blank" rel="noopener">polýMATHY</a> / <em>ScorpioMartianus</em>) — Luke is one of the best resources I've found for Greek and Latin. He is the creator of the <strong>#KephalosChallenge</strong> and the reconstructed 3-pitch restored chanting methodology used here.</li>
-          <li><strong>Audiobook</strong> — Luke's full recording of <a href="https://luke-ranieri.myshopify.com/products/iliad-100-homers-iliad-book-1-lines-1-100" target="_blank" rel="noopener">Iliad 100: Homer's Iliad Book 1, lines 1-100</a> is available on the polýMATHY store.</li>
-          <li><strong>Michael Kopf</strong> (<em>Κέφαλος</em>) — Educator who inspired the Kephalos oral memorization method.</li>
+          <li><strong>polýMATHY #KephalosChallenge</strong>: <a href="https://www.youtube.com/watch?v=sI91_W93i4Y" target="_blank" rel="noopener">Reciting Homer's Iliad from Memory</a> — The full video showing the recitation of the first 100 lines using the restored Classical Greek pronunciation.</li>
+          <li><strong>David Chamberlain's Hypotactic</strong>: <a href="https://hypotactic.com/homer/iliad1.html" target="_blank" rel="noopener">Homer's Iliad 1</a> — An incredibly detailed and mathematically rigorous breakdown of the metrical scansion for every line.</li>
+          <li><strong>The Open University</strong>: <a href="https://www.open.edu/openlearn/history-the-arts/history/classical-studies/introducing-homers-iliad/content-section-0" target="_blank" rel="noopener">Introducing Homer's Iliad</a> — A free, short online course providing context on the Trojan War, the "anger of Achilles", and Homeric themes.</li>
+          <li><strong>Attic Greek Pronunciation</strong>: <a href="https://atticgreek.org/" target="_blank" rel="noopener">AtticGreek.org Pronunciation Guide</a> — An accessible online page detailing the sounds of Ancient Attic Greek letters with audio examples.</li>
+          <li><strong>Pitch Accents</strong>: <a href="https://www.youtube.com/watch?v=R9K1uI8_S10" target="_blank" rel="noopener">How to do pitch accents in Ancient Greek</a> — A fantastic YouTube video by Luke Ranieri explaining how to naturally read the acute, grave, and circumflex musical pitch accents.</li>
         </ul>
 
-        <h4>2. Classical Attic Pronunciation (5th c. BC)</h4>
+        <h4 style="margin-top: 1.5rem;">Academic References</h4>
         <ul>
-          <li><strong>W. Sidney Allen</strong>, <a href="https://www.amazon.com/s?k=Vox+Graeca+Sidney+Allen" target="_blank" rel="noopener"><em>Vox Graeca: The Pronunciation of Classical Greek</em></a> (3rd ed., Cambridge University Press, 1987) — Standard authority on Classical Attic aspirated plosives [tʰ, pʰ, kʰ], monophthongs [eː, uː], front-rounded [y], and pitch accents.</li>
-          <li><strong>A. M. Devine & Laurence D. Stephens</strong>, <a href="https://www.amazon.com/s?k=The+Prosody+of+Greek+Speech+Devine+Stephens" target="_blank" rel="noopener"><em>The Prosody of Greek Speech</em></a> (Oxford University Press, 1994) — Empirical treatise on ancient Greek tonal pitch contours.</li>
-        </ul>
-
-        <h4>3. Metrical Scansion & Critical Text Editions</h4>
-        <ul>
-          <li><strong>D. B. Monro & T. W. Allen (eds.)</strong>, <a href="https://www.amazon.com/s?k=Homeri+Opera+Tomus+I+Monro+Allen" target="_blank" rel="noopener"><em>Homeri Opera, Tomus I: Ilias I–XII</em></a> (Oxford Classical Texts / Clarendon Press).</li>
-          <li><strong>Martin L. West</strong>, <a href="https://www.amazon.com/s?k=Greek+Metre+Martin+L.+West" target="_blank" rel="noopener"><em>Greek Metre</em></a> (Oxford University Press, 1982) & <em>Homeri Ilias</em> (Bibliotheca Teubneriana, 1998) — Canonical scholarship on dactylic hexameter, caesurae, synizesis, and correption.</li>
-          <li><strong>Corinne Ondine Pache (ed.)</strong>, <a href="https://www.amazon.com/s?k=The+Cambridge+Guide+to+Homer+Pache" target="_blank" rel="noopener"><em>The Cambridge Guide to Homer</em></a> (Cambridge University Press, 2020) — Chapter on Homeric Meter.</li>
-          <li><strong>Geoffrey Steadman</strong>, <a href="https://www.amazon.com/s?k=Geoffrey+Steadman+Homer+Iliad" target="_blank" rel="noopener"><em>Homer's Iliad 1: Greek Text with Facing Vocabulary and Commentary</em></a> (2013).</li>
-          <li><strong>Perseus Digital Library</strong> (<a href="http://www.perseus.tufts.edu/hopper/" target="_blank" rel="noopener">Tufts University, ed. Gregory Crane</a>).</li>
-          <li><strong>Perseids Project</strong> — The Morpheus API for automated morphological parsing.</li>
-          <li><strong>Hypotactic</strong> (<a href="https://hypotactic.com/" target="_blank" rel="noopener">hypotactic.com</a>) — Scansion data (dactylic hexameter feet and syllable lengths) was extracted from the Hypotactic Iliad CSV datasets.</li>
+          <li><strong>W. Sidney Allen</strong>, <em>Vox Graeca: The Pronunciation of Classical Greek</em> (3rd ed., Cambridge, 1987).</li>
+          <li><strong>D. B. Monro & T. W. Allen (eds.)</strong>, <em>Homeri Opera, Tomus I: Ilias I–XII</em> (Oxford Classical Texts).</li>
+          <li><strong>Martin L. West</strong>, <em>Greek Metre</em> (Oxford University Press, 1982).</li>
         </ul>
       </div>
     </div>
