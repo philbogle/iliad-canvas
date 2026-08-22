@@ -218,7 +218,7 @@
 
     @media (max-width: 680px) {
       .unified-hero-card {
-        grid-template-columns: minmax(0, 1fr) 90px;
+        grid-template-columns: minmax(0, 1fr) 75px;
         gap: 0.85rem;
         padding: 0.85rem;
         margin-bottom: 1rem;
@@ -244,7 +244,9 @@
     }
 
     @media (max-width: 700px) {
-      .greek-hero-text { font-size: 1.4rem; }
+      .greek-hero-text { font-size: 1.15rem; }
+      .literary-text { font-size: 1.05rem !important; }
+      .literal-text { font-size: 0.95rem !important; }
     }
 
     .next-line-btn {
@@ -486,15 +488,21 @@
 
     @media (max-width: 600px) {
       .scansion-pill {
-        padding: 0.15rem 0.25rem;
-        min-width: 30px;
+        padding: 0.3rem 0.4rem;
+        min-width: 45px;
       }
-      .sp-sym { font-size: 0.75rem; }
-      .sp-grk { font-size: 0.8rem; }
-      .sp-ipa { font-size: 0.5rem; }
-      .sp-trans { font-size: 0.5rem; }
+      .sp-sym { font-size: 0.95rem; }
+      .sp-grk { font-size: 1.05rem; }
+      .sp-ipa { font-size: 0.65rem; }
+      .sp-trans { font-size: 0.65rem; }
       .scansion-capsules {
-        gap: 0.25rem 0.45rem;
+        display: grid !important;
+        grid-template-columns: repeat(3, auto) !important;
+        justify-content: center;
+        gap: 0.5rem 0.25rem !important;
+      }
+      .scansion-foot {
+        justify-content: center;
       }
     }
 
