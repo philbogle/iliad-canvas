@@ -455,10 +455,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 0.25rem 0.35rem;
-      padding: 0.65rem;
-      background: var(--surface-subtle);
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-subtle);
+      padding-bottom: 1.25rem;
     }
 
     .scansion-pill {
@@ -759,20 +756,17 @@
         </div>
       </div>
 
-      <!-- 2. Word-by-Word Parsing Grid (Clean & Clickable for Popups) -->
+      <!-- 2. Scansion Section -->
+      <div class="scansion-section">
+        <div class="scansion-capsules" id="scansionCapsules"></div>
+      </div>
+
+      <!-- 3. Word-by-Word Parsing Grid (Clean & Clickable for Popups) -->
       <div class="section-header">
         <span>Word-by-Word Parsing</span>
         <span class="hint-click">Click any word for morphology & etymology</span>
       </div>
       <div class="interlinear-row" id="interlinearRow"></div>
-
-      <!-- 3. Scansion Section -->
-      <div class="scansion-section">
-        <div class="section-header">
-          <span>Scansion</span>
-        </div>
-        <div class="scansion-capsules" id="scansionCapsules"></div>
-      </div>
 
     </div>
 
