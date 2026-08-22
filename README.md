@@ -1,5 +1,7 @@
 # Homer's Iliad - Interactive Study Canvas
 
+**[View the live site here!](https://philbogle.github.io/iliad-canvas/)**
+
 A web app for learning and reciting the opening lines of Homer's *Iliad* (Book 1, Lines 1-21).
 
 The application features:
