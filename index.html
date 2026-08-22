@@ -343,11 +343,18 @@
       border-color: var(--text-light);
     }
     
+    .video-controls {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.4rem;
+    }
+
     .video-credit-link {
       font-size: 0.8rem;
       color: var(--text-muted);
       text-decoration: none;
-      margin-top: 0.4rem;
       display: block;
       text-align: center;
       transition: var(--transition);
@@ -357,6 +364,12 @@
     .video-credit-link:hover {
       color: var(--accent);
       text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .video-controls { gap: 0.25rem; }
+      .replay-btn { padding: 0.15rem 0.3rem; }
+      .video-credit-link { font-size: 0.65rem; }
     }
 
     /* Section Headers */
@@ -760,11 +773,11 @@
               allowfullscreen>
             </iframe>
           </div>
-          <div style="display: flex; gap: 0.5rem; justify-content: center; align-items: center; margin-top: 0.4rem;">
+          <div class="video-controls">
             <button onclick="replayVideo()" class="replay-btn" title="Replay line">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg>
             </button>
-            <a id="videoCreditLink" href="https://youtube.com/watch?v=-XkCyIRmdFg" target="_blank" rel="noopener" class="video-credit-link" style="margin-top: 0;">polýMATHY</a>
+            <a id="videoCreditLink" href="https://youtube.com/watch?v=-XkCyIRmdFg" target="_blank" rel="noopener" class="video-credit-link">polýMATHY</a>
           </div>
         </div>
       </div>
