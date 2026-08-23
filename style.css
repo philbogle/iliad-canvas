@@ -776,3 +776,40 @@
       background-color: var(--surface-subtle);
       color: var(--accent);
     }
+
+    .full-lines-scansion-capsules {
+      position: relative;
+      padding-left: 36px;
+    }
+
+    .full-lines-num {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 28px;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      user-select: none;
+      padding-top: 0.75rem;
+      text-align: right;
+    }
+
+    @media (max-width: 600px) {
+      #fullLinesModal.modal-backdrop {
+        padding: 0.25rem;
+      }
+      
+      #fullLinesModal .modal-container {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .full-lines-scansion-capsules {
+        padding-left: 0;
+      }
+
+      .full-lines-num {
+        display: none;
+      }
+    }
