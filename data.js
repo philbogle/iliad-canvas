@@ -642,7 +642,7 @@ const data = [
     "num": 4,
     "day": 4,
     "video_id": "f5mxeNDR8gI",
-    "start_sec": 6.25,
+    "start_sec": 6.35,
     "end_sec": 13.9,
     "greek": "ἡρώων, αὐτοὺς δὲ ἑλώρια τεῦχε κύνεσσιν",
     "ipa": "[hɛː.rɔ́ː.ɔːn | au̯.tùːs dè he.lɔ́ː.ri.a té͜ù.kʰe ký.nes.sin]",
