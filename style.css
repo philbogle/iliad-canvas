@@ -150,7 +150,7 @@
       color: var(--text-main);
       display: flex;
       align-items: center;
-      justify-content: flex-start; max-width: fit-content; margin: 0 auto;
+      justify-content: center;
       cursor: pointer;
       font-size: 0.75rem;
       font-weight: 700;
@@ -821,3 +821,11 @@
       }
     }
 
+
+    @media (max-width: 600px) {
+      .arrow-btn {
+        width: 70px;
+        height: 48px;
+        font-size: 1.25rem;
+      }
+    }
