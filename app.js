@@ -276,7 +276,7 @@
       if (iframe && iframe.style.display === 'none') {
         thumb.style.display = 'none';
         overlay.style.display = 'none';
-        iframe.src = `https://www.youtube.com/embed/${l.video_id}?start=${l.start_sec}&end=${l.end_sec}&playsinline=1&enablejsapi=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&autoplay=1`;
+        iframe.src = `https://www.youtube.com/embed/${l.video_id}?start=${Math.floor(l.start_sec)}&end=${Math.ceil(l.end_sec)}&playsinline=1&enablejsapi=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&autoplay=1`;
         iframe.style.display = 'block';
       }
     }
