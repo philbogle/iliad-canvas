@@ -31,9 +31,6 @@ function setTranslation(trans) {
 }
 
   
-  renderLine();
-}
-
     let currentIdx = 0;
     let currentWordIdx = -1;
 
