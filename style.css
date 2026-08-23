@@ -583,6 +583,9 @@
       border-radius: var(--radius-lg);
       max-width: 480px;
       width: 100%;
+      max-height: 95vh;
+      display: flex;
+      flex-direction: column;
       overflow: hidden;
       box-shadow: var(--shadow-lg);
       border: 1px solid var(--border);
@@ -609,6 +612,7 @@
     .word-popup-body {
       padding: 1.25rem 1.35rem;
       line-height: 1.5;
+      overflow-y: auto;
     }
 
     .wp-header-area {
@@ -679,7 +683,7 @@
     /* Credits Modal */
     .credits-container {
       max-width: 620px;
-      max-height: 80vh;
+      max-height: 95vh;
       display: flex;
       flex-direction: column;
     }
