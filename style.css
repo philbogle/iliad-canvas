@@ -813,3 +813,10 @@
         display: none;
       }
     }
+
+    @media (max-width: 600px) {
+      .scansion-pill {
+        padding: 0.25rem 0.4rem;
+        min-width: 40px;
+      }
+    }
