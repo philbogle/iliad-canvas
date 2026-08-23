@@ -330,7 +330,9 @@
       const body = document.getElementById('fullLinesBody');
       
       if (body.innerHTML.trim() === '') {
-        let html = '';
+        let html = `<div style="margin-bottom: 1.5rem; border-radius: var(--radius-md); overflow: hidden; background: #000; padding-top: 56.25%; position: relative; flex-shrink: 0;">
+          <iframe src="https://www.youtube.com/embed/KY9IjWJkmAg?start=557" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>`;
         data.forEach(l => {
           html += `<div style="padding: 0.5rem 0;">
             <div class="scansion-capsules full-lines-scansion-capsules" style="justify-content: flex-start; margin-top: 0; padding-bottom: 0;">
