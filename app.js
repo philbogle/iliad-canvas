@@ -40,6 +40,7 @@
         else if (e.key >= '1' && e.key <= '7') goToLine(parseInt(e.key) - 1);
         else if (e.key === 'Escape') {
           closeCredits();
+          closeFullLines();
         }
       });
 
@@ -322,6 +323,57 @@
 
     function closeCreditsOnBackdrop(e) {
       if (e.target.id === 'creditsModal') closeCredits();
+    }
+
+    function openFullLines() {
+      const modal = document.getElementById('fullLinesModal');
+      const body = document.getElementById('fullLinesBody');
+      
+      if (body.innerHTML.trim() === '') {
+        let html = '';
+        data.forEach(l => {
+          html += `<div style="margin-bottom: 0.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
+            <div class="greek-hero-text" style="font-size: 1.5rem; text-align: left; margin-bottom: 0.75rem; border: none; background: none;">${l.greek}</div>
+            <div class="scansion-capsules" style="justify-content: flex-start; margin-top: 0; padding-bottom: 0;">`;
+            
+          let half1 = `<div class="scansion-half">`;
+          let half2 = `<div class="scansion-half">`;
+          
+          l.feet.forEach((foot, fIdx) => {
+            let footHtml = `<div class="scansion-foot">`;
+            foot.sylls.forEach(syll => {
+              if (syll.grk === '—') return;
+              footHtml += `
+                <div class="scansion-pill ${syll.q}">
+                  <span class="sp-sym">${syll.sym}</span>
+                  <span class="sp-grk">${syll.grk}</span>
+                  <span class="sp-ipa">${syll.ipa}</span>
+                  <span class="sp-trans">${syll.trans}</span>
+                </div>
+              `;
+            });
+            footHtml += `</div>`;
+            if (fIdx < 3) half1 += footHtml;
+            else half2 += footHtml;
+          });
+          
+          half1 += `</div>`;
+          half2 += `</div>`;
+          
+          html += half1 + half2 + `</div></div>`;
+        });
+        body.innerHTML = html;
+      }
+      
+      modal.classList.add('open');
+    }
+
+    function closeFullLines() {
+      document.getElementById('fullLinesModal').classList.remove('open');
+    }
+
+    function closeFullLinesOnBackdrop(e) {
+      if (e.target.id === 'fullLinesModal') closeFullLines();
     }
 
     window.onload = init;

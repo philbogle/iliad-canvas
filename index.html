@@ -38,6 +38,7 @@
           <button class="hamburger-btn"
             onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
           <div id="dropdown" class="dropdown-menu">
+            <a href="javascript:void(0)" onclick="openFullLines()">Full Text & Scansion</a>
             <a href="javascript:void(0)" onclick="openCredits()">Help</a>
           </div>
         </div>
@@ -113,6 +114,18 @@
         <button class="modal-close" onclick="closeWordModal()">&times;</button>
       </div>
       <div class="word-popup-body" id="wordPopupBody"></div>
+    </div>
+  </div>
+
+  <!-- Full Lines Modal -->
+  <div class="modal-backdrop" id="fullLinesModal" onclick="closeFullLinesOnBackdrop(event)">
+    <div class="modal-container credits-container" style="max-width: 900px; width: 95%;">
+      <div class="modal-bar">
+        <span>Full Text & Scansion</span>
+        <button class="modal-close" onclick="closeFullLines()">&times;</button>
+      </div>
+      <div class="credits-scroll" id="fullLinesBody" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 2.5rem;">
+      </div>
     </div>
   </div>
 
