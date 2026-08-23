@@ -335,8 +335,8 @@
         </div>`;
         data.forEach(l => {
           html += `<div style="padding: 0.5rem 0;">
-            <div class="scansion-capsules full-lines-scansion-capsules" style="justify-content: flex-start; margin-top: 0; padding-bottom: 0;">
-              <div class="full-lines-num">${l.num}.</div>`;
+            <div class="full-lines-num">Line ${l.num}</div>
+            <div class="scansion-capsules full-lines-scansion-capsules" style="justify-content: flex-start; margin-top: 0; padding-bottom: 0;">`;
             
           let half1 = `<div class="scansion-half">`;
           let half2 = `<div class="scansion-half">`;
