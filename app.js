@@ -6,6 +6,8 @@ function openTranslationModal() {
   // Set the current radio button
   if (currentTranslation === 'johnston') {
     document.getElementById('radioJohnston').checked = true;
+  } else if (currentTranslation === 'butler') {
+    document.getElementById('radioButler').checked = true;
   } else {
     document.getElementById('radioMurray').checked = true;
   }
@@ -25,7 +27,7 @@ function closeTranslationModalOnBackdrop(e) {
 
 function setTranslation(trans) {
   currentTranslation = trans;
-  document.getElementById(trans === 'johnston' ? 'radioJohnston' : 'radioMurray').checked = true;
+  document.getElementById(trans === 'johnston' ? 'radioJohnston' : trans === 'butler' ? 'radioButler' : 'radioMurray').checked = true;
   renderLine();
   closeTranslationModal();
 }

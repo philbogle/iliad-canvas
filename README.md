@@ -28,7 +28,7 @@ I want to extend my thanks to the following authoritative sources that made this
 This project was built iteratively to combine the classical philology data credited above with a modern web interface.
 
 ### 1. The Greek Text & Translations
-The primary Greek text is based on the OCT. The web app allows users to toggle between two public domain translations: the literal prose translation by **Augustus Taber Murray** (1924, Loeb Classical Library) and the modern blank verse translation by **Ian Johnston** (2006, Vancouver Island University). Both have been adapted to map to the Greek hexameter lines. Literal glosses were compiled to assist with word-for-word morphology.
+The primary Greek text is based on the OCT. The web app allows users to toggle between three public domain translations: the literal prose translation by **Augustus Taber Murray** (1924, Loeb Classical Library), the modern blank verse translation by **Ian Johnston** (2006, Vancouver Island University), and the classic readable prose translation by **Samuel Butler** (1898, Longmans, Green & Co., with names adapted to Greek). All have been adapted to map to the Greek hexameter lines. Literal glosses were compiled to assist with word-for-word morphology.
 
 ### 2. Video Links & Audio Alignment
 The timestamps for lines 1-21 were manually aligned and embedded. Each line correlates directly to a timestamp slice of Luke Ranieri's videos.
