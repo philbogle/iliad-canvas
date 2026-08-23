@@ -332,8 +332,8 @@
       if (body.innerHTML.trim() === '') {
         let html = '';
         data.forEach(l => {
-          html += `<div style="margin-bottom: 0.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
-            <div class="greek-hero-text" style="font-size: 1.5rem; text-align: left; margin-bottom: 0.75rem; border: none; background: none;">${l.greek}</div>
+          html += `<div style="padding: 1rem 0; border-bottom: 1px solid var(--border-subtle);">
+            <div class="greek-hero-text" style="font-size: 1.25rem; text-align: left; margin-bottom: 0.5rem; border: none; background: none; padding: 0;">${l.greek}</div>
             <div class="scansion-capsules" style="justify-content: flex-start; margin-top: 0; padding-bottom: 0;">`;
             
           let half1 = `<div class="scansion-half">`;
