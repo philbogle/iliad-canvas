@@ -448,7 +448,7 @@ const data = [
     "scansion_pattern": "—   — | —   — | —   — | — ⏑ ⏑ | — ⏑ ⏑ | — —",
     "literal": "and many valiant souls to Hades hurled forward",
     "translations": {
-      "murray": "and sent forth to Hades many valiant souls of heroes,",
+      "murray": "and sent forth to Hades many valiant souls",
       "johnston": "and threw many warrior souls deep into Hades,"
     },
     "meter_notes": "Scansion: OCT / Steadman. Triple spondee opening gives a somber march, resolving into swift dactyls in feet 4–5 with diaereses in Ἄϊδι and προΐαψεν.",
@@ -659,7 +659,7 @@ const data = [
     "scansion_pattern": "—   — | —   — | — ⏑ ⏑ | — ⏑ ⏑ | — ⏑ ⏑ | — —",
     "literal": "of heroes, and made their bodies spoils for dogs",
     "translations": {
-      "murray": "and made them themselves spoil for dogs and every bird;",
+      "murray": "of heroes, and made them themselves spoil for dogs",
       "johnston": "leaving their dead bodies carrion food for dogs"
     },
     "meter_notes": "Scansion: OCT / West. Enjambment of ἡρώων connects lines 3 and 4 with sharp contrast between noble status and abandoned corpses.",
@@ -877,7 +877,7 @@ const data = [
     "scansion_pattern": "—   — | — ⏑ ⏑ | — ⏑ ⏑ | — ⏑ ⏑ | — ⏑ ⏑ | — —",
     "literal": "and for all birds of prey—and the will of Zeus was being fulfilled—",
     "translations": {
-      "murray": "thus the plan of Zeus came to fulfillment,",
+      "murray": "and every bird; thus the plan of Zeus came to fulfillment,",
       "johnston": "and birds—all in fulfilment of the will of Zeus."
     },
     "meter_notes": "Scansion: OCT / West. Bucolic Diaeresis after ἐτελείετο musically frames the cosmic purpose: Διὸς δ’ ἐτελείετο βουλή.",
@@ -1113,7 +1113,7 @@ const data = [
     "scansion_pattern": "—   — | —   — | — ⏑ ⏑ | —   — | — ⏑ ⏑ | — —",
     "literal": "from the time when indeed first the two parted after quarreling,",
     "translations": {
-      "murray": "from the time when first they parted in strife Atreus' son, king of men, and brilliant Achilles.",
+      "murray": "from the time when first they parted in strife",
       "johnston": "Start at the point where they first quarrelled,"
     },
     "meter_notes": "Scansion: Cambridge Guide to Homer (Iliad 1.6 example) / West. Dual verbal and participial endings (-την, -τε) mark the two quarreling chiefs.",
@@ -1315,7 +1315,7 @@ const data = [
     "scansion_pattern": "— ⏑ ⏑ | — ⏑ ⏑ | — — | — — | — ⏑ ⏑ | — —",
     "literal": "the son of Atreus, lord of men, and godlike Achilles.",
     "translations": {
-      "murray": "Who then of the gods was it that brought these two together to contend?",
+      "murray": "Atreus' son, king of men, and brilliant Achilles.",
       "johnston": "Agamemnon, son of Atreus, that king of men, and noble Achilles."
     },
     "meter_notes": "Scansion: OCT / Monro. Epic correption / hiatus in τε ἄναξ preserves unelided short vowel before archaic digamma (ϝάναξ).",
@@ -1542,7 +1542,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "Who then of the gods brought them together in strife to fight?",
     "translations": {
-      "murray": "The son of Leto and Zeus; for he in anger against the king",
+      "murray": "Who then of the gods was it that brought these two together to contend?",
       "johnston": "Which of the gods incited these two men to fight?"
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -1783,7 +1783,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "The son of Leto and Zeus: for he, angered at the king",
     "translations": {
-      "murray": "roused throughout the host an evil pestilence, and the people began to perish,",
+      "murray": "The son of Leto and Zeus; for he in anger against the king",
       "johnston": "That god was Apollo, son of Zeus and Leto. Angry with Agamemnon,"
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -2024,7 +2024,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "roused an evil disease throughout the army, and the people were perishing,",
     "translations": {
-      "murray": "because upon the priest Chryses the son of Atreus had wrought dishonour.",
+      "murray": "roused throughout the host an evil pestilence, and the people began to perish,",
       "johnston": "he cast plague down onto the troops—a deadly infectious evil."
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -2289,7 +2289,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "because he dishonored Chryses the priest",
     "translations": {
-      "murray": "For he had come to the swift ships of the Achaeans",
+      "murray": "because upon the priest Chryses",
       "johnston": "For Agamemnon had dishonoured the god’s priest, Chryses,"
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -2503,7 +2503,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "the son of Atreus: for he came to the swift ships of the Achaeans",
     "translations": {
-      "murray": "to free his daughter, bearing ransom past counting;",
+      "murray": "the son of Atreus had wrought dishonour. For he had come to the swift ships of the Achaeans",
       "johnston": "who’d come to the swift ships to find his daughter, Chryseis,"
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -2768,7 +2768,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "to ransom his daughter and bringing boundless ransom,",
     "translations": {
-      "murray": "and in his hands he held the wreaths of Apollo who strikes from afar,",
+      "murray": "to free his daughter, bearing ransom past counting;",
       "johnston": "bringing with him a huge ransom."
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -3024,7 +3024,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "holding in his hands the fillets of far-shooting Apollo",
     "translations": {
-      "murray": "on a staff of gold; and he implored all the Achaeans,",
+      "murray": "and in his hands he held the wreaths of Apollo who strikes from afar,",
       "johnston": "In his hand he held up the scarf sacred to archer god Apollo"
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -3255,7 +3255,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "upon a golden staff, and he entreated all the Achaeans,",
     "translations": {
-      "murray": "but most of all the two sons of Atreus, the marshallers of the people:",
+      "murray": "on a staff of gold; and he implored all the Achaeans,",
       "johnston": "on a golden staff. He begged all the Achaeans,"
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -3495,7 +3495,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "but most of all the two sons of Atreus, the marshals of the people:",
     "translations": {
-      "murray": "\"Sons of Atreus, and other well-greaved Achaeans,",
+      "murray": "but most of all the two sons of Atreus, the marshallers of the people:",
       "johnston": "above all the army’s leaders: \"Menelaus, Agamemnon, sons of Atreus,"
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -3734,7 +3734,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "Sons of Atreus and other well-greaved Achaeans,",
     "translations": {
-      "murray": "to you may the gods who have homes upon Olympus grant",
+      "murray": "\"Sons of Atreus, and other well-greaved Achaeans,",
       "johnston": "all you well-armed Achaeans,"
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -3973,7 +3973,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "may the gods who have Olympian homes grant to you",
     "translations": {
-      "murray": "that you sack the city of Priam, and return safe to your homes;",
+      "murray": "to you may the gods who have homes upon Olympus grant",
       "johnston": "may the gods on Olympus grant you"
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -4213,7 +4213,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "to sack the city of Priam, and to arrive well homeward:",
     "translations": {
-      "murray": "but my dear child release to me, and accept the ransom",
+      "murray": "that you sack the city of Priam, and return safe to your homes;",
       "johnston": "wipe out Priam’s city, and then return home safe and sound."
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -4453,7 +4453,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "but release to me my dear child, and accept the ransom,",
     "translations": {
-      "murray": "out of reverence for the son of Zeus, Apollo who strikes from afar.\"",
+      "murray": "but my dear child release to me, and accept the ransom",
       "johnston": "Release my dear child to me. Take this ransom."
     },
     "meter_notes": "Scansion data generated automatically.",
@@ -4719,7 +4719,7 @@ const data = [
     "scansion_pattern": "",
     "literal": "revering the son of Zeus, far-shooting Apollo.",
     "translations": {
-      "murray": "Then all the rest of the Achaeans shouted assent,",
+      "murray": "out of reverence for the son of Zeus, Apollo who strikes from afar.\"",
       "johnston": "Honour Apollo, far-shooting son of Zeus.\""
     },
     "meter_notes": "Scansion data generated automatically.",
