@@ -28,7 +28,7 @@ I want to extend my thanks to the following authoritative sources that made this
 This project was built iteratively to combine the classical philology data credited above with a modern web interface.
 
 ### 1. The Greek Text & Translations
-The primary Greek text is based on the OCT. The literary translations and literal glosses were compiled from standard public domain translations and cross-referenced with Steadman's commentary.
+The primary Greek text is based on the OCT. The literary translation used is the public domain prose translation by **Augustus Taber Murray** (1924, Loeb Classical Library), which has been manually adapted into line-by-line fragments to map to the Greek hexameter. Literal glosses were compiled to assist with word-for-word morphology.
 
 ### 2. Video Links & Audio Alignment
 The timestamps for lines 1-21 were manually aligned and embedded. Each line correlates directly to a timestamp slice of Luke Ranieri's videos.
