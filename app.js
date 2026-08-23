@@ -1,11 +1,35 @@
 let currentTranslation = "murray";
-function toggleTranslation() {
-  currentTranslation = (currentTranslation === "murray") ? "johnston" : "murray";
+
+function openTranslationModal() {
+  document.getElementById('dropdown').classList.remove('show');
   
-  const menuToggle = document.getElementById("menuTranslationToggle");
-  if (menuToggle) {
-    menuToggle.textContent = "Translation: " + (currentTranslation === "murray" ? "Murray" : "Johnston");
+  // Set the current radio button
+  if (currentTranslation === 'johnston') {
+    document.getElementById('radioJohnston').checked = true;
+  } else {
+    document.getElementById('radioMurray').checked = true;
   }
+  
+  document.getElementById('translationModal').style.display = 'flex';
+}
+
+function closeTranslationModal() {
+  document.getElementById('translationModal').style.display = 'none';
+}
+
+function closeTranslationModalOnBackdrop(e) {
+  if (e.target.id === 'translationModal') {
+    closeTranslationModal();
+  }
+}
+
+function setTranslation(trans) {
+  currentTranslation = trans;
+  document.getElementById(trans === 'johnston' ? 'radioJohnston' : 'radioMurray').checked = true;
+  renderLine();
+  closeTranslationModal();
+}
+
   
   renderLine();
 }

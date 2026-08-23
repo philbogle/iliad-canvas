@@ -39,7 +39,7 @@
             onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
           <div id="dropdown" class="dropdown-menu">
             <a href="javascript:void(0)" onclick="openFullLines()">Full Text & Scansion</a>
-            <a href="javascript:void(0)" onclick="toggleTranslation()" id="menuTranslationToggle">Translation: Murray</a>
+            <a href="javascript:void(0)" onclick="openTranslationModal()">Change translation...</a>
             <a href="javascript:void(0)" onclick="openCredits()">Help</a>
           </div>
         </div>
@@ -57,7 +57,7 @@
           <div class="greek-hero-text" id="greekLine">Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος</div>
 
           <div class="translation-item">
-            <div class="literary-text" id="idiomaticText" onclick="toggleTranslation()" style="cursor: pointer;" title="Click to swap translation (Murray / Johnston)">Sing, goddess, the ruinous wrath of Achilles, son of Peleus,
+            <div class="literary-text" id="idiomaticText" >Sing, goddess, the ruinous wrath of Achilles, son of Peleus,
             </div>
           </div>
 
@@ -204,6 +204,35 @@
           This project is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International License (CC BY 4.0)</a>. 
           The full source code is freely available on <a href="https://github.com/philbogle/iliad-canvas" target="_blank" rel="noopener">GitHub</a>.
         </p>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Translation Modal -->
+  <div class="modal-backdrop" id="translationModal" onclick="closeTranslationModalOnBackdrop(event)">
+    <div class="modal-container" style="max-width: 400px; height: auto;">
+      <div class="modal-bar">
+        <span>Select Translation</span>
+        <button class="modal-close" onclick="closeTranslationModal()">&times;</button>
+      </div>
+      <div style="padding: 1.5rem;">
+        <div style="margin-bottom: 1rem;">
+          <label style="display: flex; align-items: center; cursor: pointer; padding: 0.5rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); margin-bottom: 0.5rem;" onclick="setTranslation('murray')">
+            <input type="radio" name="trans" value="murray" id="radioMurray" style="margin-right: 0.75rem;">
+            <div>
+              <div style="font-weight: bold; color: var(--text-main);">A.T. Murray (1924)</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Literal Prose. Close to the Greek syntax.</div>
+            </div>
+          </label>
+          <label style="display: flex; align-items: center; cursor: pointer; padding: 0.5rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);" onclick="setTranslation('johnston')">
+            <input type="radio" name="trans" value="johnston" id="radioJohnston" style="margin-right: 0.75rem;">
+            <div>
+              <div style="font-weight: bold; color: var(--text-main);">Ian Johnston (2006)</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Modern Blank Verse. Highly readable.</div>
+            </div>
+          </label>
+        </div>
       </div>
     </div>
   </div>
