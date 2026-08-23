@@ -333,9 +333,10 @@
         let html = '';
         data.forEach(l => {
           html += `<div style="padding: 0.5rem 0;">
-            <div class="scansion-capsules" style="justify-content: flex-start; margin-top: 0; padding-bottom: 0;">`;
+            <div class="scansion-capsules" style="position: relative; padding-left: 36px; justify-content: flex-start; margin-top: 0; padding-bottom: 0;">
+              <div style="position: absolute; left: 0; top: 0; width: 28px; font-weight: 600; color: var(--text-muted); font-size: 0.85rem; user-select: none; padding-top: 0.75rem; text-align: right;">${l.num}.</div>`;
             
-          let half1 = `<div class="scansion-half"><div style="display: flex; align-items: center; justify-content: center; min-width: 28px; font-weight: 600; color: var(--text-muted); font-size: 1.1rem; margin-right: 0.25rem; user-select: none;">${l.num}.</div>`;
+          let half1 = `<div class="scansion-half">`;
           let half2 = `<div class="scansion-half">`;
           
           l.feet.forEach((foot, fIdx) => {
