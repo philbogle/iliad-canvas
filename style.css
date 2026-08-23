@@ -357,7 +357,7 @@
     }
 
     .video-credit-link {
-      font-size: 0.8rem;
+      font-size: 0.72rem;
       color: var(--text-muted);
       text-decoration: none;
       display: block;
@@ -381,7 +381,7 @@
       }
 
       .video-credit-link {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
       }
     }
 
@@ -440,7 +440,7 @@
       }
 
       .wt-trans {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
       }
 
       .wt-gloss {
@@ -540,13 +540,13 @@
 
     .sp-ipa {
       font-family: monospace;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       font-weight: 600;
       opacity: 0.9;
     }
 
     .sp-trans {
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       opacity: 0.8;
     }
 
