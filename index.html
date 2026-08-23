@@ -39,6 +39,7 @@
             onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
           <div id="dropdown" class="dropdown-menu">
             <a href="javascript:void(0)" onclick="openFullLines()">Full Text & Scansion</a>
+            <a href="javascript:void(0)" onclick="toggleTranslation()" id="menuTranslationToggle">Translation: Murray</a>
             <a href="javascript:void(0)" onclick="openCredits()">Help</a>
           </div>
         </div>
@@ -56,11 +57,7 @@
           <div class="greek-hero-text" id="greekLine">Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος</div>
 
           <div class="translation-item">
-            <select id="translationSelect" onchange="changeTranslation()" class="translation-select">
-              <option value="murray" selected>A.T. Murray (Literal Prose, 1924)</option>
-              <option value="johnston">Ian Johnston (Modern Verse, 2006)</option>
-            </select>
-            <div class="literary-text" id="idiomaticText">Sing, goddess, the ruinous wrath of Achilles, son of Peleus,
+            <div class="literary-text" id="idiomaticText" onclick="toggleTranslation()" style="cursor: pointer;" title="Click to swap translation (Murray / Johnston)">Sing, goddess, the ruinous wrath of Achilles, son of Peleus,
             </div>
           </div>
 

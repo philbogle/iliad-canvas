@@ -1,10 +1,13 @@
 let currentTranslation = "murray";
-function changeTranslation() {
-  const select = document.getElementById("translationSelect");
-  if (select) {
-    currentTranslation = select.value;
-    renderLine();
+function toggleTranslation() {
+  currentTranslation = (currentTranslation === "murray") ? "johnston" : "murray";
+  
+  const menuToggle = document.getElementById("menuTranslationToggle");
+  if (menuToggle) {
+    menuToggle.textContent = "Translation: " + (currentTranslation === "murray" ? "Murray" : "Johnston");
   }
+  
+  renderLine();
 }
 
     let currentIdx = 0;
