@@ -820,3 +820,23 @@
         min-width: 32px;
       }
     }
+
+    .translation-select {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      padding: 0.2rem 0.4rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      outline: none;
+      font-family: inherit;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    .translation-select:hover {
+      color: var(--text-main);
+      border-color: var(--text-muted);
+    }

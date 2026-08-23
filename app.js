@@ -1,3 +1,12 @@
+let currentTranslation = "murray";
+function changeTranslation() {
+  const select = document.getElementById("translationSelect");
+  if (select) {
+    currentTranslation = select.value;
+    renderLine();
+  }
+}
+
     let currentIdx = 0;
     let currentWordIdx = -1;
 
@@ -152,7 +161,7 @@
       }
 
       // Translation
-      document.getElementById('idiomaticText').textContent = l.idiomatic;
+      document.getElementById('idiomaticText').textContent = l.translations[currentTranslation];
 
       // Word Tiles (Clean on main page, clickable for full morphology in popup)
       const flow = document.getElementById('interlinearRow');
