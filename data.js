@@ -649,7 +649,7 @@ const data = [
     "translit_phonetic": "heh-RÓH-ohn, ow-TÓOS deh heh-LÓH-ree-ah TÉH-oo-keh KÜ-nes-sin",
     "scansion_pattern": "—   — | —   — | — ⏑ ⏑ | — ⏑ ⏑ | — ⏑ ⏑ | — —",
     "literal": "of heroes, and made their bodies spoils for dogs",
-    "idiomatic": "leaving their dead bodies carrion food for dogs and birds—",
+    "idiomatic": "leaving their dead bodies carrion food for dogs",
     "meter_notes": "Scansion: OCT / West. Enjambment of ἡρώων connects lines 3 and 4 with sharp contrast between noble status and abandoned corpses.",
     "feet": [
       {
@@ -864,7 +864,7 @@ const data = [
     "translit_phonetic": "oy-oh-NOY-see teh PÁH-see, dee-ÓS deh-teh-lay-EE-eh-toh boo-LÉH",
     "scansion_pattern": "—   — | — ⏑ ⏑ | — ⏑ ⏑ | — ⏑ ⏑ | — ⏑ ⏑ | — —",
     "literal": "and for all birds of prey—and the will of Zeus was being fulfilled—",
-    "idiomatic": "all in fulfilment of the will of Zeus.",
+    "idiomatic": "and birds—all in fulfilment of the will of Zeus.",
     "meter_notes": "Scansion: OCT / West. Bucolic Diaeresis after ἐτελείετο musically frames the cosmic purpose: Διὸς δ’ ἐτελείετο βουλή.",
     "feet": [
       {
@@ -1097,7 +1097,7 @@ const data = [
     "translit_phonetic": "eks HÓO deh tah PRÓH-tah dee-ahs-TÉH-tayn eh-RÉE-sahn-teh",
     "scansion_pattern": "—   — | —   — | — ⏑ ⏑ | —   — | — ⏑ ⏑ | — —",
     "literal": "from the time when indeed first the two parted after quarreling,",
-    "idiomatic": "Start at the point where Agamemnon, son of Atreus, that king of men, quarrelled with noble Achilles.",
+    "idiomatic": "Start at the point where they first quarrelled,",
     "meter_notes": "Scansion: Cambridge Guide to Homer (Iliad 1.6 example) / West. Dual verbal and participial endings (-την, -τε) mark the two quarreling chiefs.",
     "feet": [
       {
@@ -1296,7 +1296,7 @@ const data = [
     "translit_phonetic": "ah-treh-ÉE-days teh ÁH-nahks ahn-DRÓHN kye DÉE-os ah-kil-LEÚS",
     "scansion_pattern": "— ⏑ ⏑ | — ⏑ ⏑ | — — | — — | — ⏑ ⏑ | — —",
     "literal": "the son of Atreus, lord of men, and godlike Achilles.",
-    "idiomatic": "Which of the gods incited these two men to fight?",
+    "idiomatic": "Agamemnon, son of Atreus, that king of men, and noble Achilles.",
     "meter_notes": "Scansion: OCT / Monro. Epic correption / hiatus in τε ἄναξ preserves unelided short vowel before archaic digamma (ϝάναξ).",
     "feet": [
       {
@@ -1520,7 +1520,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "Who then of the gods brought them together in strife to fight?",
-    "idiomatic": "That god was Apollo, son of Zeus and Leto.",
+    "idiomatic": "Which of the gods incited these two men to fight?",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -1758,7 +1758,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "The son of Leto and Zeus: for he, angered at the king",
-    "idiomatic": "Angry with Agamemnon, he cast plague down onto the troops—a deadly infectious evil.",
+    "idiomatic": "That god was Apollo, son of Zeus and Leto. Angry with Agamemnon,",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -1996,7 +1996,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "roused an evil disease throughout the army, and the people were perishing,",
-    "idiomatic": "For Agamemnon had dishonoured the god’s priest, Chryses,",
+    "idiomatic": "he cast plague down onto the troops—a deadly infectious evil.",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -2258,7 +2258,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "because he dishonored Chryses the priest",
-    "idiomatic": "who’d come to the ships to find his daughter, Chryseis,",
+    "idiomatic": "For Agamemnon had dishonoured the god’s priest, Chryses,",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -2469,7 +2469,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "the son of Atreus: for he came to the swift ships of the Achaeans",
-    "idiomatic": "bringing with him a huge ransom.",
+    "idiomatic": "who’d come to the swift ships to find his daughter, Chryseis,",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -2731,7 +2731,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "to ransom his daughter and bringing boundless ransom,",
-    "idiomatic": "In his hand he held up on a golden staff",
+    "idiomatic": "bringing with him a huge ransom.",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -2984,7 +2984,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "holding in his hands the fillets of far-shooting Apollo",
-    "idiomatic": "the scarf sacred to archer god Apollo.",
+    "idiomatic": "In his hand he held up the scarf sacred to archer god Apollo",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -3212,7 +3212,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "upon a golden staff, and he entreated all the Achaeans,",
-    "idiomatic": "He begged Achaeans, above all the army’s leaders:",
+    "idiomatic": "on a golden staff. He begged all the Achaeans,",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -3449,7 +3449,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "but most of all the two sons of Atreus, the marshals of the people:",
-    "idiomatic": "\"Menelaus, Agamemnon, sons of Atreus,",
+    "idiomatic": "above all the army’s leaders: \"Menelaus, Agamemnon, sons of Atreus,",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -3685,7 +3685,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "Sons of Atreus and other well-greaved Achaeans,",
-    "idiomatic": "all you well-armed Achaeans, may the gods on Olympus",
+    "idiomatic": "all you well-armed Achaeans,",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -3921,7 +3921,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "may the gods who have Olympian homes grant to you",
-    "idiomatic": "grant you wipe out Priam’s city, and then return home safe and sound.",
+    "idiomatic": "may the gods on Olympus grant you",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -4158,7 +4158,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "to sack the city of Priam, and to arrive well homeward:",
-    "idiomatic": "Release my dear child to me.",
+    "idiomatic": "wipe out Priam’s city, and then return home safe and sound.",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -4395,7 +4395,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "but release to me my dear child, and accept the ransom,",
-    "idiomatic": "Take this ransom. Honour Apollo, far-shooting son of Zeus.\"",
+    "idiomatic": "Release my dear child to me. Take this ransom.",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
@@ -4658,7 +4658,7 @@ const data = [
     "translit_phonetic": "",
     "scansion_pattern": "",
     "literal": "revering the son of Zeus, far-shooting Apollo.",
-    "idiomatic": "All the Achaeans roared out their support:",
+    "idiomatic": "Honour Apollo, far-shooting son of Zeus.\"",
     "meter_notes": "Scansion data generated automatically.",
     "feet": [
       {
