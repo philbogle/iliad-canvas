@@ -330,7 +330,7 @@
       const body = document.getElementById('fullLinesBody');
       
       if (body.innerHTML.trim() === '') {
-        let html = `<div style="margin-bottom: 1.5rem; border-radius: var(--radius-md); overflow: hidden; background: #000; padding-top: 56.25%; position: relative; flex-shrink: 0;">
+        let html = `<div style="margin: 0 auto 1.5rem auto; max-width: 600px; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-md); overflow: hidden; background: #000; position: relative; flex-shrink: 0;">
           <iframe src="https://www.youtube.com/embed/KY9IjWJkmAg?start=557" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>`;
         data.forEach(l => {
