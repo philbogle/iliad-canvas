@@ -142,8 +142,8 @@
     }
 
     .arrow-btn {
-      width: 70px;
-      height: 28px;
+      width: 80px;
+      height: 48px;
       border-radius: var(--radius-full);
       border: 1px solid var(--border);
       background: var(--surface);
@@ -152,7 +152,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 0.75rem;
+      font-size: 1.25rem;
       font-weight: 700;
       transition: var(--transition);
     }
@@ -818,14 +818,5 @@
       .scansion-pill {
         padding: 0.175rem 0.25rem;
         min-width: 32px;
-      }
-    }
-
-
-    @media (max-width: 600px) {
-      .arrow-btn {
-        width: 70px;
-        height: 48px;
-        font-size: 1.25rem;
       }
     }
