@@ -22,6 +22,7 @@ I want to extend my thanks to the following authoritative sources that made this
 - **[Hypotactic](https://hypotactic.com/)**: The dactylic hexameter scansion logic (accurate syllable lengths, positional lengthening, and hiatus) was sourced directly from their metrical CSV datasets.
 - **[Perseus Digital Library](http://www.perseus.tufts.edu/hopper/)**: For hosting the canonical Oxford Classical Text (Monro & Allen, 1920) that forms the base Greek of this project.
 - **[Geoffrey Steadman](https://geoffreysteadman.com/homers-iliad-1-6/)**: Whose *Homer's Iliad 1* commentary served as a cross-reference for the literal word-for-word glosses.
+- **[Ben Crowell](https://bitbucket.org/ben-crowell/greek_pronunciation/src/master/index.md)**: Whose comprehensive guide to Greek pronunciation provides deep information on reconstructed Attic vs. Erasmian pronunciation, tonal accents, and sound recordings of informed readings of the Iliad.
 
 ## How this was created
 
