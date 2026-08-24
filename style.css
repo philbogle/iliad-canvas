@@ -306,7 +306,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start; max-width: fit-content; margin: 0 auto;
+      justify-content: center;
     }
 
     .player-container {
@@ -351,7 +351,7 @@
     .video-controls {
       display: flex;
       gap: 0.5rem;
-      justify-content: flex-start; max-width: fit-content; margin: 0 auto;
+      justify-content: center;
       align-items: center;
       margin-top: 0.4rem;
     }
@@ -555,7 +555,7 @@
     .scansion-half {
       display: flex;
       flex-wrap: nowrap;
-      justify-content: flex-start; max-width: fit-content; margin: 0 auto;
+      justify-content: center;
       gap: 0.65rem;
     }
 
@@ -571,7 +571,7 @@
       -webkit-backdrop-filter: blur(8px);
       display: none;
       align-items: center;
-      justify-content: flex-start; max-width: fit-content; margin: 0 auto;
+      justify-content: center;
       z-index: 1000;
       padding: 1rem;
     }
