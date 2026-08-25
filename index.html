@@ -38,7 +38,6 @@
           <button class="hamburger-btn"
             onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
           <div id="dropdown" class="dropdown-menu">
-            <a href="javascript:void(0)" onclick="openFullLines()">Full scansion</a>
             <a href="javascript:void(0)" onclick="openCredits()">Help</a>
           </div>
         </div>
@@ -124,6 +123,8 @@
 
   
   <footer style="text-align: center; margin: 3rem 0 2rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.85rem;">
+    <a href="javascript:void(0)" onclick="openFullLines()" style="color: var(--text-muted); text-decoration: none;">Full scansion</a>
+    <span style="color: var(--text-muted); margin: 0 0.5rem;">|</span>
     <a href="sources.html" style="color: var(--text-muted); text-decoration: none;">Sources</a>
   </footer>
 
