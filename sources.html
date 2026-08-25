@@ -25,22 +25,16 @@
   <!-- Top Nav with Integrated Line Selector -->
   <nav>
     <div class="nav-container">
-      <span class="brand-title">Homer's Iliad</span>
+      <a href="index.html" class="brand-title" style="text-decoration: none; color: inherit;">Homer's Iliad</a>
 
       <div style="display: flex; align-items: center;">
-        <div class="header-line-picker">
-          <button class="arrow-btn" id="prevBtn" onclick="prevLine()" title="Previous (←)">❮</button>
-          <div class="line-pills" id="linePills"></div>
-          <button class="arrow-btn" id="nextBtn" onclick="nextLine()" title="Next (→)">❯</button>
-        </div>
+        
 
         <div class="menu-container">
           <button class="hamburger-btn"
             onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
-          <div id="dropdown" class="dropdown-menu">
-            <a href="javascript:void(0)" onclick="openFullLines()">Full scansion</a>
-            <a href="javascript:void(0)" onclick="openTranslationModal()">Options</a>
-            <a href="javascript:void(0)" onclick="openCredits()">Help</a>
+                    <div id="dropdown" class="dropdown-menu">
+            <a href="index.html">Interactive Reader</a>
           </div>
         </div>
       </div>
