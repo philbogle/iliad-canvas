@@ -417,6 +417,7 @@ function setTranslation(trans) {
 // --- METRONOME FEATURE ---
 let audioCtx;
 let metronomeIsPlaying = false;
+    document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
 let nextNoteTime = 0;
 let noteIndex = 0;
 let metronomeTimerID;
@@ -425,12 +426,15 @@ let currentMoraeSequence = [];
 function parseMoraeSequence() {
   const lineData = data[currentIdx];
   const seq = [];
+  const domPills = document.querySelectorAll('#scansionCapsules .scansion-pill');
+  let pillIdx = 0;
   lineData.feet.forEach((foot, fIdx) => {
     foot.sylls.forEach((syll, sIdx) => {
       if (syll.grk === '—') return; // ignore visual padding
       seq.push({
         q: syll.q, // 'long' or 'short'
-        isIctus: sIdx === 0 // true for the first syllable of the foot
+        isIctus: sIdx === 0, // true for the first syllable of the foot
+        el: domPills[pillIdx++]
       });
     });
   });
@@ -453,6 +457,16 @@ function scheduleNote(syllable, time) {
   
   osc.start(time);
   osc.stop(time + 0.1);
+  
+  // Visual highlight
+  const delay = Math.max((time - audioCtx.currentTime) * 1000, 0);
+  setTimeout(() => {
+    if (!metronomeIsPlaying) return;
+    document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
+    if (syllable.el) {
+      syllable.el.classList.add('active-beat');
+    }
+  }, delay);
 }
 
 function nextNote() {
@@ -477,6 +491,7 @@ function scheduler() {
     // Done playing
     setTimeout(() => {
       metronomeIsPlaying = false;
+    document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
       document.getElementById('metronomeBtn').innerHTML = '<span style="font-size: 1.1rem;">⏱️</span> Play Beats';
     }, 500);
   }
@@ -490,6 +505,7 @@ function playMetronome() {
       audioCtx = null;
     }
     metronomeIsPlaying = false;
+    document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
     document.getElementById('metronomeBtn').innerHTML = '<span style="font-size: 1.1rem;">⏱️</span> Play Beats';
     return;
   }

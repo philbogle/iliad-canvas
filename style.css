@@ -820,3 +820,14 @@
         min-width: 32px;
       }
     }
+
+.active-beat {
+  background: var(--accent) !important;
+  color: white !important;
+  transform: scale(1.05);
+  box-shadow: var(--shadow-sm);
+}
+
+.active-beat .sp-sym, .active-beat .sp-grk, .active-beat .sp-ipa, .active-beat .sp-trans {
+  color: white !important;
+}
