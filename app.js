@@ -1,5 +1,8 @@
 let currentTranslation = localStorage.getItem("iliad_translation") || "murray";
 
+/**
+ * Opens the Translation/Options modal and sets the active translation radio button.
+ */
 function openTranslationModal() {
   document.getElementById('dropdown').classList.remove('show');
   
@@ -15,16 +18,27 @@ function openTranslationModal() {
   document.getElementById('translationModal').style.display = 'flex';
 }
 
+/**
+ * Closes the Translation/Options modal.
+ */
 function closeTranslationModal() {
   document.getElementById('translationModal').style.display = 'none';
 }
 
+/**
+ * Closes the Translation/Options modal if the user clicks outside the modal content.
+ * @param {Event} e - The click event.
+ */
 function closeTranslationModalOnBackdrop(e) {
   if (e.target.id === 'translationModal') {
     closeTranslationModal();
   }
 }
 
+/**
+ * Sets the active translation, saves the preference to localStorage, and re-renders the current line.
+ * @param {string} trans - The translation identifier (e.g. "murray", "johnston").
+ */
 function setTranslation(trans) {
   currentTranslation = trans;
   localStorage.setItem("iliad_translation", trans);
@@ -48,6 +62,9 @@ function setTranslation(trans) {
       }
     };
 
+    /**
+ * Initializes the application, sets up event listeners, loads preferences from localStorage, and renders the first line.
+ */
     function init() {
       const params = new URLSearchParams(window.location.search);
       const lineParam = params.get('line');
@@ -106,6 +123,9 @@ function setTranslation(trans) {
         handleSwipe();
       }, {passive: true});
 
+      /**
+ * Determines swipe direction based on touch coordinates and navigates to next/prev line accordingly.
+ */
       function handleSwipe() {
         const diffX = touchEndX - touchStartX;
         const diffY = touchEndY - touchStartY;
@@ -125,6 +145,9 @@ function setTranslation(trans) {
       }
     }
 
+    /**
+ * Navigates to the next word in the dictionary modal. Closes modal if at the end of the line.
+ */
     function nextWord() {
       const l = data[currentIdx];
       if (currentWordIdx < l.words.length - 1) {
@@ -132,12 +155,18 @@ function setTranslation(trans) {
       }
     }
 
+    /**
+ * Navigates to the previous word in the dictionary modal.
+ */
     function prevWord() {
       if (currentWordIdx > 0) {
         openWordModal(currentWordIdx - 1);
       }
     }
 
+    /**
+ * Renders the scansion grid (capsules/pills) representing the metrical feet of the current line.
+ */
     function renderPills() {
       const container = document.getElementById('linePills');
       container.innerHTML = '';
@@ -170,6 +199,9 @@ function setTranslation(trans) {
       if (nextBtn) nextBtn.disabled = (currentIdx === data.length - 1);
     }
 
+    /**
+ * Renders the full interactive UI for the currently selected line (Greek text, translation, scansion, interlinear words).
+ */
     function renderLine() {
       const l = data[currentIdx];
 
@@ -259,6 +291,10 @@ function setTranslation(trans) {
 
     }
 
+    /**
+ * Opens the dictionary popup modal for a specific word, populating it with morphology and definitions.
+ * @param {number} wIdx - The index of the word within the current line.
+ */
     function openWordModal(wIdx) {
       currentWordIdx = wIdx;
       const l = data[currentIdx];
@@ -300,10 +336,17 @@ function setTranslation(trans) {
       modal.classList.add('open');
     }
 
+    /**
+ * Closes the word dictionary popup modal.
+ */
     function closeWordModal() {
       document.getElementById('wordModal').classList.remove('open');
     }
 
+    /**
+ * Navigates the app to a specific line index, updating the URL and metronome state as needed.
+ * @param {number} idx - The index of the line in the data array.
+ */
     function goToLine(idx) {
       if (idx >= 0 && idx < data.length) {
         currentIdx = idx;
@@ -326,6 +369,9 @@ function setTranslation(trans) {
       }
     }
 
+    /**
+ * Replaces the video thumbnail with a live YouTube iframe cued to the exact timestamp of the current line.
+ */
     function loadYoutubeVideo() {
       if (metronomeIsPlaying) playMetronome(); // Stop metronome if playing
       const l = data[currentIdx];
@@ -341,6 +387,9 @@ function setTranslation(trans) {
       }
     }
 
+    /**
+ * Restarts the video playback for the current line by sending a seekTo command to the YouTube iframe.
+ */
     function replayVideo() {
       if (metronomeIsPlaying) playMetronome(); // Stop metronome if playing
       const iframe = document.getElementById('mainVideoIframe');
@@ -362,30 +411,53 @@ function setTranslation(trans) {
       }), '*');
     }
 
+    /**
+ * Advances to the next line in the text.
+ */
     function nextLine() {
       goToLine((currentIdx + 1) % data.length);
     }
 
+    /**
+ * Goes back to the previous line in the text.
+ */
     function prevLine() {
       goToLine((currentIdx - 1 + data.length) % data.length);
     }
 
+    /**
+ * Opens the Help/Credits modal.
+ */
     function openCredits() {
       document.getElementById('creditsModal').classList.add('open');
     }
 
+    /**
+ * Closes the Help/Credits modal.
+ */
     function closeCredits() {
       document.getElementById('creditsModal').classList.remove('open');
     }
 
+    /**
+ * Closes the word dictionary modal if the user clicks the backdrop.
+ * @param {Event} e - The click event.
+ */
     function closeWordOnBackdrop(e) {
       if (e.target.id === 'wordModal') closeWordModal();
     }
 
+    /**
+ * Closes the Help/Credits modal if the user clicks the backdrop.
+ * @param {Event} e - The click event.
+ */
     function closeCreditsOnBackdrop(e) {
       if (e.target.id === 'creditsModal') closeCredits();
     }
 
+    /**
+ * Opens a modal displaying all lines of the text with their full scansion at once.
+ */
     function openFullLines() {
       const modal = document.getElementById('fullLinesModal');
       const body = document.getElementById('fullLinesBody');
@@ -429,10 +501,17 @@ function setTranslation(trans) {
       modal.classList.add('open');
     }
 
+    /**
+ * Closes the full text/scansion modal.
+ */
     function closeFullLines() {
       document.getElementById('fullLinesModal').classList.remove('open');
     }
 
+    /**
+ * Closes the full text/scansion modal if the user clicks the backdrop.
+ * @param {Event} e - The click event.
+ */
     function closeFullLinesOnBackdrop(e) {
       if (e.target.id === 'fullLinesModal') closeFullLines();
     }
@@ -448,12 +527,20 @@ let metronomeTimerID;
 let currentMoraeSequence = [];
 let moraLength = parseFloat(localStorage.getItem('iliad_tempo')) || 0.22;
 
+/**
+ * Updates the metronome tempo based on slider input and saves the preference to localStorage.
+ * @param {string|number} val - The new tempo in seconds per short syllable.
+ */
 function updateTempo(val) {
   moraLength = parseFloat(val);
   localStorage.setItem('iliad_tempo', moraLength);
   document.getElementById('tempoLabel').textContent = moraLength.toFixed(2) + 's per short syllable';
 }
 
+/**
+ * Flattens the current line's scansion feet into a 1D array of syllables for the metronome to sequence.
+ * @returns {Array} Array of syllable objects containing quantity, ictus flag, and DOM element reference.
+ */
 function parseMoraeSequence() {
   const lineData = data[currentIdx];
   const seq = [];
@@ -472,6 +559,12 @@ function parseMoraeSequence() {
   return seq;
 }
 
+/**
+ * Synthesizes and schedules a percussive "click" sound using the Web Audio API for a specific syllable.
+ * Also queues the visual highlight in the DOM to sync with the audio.
+ * @param {Object} syllable - The syllable object containing quantity and DOM element.
+ * @param {number} time - The exact AudioContext time to play the note.
+ */
 function scheduleNote(syllable, time) {
   const osc = audioCtx.createOscillator();
   const envelope = audioCtx.createGain();
@@ -507,6 +600,9 @@ function scheduleNote(syllable, time) {
   }, delay);
 }
 
+/**
+ * Advances the internal metronome clock by the duration (morae) of the current syllable.
+ */
 function nextNote() {
   
   const syllable = currentMoraeSequence[noteIndex];
@@ -516,6 +612,10 @@ function nextNote() {
   noteIndex++;
 }
 
+/**
+ * Continuously schedules metronome notes slightly ahead of the AudioContext time to ensure seamless playback.
+ * Uses a recursive setTimeout loop to poll the clock.
+ */
 function scheduler() {
   // schedule notes up to 0.1s in the future
   while (nextNoteTime < audioCtx.currentTime + 0.1) {
@@ -543,6 +643,9 @@ function scheduler() {
   }
 }
 
+/**
+ * Toggles the metronome on or off, handling AudioContext initialization, visual resets, and video exclusion.
+ */
 function playMetronome() {
   if (metronomeIsPlaying) {
     clearTimeout(metronomeTimerID);
