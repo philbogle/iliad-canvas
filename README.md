@@ -20,6 +20,7 @@ I want to extend my thanks to the following authoritative sources that made this
 
 - **[Ben Crowell](https://bitbucket.org/ben-crowell/greek_pronunciation/src/master/index.md)**: Whose comprehensive guide to Greek pronunciation provides deep information on reconstructed Attic vs. Erasmian pronunciation, tonal accents, and sound recordings of informed readings of the Iliad.
 - **[Luke Ranieri (polýMATHY)](https://www.youtube.com/@polymathy)**: The audio and video rely on Luke's `#KephalosChallenge` recitations and his 3-pitch restored chanting method. His full recording of [Iliad Book 1, lines 1-100](https://luke-ranieri.myshopify.com/products/iliad-100-homers-iliad-book-1-lines-1-100) is available on his store.
+- **[Wikimedia Commons](https://commons.wikimedia.org/)**: The audio files in the pronunciation guide were sourced from their extensive public domain repository of IPA pronunciation audio.
 - **[The Perseids Project](https://perseids.org/) (Tufts University)**: All of the automated grammatical parsing (Part of Speech, Voice, Mood, Case) and dictionary Lemmas were fetched using their Morpheus API.
 - **[Hypotactic](https://hypotactic.com/)**: The dactylic hexameter scansion logic (accurate syllable lengths, positional lengthening, and hiatus) was sourced directly from their metrical CSV datasets.
 - **[Perseus Digital Library](http://www.perseus.tufts.edu/hopper/)**: For hosting the canonical Oxford Classical Text (Monro & Allen, 1920) that forms the base Greek of this project.
