@@ -294,6 +294,7 @@ function setTranslation(trans) {
 
     function goToLine(idx) {
       if (idx >= 0 && idx < data.length) {
+        if (metronomeIsPlaying) playMetronome(); // toggles it off
         currentIdx = idx;
         const newUrl = new URL(window.location);
         newUrl.searchParams.set('line', data[idx].num);
@@ -412,3 +413,95 @@ function setTranslation(trans) {
     }
 
     window.onload = init;
+
+// --- METRONOME FEATURE ---
+let audioCtx;
+let metronomeIsPlaying = false;
+let nextNoteTime = 0;
+let noteIndex = 0;
+let metronomeTimerID;
+let currentMoraeSequence = [];
+
+function parseMoraeSequence() {
+  const lineData = data[currentIdx];
+  const seq = [];
+  lineData.feet.forEach((foot, fIdx) => {
+    foot.sylls.forEach((syll, sIdx) => {
+      if (syll.grk === '—') return; // ignore visual padding
+      seq.push({
+        q: syll.q, // 'long' or 'short'
+        isIctus: sIdx === 0 // true for the first syllable of the foot
+      });
+    });
+  });
+  return seq;
+}
+
+function scheduleNote(syllable, time) {
+  const osc = audioCtx.createOscillator();
+  const envelope = audioCtx.createGain();
+  
+  osc.connect(envelope);
+  envelope.connect(audioCtx.destination);
+  
+  // Ictus (first beat of foot) gets a higher pitch
+  osc.frequency.value = syllable.isIctus ? 800 : 400;
+  
+  // Woodblock-like envelope
+  envelope.gain.setValueAtTime(1, time);
+  envelope.gain.exponentialRampToValueAtTime(0.001, time + 0.1);
+  
+  osc.start(time);
+  osc.stop(time + 0.1);
+}
+
+function nextNote() {
+  const moraLength = 0.22; // seconds per mora
+  const syllable = currentMoraeSequence[noteIndex];
+  
+  // Advance time by the duration of the current syllable
+  nextNoteTime += (syllable.q === 'long' ? 2 : 1) * moraLength;
+  noteIndex++;
+}
+
+function scheduler() {
+  // schedule notes up to 0.1s in the future
+  while (nextNoteTime < audioCtx.currentTime + 0.1 && noteIndex < currentMoraeSequence.length) {
+    scheduleNote(currentMoraeSequence[noteIndex], nextNoteTime);
+    nextNote();
+  }
+  
+  if (noteIndex < currentMoraeSequence.length) {
+    metronomeTimerID = setTimeout(scheduler, 25);
+  } else {
+    // Done playing
+    setTimeout(() => {
+      metronomeIsPlaying = false;
+      document.getElementById('metronomeBtn').innerHTML = '<span style="font-size: 1.1rem;">⏱️</span> Play Beats';
+    }, 500);
+  }
+}
+
+function playMetronome() {
+  if (metronomeIsPlaying) {
+    clearTimeout(metronomeTimerID);
+    if (audioCtx) {
+      audioCtx.close();
+      audioCtx = null;
+    }
+    metronomeIsPlaying = false;
+    document.getElementById('metronomeBtn').innerHTML = '<span style="font-size: 1.1rem;">⏱️</span> Play Beats';
+    return;
+  }
+  
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  
+  currentMoraeSequence = parseMoraeSequence();
+  noteIndex = 0;
+  nextNoteTime = audioCtx.currentTime + 0.05; 
+  
+  metronomeIsPlaying = true;
+  document.getElementById('metronomeBtn').innerHTML = '<span style="font-size: 1.1rem;">⏹️</span> Stop Beats';
+  
+  scheduler();
+}
