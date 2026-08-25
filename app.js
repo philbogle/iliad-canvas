@@ -367,8 +367,8 @@ function setTranslation(trans) {
           // Restart sequence from the beginning of the new line
           currentMoraeSequence = parseMoraeSequence();
           noteIndex = 0;
-          // Add a 2-second pause before resuming the beats for the new line
-          const pauseDuration = 2.0;
+          // Add a 1-second pause before resuming the beats for the new line
+          const pauseDuration = 1.0;
           nextNoteTime = Math.max(nextNoteTime, audioCtx.currentTime) + pauseDuration;
           
           // Clear any visual pills from the old line
