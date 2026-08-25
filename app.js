@@ -1,3 +1,14 @@
+/**
+ * @fileoverview Main application logic for Homer's Iliad Interactive Study Canvas.
+ * 
+ * This module handles:
+ * 1. UI State & Navigation: Line-by-line stepping, swipe gestures, and URL parameter syncing.
+ * 2. Media Control: YouTube iframe embedding, auto-seeking, and UI toggling.
+ * 3. Modals & Interactivity: Translation options, word-by-word morphology popups, and full scansion views.
+ * 4. Metronome (Web Audio API): A highly accurate audio scheduler that reads hexameter scansion data 
+ *    and synthesizes percussive beats synced with visual DOM highlighting.
+ */
+
 const svgPlayVideo = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`;
 const svgReplayVideo = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg>`;
 let currentTranslation = localStorage.getItem("iliad_translation") || "murray";
