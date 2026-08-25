@@ -647,15 +647,7 @@ function scheduler() {
     if (noteIndex >= currentMoraeSequence.length) {
       noteIndex = 0;
       
-      // Clear visual highlight at the exact end of the line's last note
-      const delay = Math.max((nextNoteTime - audioCtx.currentTime) * 1000, 0);
-      setTimeout(() => {
-        if (metronomeIsPlaying) {
-          document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
-        }
-      }, delay);
-      
-      // Add a 2-mora (1 long beat) rest at the end of the line to simulate taking a breath
+      // (Loops seamlessly to the beginning of the line)
        
     }
     
