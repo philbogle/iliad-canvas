@@ -316,6 +316,7 @@ function setTranslation(trans) {
     }
 
     function loadYoutubeVideo() {
+      if (metronomeIsPlaying) playMetronome(); // Stop metronome if playing
       const l = data[currentIdx];
       const iframe = document.getElementById('mainVideoIframe');
       const thumb = document.getElementById('videoThumb');
@@ -330,6 +331,7 @@ function setTranslation(trans) {
     }
 
     function replayVideo() {
+      if (metronomeIsPlaying) playMetronome(); // Stop metronome if playing
       const iframe = document.getElementById('mainVideoIframe');
       if (iframe.style.display === 'none') {
         loadYoutubeVideo();
@@ -539,6 +541,13 @@ function playMetronome() {
     }
     metronomeIsPlaying = false;
     document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
+    
+    // Restore video opacity and clickability
+    const pContainer = document.getElementById('playerContainer');
+    if (pContainer) {
+      pContainer.style.opacity = '1';
+      pContainer.style.pointerEvents = 'auto';
+    }
     document.getElementById('metronomeBtn').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="12" cy="13" r="8"></circle>
   <path d="M12 9v4l2 2"></path>
@@ -558,6 +567,23 @@ function playMetronome() {
   document.getElementById('metronomeBtn').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
   <rect x="6" y="6" width="12" height="12" rx="2"></rect>
 </svg>`;
+
+  // Stop video if it's playing and grey out the container
+  const iframe = document.getElementById('mainVideoIframe');
+  if (iframe && iframe.style.display === 'block') {
+    iframe.src = '';
+    iframe.style.display = 'none';
+    const thumb = document.getElementById('videoThumb');
+    const overlay = document.getElementById('playOverlay');
+    if (thumb) thumb.style.display = 'block';
+    if (overlay) overlay.style.display = 'flex';
+  }
+  
+  const pContainer = document.getElementById('playerContainer');
+  if (pContainer) {
+    pContainer.style.opacity = '0.3';
+    pContainer.style.pointerEvents = 'none';
+  }
   
   scheduler();
 }
