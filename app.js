@@ -448,15 +448,22 @@ function scheduleNote(syllable, time) {
   osc.connect(envelope);
   envelope.connect(audioCtx.destination);
   
-  // Ictus (first beat of foot) gets a higher pitch
-  osc.frequency.value = syllable.isIctus ? 800 : 400;
+  // Create a sharp, percussive "click" sound using a rapid pitch drop (frequency envelope)
+  osc.type = 'triangle';
+  if (syllable.isIctus) {
+    osc.frequency.setValueAtTime(1200, time);
+    osc.frequency.exponentialRampToValueAtTime(50, time + 0.04);
+  } else {
+    osc.frequency.setValueAtTime(600, time);
+    osc.frequency.exponentialRampToValueAtTime(50, time + 0.04);
+  }
   
-  // Woodblock-like envelope
+  // Extremely fast amplitude decay
   envelope.gain.setValueAtTime(1, time);
-  envelope.gain.exponentialRampToValueAtTime(0.001, time + 0.1);
+  envelope.gain.exponentialRampToValueAtTime(0.001, time + 0.04);
   
   osc.start(time);
-  osc.stop(time + 0.1);
+  osc.stop(time + 0.04);
   
   // Visual highlight
   const delay = Math.max((time - audioCtx.currentTime) * 1000, 0);
