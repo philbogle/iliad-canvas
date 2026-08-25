@@ -480,20 +480,28 @@ function nextNote() {
 
 function scheduler() {
   // schedule notes up to 0.1s in the future
-  while (nextNoteTime < audioCtx.currentTime + 0.1 && noteIndex < currentMoraeSequence.length) {
+  while (nextNoteTime < audioCtx.currentTime + 0.1) {
+    if (noteIndex >= currentMoraeSequence.length) {
+      noteIndex = 0;
+      
+      // Clear visual highlight at the exact end of the line's last note
+      const delay = Math.max((nextNoteTime - audioCtx.currentTime) * 1000, 0);
+      setTimeout(() => {
+        if (metronomeIsPlaying) {
+          document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
+        }
+      }, delay);
+      
+      // Add a 2-mora (1 long beat) rest at the end of the line to simulate taking a breath
+      nextNoteTime += 0.44; 
+    }
+    
     scheduleNote(currentMoraeSequence[noteIndex], nextNoteTime);
     nextNote();
   }
   
-  if (noteIndex < currentMoraeSequence.length) {
+  if (metronomeIsPlaying) {
     metronomeTimerID = setTimeout(scheduler, 25);
-  } else {
-    // Done playing
-    setTimeout(() => {
-      metronomeIsPlaying = false;
-    document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
-      document.getElementById('metronomeBtn').innerHTML = '<span style="font-size: 1.1rem;">⏱️</span> Play Beats';
-    }, 500);
   }
 }
 
