@@ -306,12 +306,19 @@ function setTranslation(trans) {
 
     function goToLine(idx) {
       if (idx >= 0 && idx < data.length) {
-        if (metronomeIsPlaying) playMetronome(); // toggles it off
         currentIdx = idx;
         const newUrl = new URL(window.location);
         newUrl.searchParams.set('line', data[idx].num);
         window.history.replaceState(null, '', newUrl);
         renderLine();
+        
+        if (metronomeIsPlaying) {
+          // Restart sequence from the beginning of the new line, keeping the rhythm in sync
+          currentMoraeSequence = parseMoraeSequence();
+          noteIndex = 0;
+          // Clear any visual pills from the old line
+          document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
+        }
       }
     }
 
