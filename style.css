@@ -336,7 +336,7 @@
       font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
-      color: var(--text-main);
+      color: var(--text-light);
       transition: var(--transition);
       display: inline-flex;
       align-items: center;
@@ -346,6 +346,7 @@
     .replay-btn:hover {
       background: var(--surface-active);
       border-color: var(--text-light);
+      color: var(--text-main);
     }
 
     .video-controls {
