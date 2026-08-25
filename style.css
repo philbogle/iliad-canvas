@@ -329,14 +329,14 @@
     }
 
     .replay-btn {
-      background: var(--surface);
-      border: 1px solid var(--border);
+      background: var(--surface-subtle);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
       padding: 0.2rem 0.5rem;
       font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
-      color: var(--text-light);
+      color: var(--text-muted);
       transition: var(--transition);
       display: inline-flex;
       align-items: center;
@@ -345,7 +345,7 @@
 
     .replay-btn:hover {
       background: var(--surface-active);
-      border-color: var(--text-light);
+      border-color: var(--border);
       color: var(--text-main);
     }
 
