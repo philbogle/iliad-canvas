@@ -38,8 +38,8 @@
           <button class="hamburger-btn"
             onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
           <div id="dropdown" class="dropdown-menu">
-            <a href="javascript:void(0)" onclick="openFullLines()">Full Text & Scansion</a>
-            <a href="javascript:void(0)" onclick="openTranslationModal()">Change translation...</a>
+            <a href="javascript:void(0)" onclick="openFullLines()">Full scansion</a>
+            <a href="javascript:void(0)" onclick="openTranslationModal()">Options</a>
             <a href="javascript:void(0)" onclick="openCredits()">Help</a>
           </div>
         </div>
@@ -105,6 +105,11 @@
 
     </div>
 
+  
+  <footer style="text-align: center; margin: 3rem 0 2rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.85rem;">
+    <a href="sources.html" style="color: var(--text-muted); text-decoration: none;">Sources</a>
+  </footer>
+
   </main>
 
   <!-- Word Details Popup Modal -->
@@ -134,7 +139,7 @@
   <div class="modal-backdrop" id="creditsModal" onclick="closeCreditsOnBackdrop(event)">
     <div class="modal-container credits-container">
       <div class="modal-bar">
-        <span>Help & Resources</span>
+        <span>Help</span>
         <button class="modal-close" onclick="closeCredits()">&times;</button>
       </div>
       <div class="credits-scroll">
@@ -166,40 +171,7 @@
             this canvas. Bug reports and corrections are welcome.</em>
         </p>
 
-        <h4>Additional Helpful Resources</h4>
-        <ul>
-          <li><strong>Ben Crowell</strong>: <a href="https://bitbucket.org/ben-crowell/greek_pronunciation/src/master/index.md" target="_blank" rel="noopener">Greek Pronunciation</a> — Information on reconstructed Attic vs. Erasmian pronunciation, tonal accents, and sound recordings of informed readings of the Iliad.</li>
-          <li><strong>polýMATHY #KephalosChallenge</strong>: <a href="https://www.youtube.com/watch?v=KY9IjWJkmAg"
-              target="_blank" rel="noopener">Reciting Homer's Iliad from Memory</a> — The full video showing the
-            recitation of the first 100 lines using the restored Classical Greek pronunciation.</li>
-          <li><strong>David Chamberlain's Hypotactic</strong>: <a href="https://hypotactic.com/homer/iliad1.html"
-              target="_blank" rel="noopener">Homer's Iliad 1</a> — A detailed breakdown of the metrical scansion for
-            every line with audio.</li>
-          <li><strong>Pitch Accents & Pronunciation</strong>: <a
-              href="https://www.youtube.com/watch?v=ge-mq6ZnceU&t=766s" target="_blank" rel="noopener">How to Sound Out
-              Ancient Greek Words</a> — Luke Ranieri's guide</li>
-          <li><strong>Dactylic Hexameter</strong>: <a href="https://www.youtube.com/watch?v=TXtLoGORAq0&t=566s"
-              target="_blank" rel="noopener">The Iliad – What did Ancient Greek poetry sound like?</a> — A practical
-            demonstration of how to chant and recite dactylic hexameter.</li>
-          <li><strong>The Open University</strong>: <a
-              href="https://www.open.edu/openlearn/history-the-arts/introducing-homers-iliad/content-section-0?intro=1"
-              target="_blank" rel="noopener">Introducing Homer's Iliad</a> — A free, short online course providing
-            context on the Trojan War, the "anger of Achilles", and Homeric themes.</li>
-        </ul>
-
-        <h4 style="margin-top: 1.5rem;">Academic References</h4>
-        <ul>
-          <li><strong>W. Sidney Allen</strong>, <a href="https://www.amazon.com/s?k=Vox+Graeca+Sidney+Allen"
-              target="_blank" rel="noopener"><em>Vox Graeca: The Pronunciation of Classical Greek</em></a> (3rd ed.,
-            Cambridge, 1987).</li>
-          <li><strong>Ian Johnston (trans.)</strong>, <a href="https://johnstoniatexts.x10host.com/homer/iliad1html.html" target="_blank" rel="noopener"><em>Homer, The Iliad</em></a> (Vancouver Island University, 2006). Released to the public domain by the translator.</li>
-          <li><strong>Samuel Butler (trans.)</strong>, <a href="https://www.gutenberg.org/ebooks/2199" target="_blank" rel="noopener"><em>The Iliad of Homer</em></a> (Longmans, Green & Co., 1898). English translation is in the public domain. (Names adapted from Roman to Greek).</li>
-          <li><strong>D. B. Monro & T. W. Allen (eds.)</strong>, <a
-              href="https://www.amazon.com/s?k=Homeri+Opera+Tomus+I+Monro+Allen" target="_blank"
-              rel="noopener"><em>Homeri Opera, Tomus I: Ilias I–XII</em></a> (Oxford Classical Texts).</li>
-          <li><strong>Martin L. West</strong>, <a href="https://www.amazon.com/s?k=Greek+Metre+Martin+L.+West"
-              target="_blank" rel="noopener"><em>Greek Metre</em></a> (Oxford University Press, 1982).</li>
-        </ul>
+        
 
         <h4 style="margin-top: 1.5rem;">Open Source License</h4>
         <p style="margin-top: 0.5rem; color: #000000;">
@@ -215,7 +187,7 @@
   <div class="modal-backdrop" id="translationModal" onclick="closeTranslationModalOnBackdrop(event)">
     <div class="modal-container" style="max-width: 400px; height: auto;">
       <div class="modal-bar">
-        <span>Select Translation</span>
+        <span>Options</span>
         <button class="modal-close" onclick="closeTranslationModal()">&times;</button>
       </div>
       <div style="padding: 1.5rem;">

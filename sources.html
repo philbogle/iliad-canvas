@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- 
+  Homer's Iliad - Interactive Study Canvas
+  A vanilla HTML/JS single-page application for learning and reciting the opening lines of Homer's Iliad.
+  Features an embedded YouTube player, metrical scansion breakdowns, and interlinear word-for-word morphology glosses.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homer's Iliad</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Top Nav with Integrated Line Selector -->
+  <nav>
+    <div class="nav-container">
+      <span class="brand-title">Homer's Iliad</span>
+
+      <div style="display: flex; align-items: center;">
+        <div class="header-line-picker">
+          <button class="arrow-btn" id="prevBtn" onclick="prevLine()" title="Previous (←)">❮</button>
+          <div class="line-pills" id="linePills"></div>
+          <button class="arrow-btn" id="nextBtn" onclick="nextLine()" title="Next (→)">❯</button>
+        </div>
+
+        <div class="menu-container">
+          <button class="hamburger-btn"
+            onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
+          <div id="dropdown" class="dropdown-menu">
+            <a href="javascript:void(0)" onclick="openFullLines()">Full scansion</a>
+            <a href="javascript:void(0)" onclick="openTranslationModal()">Options</a>
+            <a href="javascript:void(0)" onclick="openCredits()">Help</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main style="max-width: 800px; margin: 2rem auto; padding: 1rem;">
+    <h2>Sources</h2>
+    <div class="credits-scroll" style="margin-top: 1.5rem;">
+<h4>Additional Helpful Resources</h4>
+        <ul>
+          <li><strong>Ben Crowell</strong>: <a href="https://bitbucket.org/ben-crowell/greek_pronunciation/src/master/index.md" target="_blank" rel="noopener">Greek Pronunciation</a> — Information on reconstructed Attic vs. Erasmian pronunciation, tonal accents, and sound recordings of informed readings of the Iliad.</li>
+          <li><strong>polýMATHY #KephalosChallenge</strong>: <a href="https://www.youtube.com/watch?v=KY9IjWJkmAg"
+              target="_blank" rel="noopener">Reciting Homer's Iliad from Memory</a> — The full video showing the
+            recitation of the first 100 lines using the restored Classical Greek pronunciation.</li>
+          <li><strong>David Chamberlain's Hypotactic</strong>: <a href="https://hypotactic.com/homer/iliad1.html"
+              target="_blank" rel="noopener">Homer's Iliad 1</a> — A detailed breakdown of the metrical scansion for
+            every line with audio.</li>
+          <li><strong>Pitch Accents & Pronunciation</strong>: <a
+              href="https://www.youtube.com/watch?v=ge-mq6ZnceU&t=766s" target="_blank" rel="noopener">How to Sound Out
+              Ancient Greek Words</a> — Luke Ranieri's guide</li>
+          <li><strong>Dactylic Hexameter</strong>: <a href="https://www.youtube.com/watch?v=TXtLoGORAq0&t=566s"
+              target="_blank" rel="noopener">The Iliad – What did Ancient Greek poetry sound like?</a> — A practical
+            demonstration of how to chant and recite dactylic hexameter.</li>
+          <li><strong>The Open University</strong>: <a
+              href="https://www.open.edu/openlearn/history-the-arts/introducing-homers-iliad/content-section-0?intro=1"
+              target="_blank" rel="noopener">Introducing Homer's Iliad</a> — A free, short online course providing
+            context on the Trojan War, the "anger of Achilles", and Homeric themes.</li>
+        </ul>
+
+        <h4 style="margin-top: 1.5rem;">Academic References</h4>
+        <ul>
+          <li><strong>W. Sidney Allen</strong>, <a href="https://www.amazon.com/s?k=Vox+Graeca+Sidney+Allen"
+              target="_blank" rel="noopener"><em>Vox Graeca: The Pronunciation of Classical Greek</em></a> (3rd ed.,
+            Cambridge, 1987).</li>
+          <li><strong>Ian Johnston (trans.)</strong>, <a href="https://johnstoniatexts.x10host.com/homer/iliad1html.html" target="_blank" rel="noopener"><em>Homer, The Iliad</em></a> (Vancouver Island University, 2006). Released to the public domain by the translator.</li>
+          <li><strong>Samuel Butler (trans.)</strong>, <a href="https://www.gutenberg.org/ebooks/2199" target="_blank" rel="noopener"><em>The Iliad of Homer</em></a> (Longmans, Green & Co., 1898). English translation is in the public domain. (Names adapted from Roman to Greek).</li>
+          <li><strong>D. B. Monro & T. W. Allen (eds.)</strong>, <a
+              href="https://www.amazon.com/s?k=Homeri+Opera+Tomus+I+Monro+Allen" target="_blank"
+              rel="noopener"><em>Homeri Opera, Tomus I: Ilias I–XII</em></a> (Oxford Classical Texts).</li>
+          <li><strong>Martin L. West</strong>, <a href="https://www.amazon.com/s?k=Greek+Metre+Martin+L.+West"
+              target="_blank" rel="noopener"><em>Greek Metre</em></a> (Oxford University Press, 1982).</li>
+        </ul>
+    </div>
+  </main>
+  
+  
+  <script>
+    window.onclick = function (event) {
+      if (!event.target.matches('.hamburger-btn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-menu");
+        for (let i = 0; i < dropdowns.length; i++) {
+          if (dropdowns[i].classList.contains('show')) {
+            dropdowns[i].classList.remove('show');
+          }
+        }
+      }
+    };
+  </script>
+
+</body>
+</html>
