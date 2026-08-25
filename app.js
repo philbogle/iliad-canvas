@@ -313,9 +313,13 @@ function setTranslation(trans) {
         renderLine();
         
         if (metronomeIsPlaying) {
-          // Restart sequence from the beginning of the new line, keeping the rhythm in sync
+          // Restart sequence from the beginning of the new line
           currentMoraeSequence = parseMoraeSequence();
           noteIndex = 0;
+          // Add a 2-second pause before resuming the beats for the new line
+          const pauseDuration = 2.0;
+          nextNoteTime = Math.max(nextNoteTime, audioCtx.currentTime) + pauseDuration;
+          
           // Clear any visual pills from the old line
           document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
         }
