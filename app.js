@@ -65,8 +65,8 @@ function setTranslation(trans) {
     };
 
     /**
- * Initializes the application, sets up event listeners, loads preferences from localStorage, and renders the first line.
- */
+     * Initializes the application, sets up event listeners, loads preferences from localStorage, and renders the first line.
+     */
     function init() {
       const params = new URLSearchParams(window.location.search);
       const lineParam = params.get('line');
@@ -126,8 +126,8 @@ function setTranslation(trans) {
       }, {passive: true});
 
       /**
- * Determines swipe direction based on touch coordinates and navigates to next/prev line accordingly.
- */
+       * Determines swipe direction based on touch coordinates and navigates to next/prev line accordingly.
+       */
       function handleSwipe() {
         const diffX = touchEndX - touchStartX;
         const diffY = touchEndY - touchStartY;
@@ -148,8 +148,8 @@ function setTranslation(trans) {
     }
 
     /**
- * Navigates to the next word in the dictionary modal. Closes modal if at the end of the line.
- */
+     * Navigates to the next word in the dictionary modal. Closes modal if at the end of the line.
+     */
     function nextWord() {
       const l = data[currentIdx];
       if (currentWordIdx < l.words.length - 1) {
@@ -158,8 +158,8 @@ function setTranslation(trans) {
     }
 
     /**
- * Navigates to the previous word in the dictionary modal.
- */
+     * Navigates to the previous word in the dictionary modal.
+     */
     function prevWord() {
       if (currentWordIdx > 0) {
         openWordModal(currentWordIdx - 1);
@@ -167,8 +167,8 @@ function setTranslation(trans) {
     }
 
     /**
- * Renders the scansion grid (capsules/pills) representing the metrical feet of the current line.
- */
+     * Renders the scansion grid (capsules/pills) representing the metrical feet of the current line.
+     */
     function renderPills() {
       const container = document.getElementById('linePills');
       container.innerHTML = '';
@@ -202,8 +202,8 @@ function setTranslation(trans) {
     }
 
     /**
- * Renders the full interactive UI for the currently selected line (Greek text, translation, scansion, interlinear words).
- */
+     * Renders the full interactive UI for the currently selected line (Greek text, translation, scansion, interlinear words).
+     */
     function renderLine() {
       const l = data[currentIdx];
 
@@ -300,9 +300,9 @@ function setTranslation(trans) {
     }
 
     /**
- * Opens the dictionary popup modal for a specific word, populating it with morphology and definitions.
- * @param {number} wIdx - The index of the word within the current line.
- */
+     * Opens the dictionary popup modal for a specific word, populating it with morphology and definitions.
+     * @param {number} wIdx - The index of the word within the current line.
+     */
     function openWordModal(wIdx) {
       currentWordIdx = wIdx;
       const l = data[currentIdx];
@@ -345,16 +345,16 @@ function setTranslation(trans) {
     }
 
     /**
- * Closes the word dictionary popup modal.
- */
+     * Closes the word dictionary popup modal.
+     */
     function closeWordModal() {
       document.getElementById('wordModal').classList.remove('open');
     }
 
     /**
- * Navigates the app to a specific line index, updating the URL and metronome state as needed.
- * @param {number} idx - The index of the line in the data array.
- */
+     * Navigates the app to a specific line index, updating the URL and metronome state as needed.
+     * @param {number} idx - The index of the line in the data array.
+     */
     function goToLine(idx) {
       if (idx >= 0 && idx < data.length) {
         currentIdx = idx;
@@ -378,8 +378,8 @@ function setTranslation(trans) {
     }
 
     /**
- * Replaces the video thumbnail with a live YouTube iframe cued to the exact timestamp of the current line.
- */
+     * Replaces the video thumbnail with a live YouTube iframe cued to the exact timestamp of the current line.
+     */
     function loadYoutubeVideo() {
       if (metronomeIsPlaying) playMetronome(); // Stop metronome if playing
       const l = data[currentIdx];
@@ -402,8 +402,8 @@ function setTranslation(trans) {
     }
 
     /**
- * Restarts the video playback for the current line by sending a seekTo command to the YouTube iframe.
- */
+     * Restarts the video playback for the current line by sending a seekTo command to the YouTube iframe.
+     */
     function replayVideo() {
       if (metronomeIsPlaying) playMetronome(); // Stop metronome if playing
       const iframe = document.getElementById('mainVideoIframe');
@@ -426,52 +426,52 @@ function setTranslation(trans) {
     }
 
     /**
- * Advances to the next line in the text.
- */
+     * Advances to the next line in the text.
+     */
     function nextLine() {
       goToLine((currentIdx + 1) % data.length);
     }
 
     /**
- * Goes back to the previous line in the text.
- */
+     * Goes back to the previous line in the text.
+     */
     function prevLine() {
       goToLine((currentIdx - 1 + data.length) % data.length);
     }
 
     /**
- * Opens the Help/Credits modal.
- */
+     * Opens the Help/Credits modal.
+     */
     function openCredits() {
       document.getElementById('creditsModal').classList.add('open');
     }
 
     /**
- * Closes the Help/Credits modal.
- */
+     * Closes the Help/Credits modal.
+     */
     function closeCredits() {
       document.getElementById('creditsModal').classList.remove('open');
     }
 
     /**
- * Closes the word dictionary modal if the user clicks the backdrop.
- * @param {Event} e - The click event.
- */
+     * Closes the word dictionary modal if the user clicks the backdrop.
+     * @param {Event} e - The click event.
+     */
     function closeWordOnBackdrop(e) {
       if (e.target.id === 'wordModal') closeWordModal();
     }
 
     /**
- * Closes the Help/Credits modal if the user clicks the backdrop.
- * @param {Event} e - The click event.
- */
+     * Closes the Help/Credits modal if the user clicks the backdrop.
+     * @param {Event} e - The click event.
+     */
     function closeCreditsOnBackdrop(e) {
       if (e.target.id === 'creditsModal') closeCredits();
     }
 
     /**
- * Opens a modal displaying all lines of the text with their full scansion at once.
- */
+     * Opens a modal displaying all lines of the text with their full scansion at once.
+     */
     function openFullLines() {
       const modal = document.getElementById('fullLinesModal');
       const body = document.getElementById('fullLinesBody');
@@ -516,16 +516,16 @@ function setTranslation(trans) {
     }
 
     /**
- * Closes the full text/scansion modal.
- */
+     * Closes the full text/scansion modal.
+     */
     function closeFullLines() {
       document.getElementById('fullLinesModal').classList.remove('open');
     }
 
     /**
- * Closes the full text/scansion modal if the user clicks the backdrop.
- * @param {Event} e - The click event.
- */
+     * Closes the full text/scansion modal if the user clicks the backdrop.
+     * @param {Event} e - The click event.
+     */
     function closeFullLinesOnBackdrop(e) {
       if (e.target.id === 'fullLinesModal') closeFullLines();
     }
