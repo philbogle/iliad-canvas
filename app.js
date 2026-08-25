@@ -539,7 +539,7 @@ function playMetronome() {
     }
     metronomeIsPlaying = false;
     document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
-    document.getElementById('metronomeBtn').innerHTML = '<span style="font-size: 1.25rem;">⏱️</span>';
+    document.getElementById('metronomeBtn').innerHTML = '⏱️';
     return;
   }
   
@@ -550,7 +550,7 @@ function playMetronome() {
   nextNoteTime = audioCtx.currentTime + 0.05; 
   
   metronomeIsPlaying = true;
-  document.getElementById('metronomeBtn').innerHTML = '<span style="font-size: 1.25rem;">⏹️</span>';
+  document.getElementById('metronomeBtn').innerHTML = '⏹️';
   
   scheduler();
 }
