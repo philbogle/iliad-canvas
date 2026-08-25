@@ -1,4 +1,4 @@
-let currentTranslation = "murray";
+let currentTranslation = localStorage.getItem("iliad_translation") || "murray";
 
 function openTranslationModal() {
   document.getElementById('dropdown').classList.remove('show');
@@ -27,6 +27,7 @@ function closeTranslationModalOnBackdrop(e) {
 
 function setTranslation(trans) {
   currentTranslation = trans;
+  localStorage.setItem("iliad_translation", trans);
   document.getElementById(trans === 'johnston' ? 'radioJohnston' : trans === 'butler' ? 'radioButler' : 'radioMurray').checked = true;
   renderLine();
   closeTranslationModal();
@@ -54,6 +55,16 @@ function setTranslation(trans) {
         const foundIdx = data.findIndex(d => d.num === parseInt(lineParam));
         if (foundIdx !== -1) {
           currentIdx = foundIdx;
+        }
+      }
+
+      
+      const savedTempo = localStorage.getItem('iliad_tempo');
+      if (savedTempo) {
+        const slider = document.getElementById('tempoSlider');
+        if (slider) {
+          slider.value = savedTempo;
+          document.getElementById('tempoLabel').textContent = parseFloat(savedTempo).toFixed(2) + 's per short syllable';
         }
       }
 
@@ -161,6 +172,7 @@ function setTranslation(trans) {
 
     function renderLine() {
       const l = data[currentIdx];
+
       renderPills();
 
       // Greek Line
@@ -417,11 +429,17 @@ function setTranslation(trans) {
 // --- METRONOME FEATURE ---
 let audioCtx;
 let metronomeIsPlaying = false;
-    document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
 let nextNoteTime = 0;
 let noteIndex = 0;
 let metronomeTimerID;
 let currentMoraeSequence = [];
+let moraLength = parseFloat(localStorage.getItem('iliad_tempo')) || 0.22;
+
+function updateTempo(val) {
+  moraLength = parseFloat(val);
+  localStorage.setItem('iliad_tempo', moraLength);
+  document.getElementById('tempoLabel').textContent = moraLength.toFixed(2) + 's per short syllable';
+}
 
 function parseMoraeSequence() {
   const lineData = data[currentIdx];
@@ -477,7 +495,7 @@ function scheduleNote(syllable, time) {
 }
 
 function nextNote() {
-  const moraLength = 0.22; // seconds per mora
+  
   const syllable = currentMoraeSequence[noteIndex];
   
   // Advance time by the duration of the current syllable
@@ -500,7 +518,7 @@ function scheduler() {
       }, delay);
       
       // Add a 2-mora (1 long beat) rest at the end of the line to simulate taking a breath
-      nextNoteTime += 0.44; 
+      nextNoteTime += (2 * moraLength); 
     }
     
     scheduleNote(currentMoraeSequence[noteIndex], nextNoteTime);
@@ -521,7 +539,7 @@ function playMetronome() {
     }
     metronomeIsPlaying = false;
     document.querySelectorAll('#scansionCapsules .scansion-pill').forEach(el => el.classList.remove('active-beat'));
-    document.getElementById('metronomeBtn').innerHTML = '<span style="font-size: 1.1rem;">⏱️</span> Play Beats';
+    document.getElementById('metronomeBtn').innerHTML = '<span style="font-size: 1.25rem;">⏱️</span>';
     return;
   }
   
@@ -532,7 +550,7 @@ function playMetronome() {
   nextNoteTime = audioCtx.currentTime + 0.05; 
   
   metronomeIsPlaying = true;
-  document.getElementById('metronomeBtn').innerHTML = '<span style="font-size: 1.1rem;">⏹️</span> Stop Beats';
+  document.getElementById('metronomeBtn').innerHTML = '<span style="font-size: 1.25rem;">⏹️</span>';
   
   scheduler();
 }
