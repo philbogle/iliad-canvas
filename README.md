@@ -7,9 +7,10 @@ A web app for learning and reciting the opening lines of Homer's *Iliad* (Book 1
 The application features:
 - An embedded YouTube player that auto-seeks to the exact line being recited, using Luke Ranieri's Kephalos challenge recitation.
 - Metrical scansion breakdowns showing long/short syllables and dactylic hexameter feet.
+- **Built-in Web Audio Metronome**: A customizable metronome that generates authentic metrical beats synced with visual scansion highlighting to help you practice reciting in rhythm.
 - Interlinear word-for-word definitions with popup deep-dives.
-- A clean, distraction-free reading mode.
-- Fully responsive design that works on mobile devices.
+- An Options menu for toggling between three different English translations and adjusting the metronome playback speed.
+- Fully responsive design that works seamlessly on mobile devices.
 
 ## 📜 Credits, Thanks, & Disclaimer
 
