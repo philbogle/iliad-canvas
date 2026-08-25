@@ -243,15 +243,15 @@
 
     @media (max-width: 700px) {
       .greek-hero-text {
-        font-size: 1.15rem;
+        font-size: 1.45rem;
       }
 
       .literary-text {
-        font-size: 1.05rem !important;
+        font-size: 1.25rem !important;
       }
 
       .literal-text {
-        font-size: 0.95rem !important;
+        font-size: 1.05rem !important;
       }
     }
 
