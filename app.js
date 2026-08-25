@@ -518,7 +518,7 @@ function scheduler() {
       }, delay);
       
       // Add a 2-mora (1 long beat) rest at the end of the line to simulate taking a breath
-      nextNoteTime += (2 * moraLength); 
+       
     }
     
     scheduleNote(currentMoraeSequence[noteIndex], nextNoteTime);
