@@ -349,6 +349,11 @@
       color: var(--text-main);
     }
 
+
+    .video-controls .replay-btn {
+      flex: 1;
+      justify-content: center;
+    }
     .video-controls {
       display: flex;
       gap: 0.5rem;
