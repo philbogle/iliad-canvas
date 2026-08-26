@@ -353,6 +353,9 @@
     .video-controls .replay-btn {
       flex: 1;
       justify-content: center;
+      padding-left: 0;
+      padding-right: 0;
+      min-width: 0; /* allows shrinking below content size if necessary */
     }
     .video-controls {
       display: flex;
@@ -360,6 +363,8 @@
       justify-content: center;
       align-items: center;
       margin-top: 0.4rem;
+      width: 100%;
+      max-width: 111px;
     }
 
     .video-credit-link {
