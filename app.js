@@ -28,6 +28,12 @@ function openTranslationModal() {
     document.getElementById('radioMurray').checked = true;
   }
   
+  if (currentPerformance === 'polymathy') {
+    document.getElementById('radioPolymathy').checked = true;
+  } else {
+    document.getElementById('radioChamberlain').checked = true;
+  }
+  
   document.getElementById('translationModal').style.display = 'flex';
 }
 
@@ -59,6 +65,25 @@ function setTranslation(trans) {
   renderLine();
   closeTranslationModal();
 }
+function setPerformance(perf) {
+  currentPerformance = perf;
+  localStorage.setItem("iliad_performance", perf);
+  document.getElementById(perf === 'chamberlain' ? 'radioChamberlain' : 'radioPolymathy').checked = true;
+  
+  // If a video is playing, stop it and reload the new performance
+  const iframe = document.getElementById('mainVideoIframe');
+  const audio = document.getElementById('chamberlainAudio');
+  
+  if ((iframe && iframe.style.display === 'block') || (audio && !audio.paused)) {
+    // Both replayVideo and pause routines can be consolidated, but for now we just call replayVideo
+    // to reload the active performance type
+    replayVideo();
+  } else {
+    renderLine(); // update credit links etc.
+  }
+  closeTranslationModal();
+}
+
 
   
     let currentIdx = 0;
@@ -88,6 +113,12 @@ function setTranslation(trans) {
         }
       }
 
+      
+
+      const savedPerf = localStorage.getItem('iliad_performance') || 'chamberlain';
+      currentPerformance = savedPerf;
+      const perfRadio = document.getElementById(savedPerf === 'chamberlain' ? 'radioChamberlain' : 'radioPolymathy');
+      if (perfRadio) perfRadio.checked = true;
       
       const savedTempo = localStorage.getItem('iliad_tempo');
       if (savedTempo) {
@@ -224,10 +255,22 @@ function setTranslation(trans) {
       document.getElementById('greekLine').textContent = l.greek;
 
       // Update embedded iframe and credit link
-      // Update video thumbnail
+      // Update video thumbnail and credits based on performance mode
       const thumb = document.getElementById('videoThumb');
-      if (thumb) {
-        thumb.src = `https://img.youtube.com/vi/${l.video_id}/hqdefault.jpg`;
+      const creditLink = document.getElementById('videoCreditLink');
+      
+      if (thumb && creditLink) {
+        if (currentPerformance === 'polymathy') {
+          thumb.src = `https://img.youtube.com/vi/${l.video_id}/hqdefault.jpg`;
+          creditLink.href = `https://youtube.com/watch?v=${l.video_id}`;
+          creditLink.textContent = "polýMATHY";
+        } else {
+          // For Chamberlain, use a generic audio-centric or plain background.
+          // We can use a data URL SVG for a nice audio placeholder.
+          thumb.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 1422' fill='%23111'%3E%3Crect width='800' height='1422' fill='%23111'/%3E%3Cpath d='M300 600h50v200h-50zM400 500h50v400h-50zM500 550h50v300h-50z' fill='%23666'/%3E%3C/svg%3E";
+          creditLink.href = "https://hypotactic.com/homer/iliad1.html";
+          creditLink.textContent = "David Chamberlain";
+        }
         thumb.style.display = 'block';
         document.getElementById('playOverlay').style.display = 'flex';
       }
@@ -238,15 +281,16 @@ function setTranslation(trans) {
         iframe.src = '';
       }
       
+      const audio = document.getElementById('chamberlainAudio');
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+      
       const btn = document.getElementById('playVideoBtn');
       if (btn) {
         btn.innerHTML = svgPlayVideo;
-        btn.title = "Play Video";
-      }
-
-      const creditLink = document.getElementById('videoCreditLink');
-      if (creditLink) {
-        creditLink.href = `https://youtube.com/watch?v=${l.video_id}`;
+        btn.title = currentPerformance === 'polymathy' ? "Play Video" : "Play Audio";
       }
 
       // Translation
@@ -391,24 +435,55 @@ function setTranslation(trans) {
     /**
      * Replaces the video thumbnail with a live YouTube iframe cued to the exact timestamp of the current line.
      */
-    function loadYoutubeVideo() {
+    function loadPerformance() {
       if (metronomeIsPlaying) playMetronome(); // Stop metronome if playing
       const l = data[currentIdx];
       const iframe = document.getElementById('mainVideoIframe');
+      let audio = document.getElementById('chamberlainAudio');
       const thumb = document.getElementById('videoThumb');
       const overlay = document.getElementById('playOverlay');
+      const btn = document.getElementById('playVideoBtn');
 
-      if (iframe && iframe.style.display === 'none') {
-        thumb.style.display = 'none';
-        overlay.style.display = 'none';
-        iframe.src = `https://www.youtube.com/embed/${l.video_id}?start=${Math.floor(l.start_sec)}&end=${Math.ceil(l.end_sec)}&playsinline=1&enablejsapi=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&autoplay=1`;
-        iframe.style.display = 'block';
+      if (currentPerformance === 'polymathy') {
+        if (audio) { audio.pause(); audio.currentTime = 0; }
+        if (iframe && iframe.style.display === 'none') {
+          thumb.style.display = 'none';
+          overlay.style.display = 'none';
+          iframe.src = `https://www.youtube.com/embed/${l.video_id}?start=${Math.floor(l.start_sec)}&end=${Math.ceil(l.end_sec)}&playsinline=1&enablejsapi=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&autoplay=1`;
+          iframe.style.display = 'block';
+          
+          if (btn) {
+            btn.innerHTML = svgReplayVideo;
+            btn.title = "Replay line";
+          }
+        }
+      } else {
+        if (iframe) { iframe.src = ''; iframe.style.display = 'none'; }
+        if (!audio) {
+          audio = document.createElement('audio');
+          audio.id = 'chamberlainAudio';
+          document.body.appendChild(audio);
+        }
         
-        const btn = document.getElementById('playVideoBtn');
+        // Chamberlain uses URL like https://hypotactic.com/homer/audio/1/line_1.mp4
+        audio.src = `https://hypotactic.com/homer/audio/1/line_${l.num}.mp4`;
+        audio.play().catch(e => console.error("Audio play failed", e));
+        
+        // Keep the thumbnail visible, just hide the play overlay while playing
+        overlay.style.display = 'none';
+        
         if (btn) {
           btn.innerHTML = svgReplayVideo;
           btn.title = "Replay line";
         }
+        
+        audio.onended = () => {
+          overlay.style.display = 'flex';
+          if (btn) {
+            btn.innerHTML = svgPlayVideo;
+            btn.title = "Play Audio";
+          }
+        };
       }
     }
 
@@ -417,23 +492,33 @@ function setTranslation(trans) {
      */
     function replayVideo() {
       if (metronomeIsPlaying) playMetronome(); // Stop metronome if playing
-      const iframe = document.getElementById('mainVideoIframe');
-      if (iframe.style.display === 'none') {
-        loadYoutubeVideo();
-        return;
+      
+      if (currentPerformance === 'polymathy') {
+        const iframe = document.getElementById('mainVideoIframe');
+        if (iframe.style.display === 'none') {
+          loadPerformance();
+          return;
+        }
+        const l = data[currentIdx];
+        iframe.contentWindow.postMessage(JSON.stringify({
+          event: 'command',
+          func: 'seekTo',
+          args: [l.start_sec, true]
+        }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({
+          event: 'command',
+          func: 'playVideo',
+          args: []
+        }), '*');
+      } else {
+        const audio = document.getElementById('chamberlainAudio');
+        if (!audio || audio.paused || audio.ended || audio.src === '') {
+          loadPerformance();
+        } else {
+          audio.currentTime = 0;
+          audio.play().catch(e => console.error("Audio replay failed", e));
+        }
       }
-      const l = data[currentIdx];
-      // Send postMessage to YouTube player to seek to start and play
-      iframe.contentWindow.postMessage(JSON.stringify({
-        event: 'command',
-        func: 'seekTo',
-        args: [l.start_sec, true]
-      }), '*');
-      iframe.contentWindow.postMessage(JSON.stringify({
-        event: 'command',
-        func: 'playVideo',
-        args: []
-      }), '*');
     }
 
     /**
@@ -699,11 +784,20 @@ function playMetronome() {
   <rect x="6" y="6" width="12" height="12" rx="2"></rect>
 </svg>`;
 
-  // Stop video if it's playing and grey out the container
+  // Stop video/audio if it's playing and grey out the container
   const iframe = document.getElementById('mainVideoIframe');
-  if (iframe && iframe.style.display === 'block') {
-    iframe.src = '';
-    iframe.style.display = 'none';
+  const audio = document.getElementById('chamberlainAudio');
+  
+  if (audio) {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+  
+  if ((iframe && iframe.style.display === 'block') || (audio && !audio.paused)) {
+    if (iframe) {
+      iframe.src = '';
+      iframe.style.display = 'none';
+    }
     const thumb = document.getElementById('videoThumb');
     const overlay = document.getElementById('playOverlay');
     if (thumb) thumb.style.display = 'block';
@@ -712,7 +806,7 @@ function playMetronome() {
     const btn = document.getElementById('playVideoBtn');
     if (btn) {
       btn.innerHTML = svgPlayVideo;
-      btn.title = "Play Video";
+      btn.title = currentPerformance === 'polymathy' ? "Play Video" : "Play Audio";
     }
   }
   

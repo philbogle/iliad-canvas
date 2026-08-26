@@ -92,7 +92,7 @@
         <div class="hero-video-col">
           
           <a id="videoCreditLink" href="https://youtube.com/watch?v=-XkCyIRmdFg" target="_blank" rel="noopener" class="video-credit-link" style="margin-bottom: 0.25rem;">polýMATHY</a>
-          <div class="player-container" id="playerContainer" onclick="loadYoutubeVideo()" style="cursor: pointer;">
+          <div class="player-container" id="playerContainer" onclick="replayVideo()" style="cursor: pointer;">
             <img id="videoThumb" src="" alt="Video Thumbnail"
               style="width: 100%; height: 100%; object-fit: cover; display: block;">
             <div id="playOverlay"
@@ -242,6 +242,24 @@
           </label>
         </div>
 
+        
+        <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--text-main);">Performance Audio</h4>
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: flex; align-items: center; cursor: pointer; padding: 0.5rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); margin-bottom: 0.5rem;" onclick="setPerformance('chamberlain')">
+            <input type="radio" name="perf" value="chamberlain" id="radioChamberlain" style="margin-right: 0.75rem;">
+            <div>
+              <div style="font-weight: bold; color: var(--text-main);">David Chamberlain</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Hypotactic.com. Clear metrical reading.</div>
+            </div>
+          </label>
+          <label style="display: flex; align-items: center; cursor: pointer; padding: 0.5rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);" onclick="setPerformance('polymathy')">
+            <input type="radio" name="perf" value="polymathy" id="radioPolymathy" style="margin-right: 0.75rem;">
+            <div>
+              <div style="font-weight: bold; color: var(--text-main);">polýMATHY (Luke Ranieri)</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Memory recitation. Restored 3-pitch chanting.</div>
+            </div>
+          </label>
+        </div>
         <h4 style="margin-top: 0; margin-bottom: 0.75rem; color: var(--text-main);">Metronome Speed</h4>
         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
           <span style="font-size: 0.85rem; color: var(--text-muted);">Fast</span>
@@ -254,7 +272,7 @@
   </div>
 
   <script src="data.js"></script>
-  <script src="app.js?v=17"></script>
+  <script src="app.js?v=18"></script>
 </body>
 
 </html>
