@@ -353,16 +353,18 @@
     .video-controls .replay-btn {
       flex: 1;
       justify-content: center;
+      padding-top: 0.35rem;
+      padding-bottom: 0.35rem;
     }
     .video-controls {
       display: flex;
       gap: 0.5rem;
       justify-content: flex-start;
       align-items: center;
-      margin-top: 0.4rem;
-      width: max-content;
+      margin-top: 0.5rem;
+      width: 100%;
+      max-width: 280px; /* allows them to be nicely wide but not taking up the whole screen */
       align-self: flex-start;
-      margin-left: -10px; /* shift them closer to the left side of the panel */
     }
 
     .video-credit-link {
