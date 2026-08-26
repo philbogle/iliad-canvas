@@ -269,7 +269,7 @@ function setPerformance(perf) {
           // We can use a data URL SVG for a nice audio placeholder.
           thumb.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 1422' fill='%23111'%3E%3Crect width='800' height='1422' fill='%23111'/%3E%3Cpath d='M300 600h50v200h-50zM400 500h50v400h-50zM500 550h50v300h-50z' fill='%23666'/%3E%3C/svg%3E";
           creditLink.href = "https://hypotactic.com/homer/iliad1.html";
-          creditLink.textContent = "David Chamberlain";
+          creditLink.textContent = "Hypotactic";
         }
         thumb.style.display = 'block';
         document.getElementById('playOverlay').style.display = 'flex';
