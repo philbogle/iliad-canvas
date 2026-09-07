@@ -5,7 +5,7 @@
 A web app for learning and reciting the opening lines of Homer's *Iliad* (Book 1, Lines 1-21).
 
 The application features:
-- **Performance Audio Options**: An interactive player that allows you to switch between David Chamberlain's clear metrical reading and Luke Ranieri's (polýMATHY) restored 3-pitch chanting.
+- **Performance Audio Options**: An interactive player that allows you to switch between three vocal performances: Luke Ranieri's (polýMATHY) restored 3-pitch chanting, David Chamberlain's clear metrical reading (Erasmian), and the "Greek History" channel's archaic sung recitation.
 - Metrical scansion breakdowns showing long/short syllables and dactylic hexameter feet.
 - **Built-in Web Audio Metronome**: A metronome that generates metrical beats synced with visual scansion highlighting to help you practice reciting in rhythm.
 - Interlinear word-for-word definitions with popup deep-dives.

@@ -31,6 +31,8 @@ function openTranslationModal() {
   
   if (currentPerformance === 'polymathy') {
     document.getElementById('radioPolymathy').checked = true;
+  } else if (currentPerformance === 'greekhistory') {
+    document.getElementById('radioGreekHistory').checked = true;
   } else {
     document.getElementById('radioChamberlain').checked = true;
   }
@@ -69,7 +71,7 @@ function setTranslation(trans) {
 function setPerformance(perf) {
   currentPerformance = perf;
   localStorage.setItem("iliad_performance", perf);
-  document.getElementById(perf === 'chamberlain' ? 'radioChamberlain' : 'radioPolymathy').checked = true;
+  document.getElementById(perf === 'chamberlain' ? 'radioChamberlain' : perf === 'greekhistory' ? 'radioGreekHistory' : 'radioPolymathy').checked = true;
   
   // If a video is playing, stop it and reload the new performance
   const iframe = document.getElementById('mainVideoIframe');
@@ -118,7 +120,7 @@ function setPerformance(perf) {
 
       const savedPerf = localStorage.getItem('iliad_performance') || 'polymathy';
       currentPerformance = savedPerf;
-      const perfRadio = document.getElementById(savedPerf === 'chamberlain' ? 'radioChamberlain' : 'radioPolymathy');
+      const perfRadio = document.getElementById(savedPerf === 'chamberlain' ? 'radioChamberlain' : savedPerf === 'greekhistory' ? 'radioGreekHistory' : 'radioPolymathy');
       if (perfRadio) perfRadio.checked = true;
       
       const savedTempo = localStorage.getItem('iliad_tempo');
@@ -265,6 +267,10 @@ function setPerformance(perf) {
           thumb.src = `https://img.youtube.com/vi/${l.video_id}/hqdefault.jpg`;
           creditLink.href = `https://youtube.com/watch?v=${l.video_id}`;
           creditLink.textContent = "polýMATHY";
+        } else if (currentPerformance === 'greekhistory') {
+          thumb.src = `https://img.youtube.com/vi/${l.video2_id}/hqdefault.jpg`;
+          creditLink.href = `https://youtube.com/watch?v=${l.video2_id}`;
+          creditLink.textContent = "Greek History";
         } else {
           // For Chamberlain, use a generic audio-centric or plain background.
           // We can use a data URL SVG for a nice audio placeholder.
@@ -291,7 +297,7 @@ function setPerformance(perf) {
       const btn = document.getElementById('playVideoBtn');
       if (btn) {
         btn.innerHTML = svgPlayVideo;
-        btn.title = currentPerformance === 'polymathy' ? "Play Video" : "Play Audio";
+        btn.title = (currentPerformance === 'polymathy' || currentPerformance === 'greekhistory') ? "Play Video" : "Play Audio";
       }
 
       // Translation
@@ -445,12 +451,15 @@ function setPerformance(perf) {
       const overlay = document.getElementById('playOverlay');
       const btn = document.getElementById('playVideoBtn');
 
-      if (currentPerformance === 'polymathy') {
+      if (currentPerformance === 'polymathy' || currentPerformance === 'greekhistory') {
         if (audio) { audio.pause(); audio.currentTime = 0; }
         if (iframe && iframe.style.display === 'none') {
           thumb.style.display = 'none';
           overlay.style.display = 'none';
-          iframe.src = `https://www.youtube.com/embed/${l.video_id}?start=${Math.floor(l.start_sec)}&end=${Math.ceil(l.end_sec)}&playsinline=1&enablejsapi=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&autoplay=1`;
+          let vid = currentPerformance === 'polymathy' ? l.video_id : l.video2_id;
+          let s_sec = currentPerformance === 'polymathy' ? l.start_sec : l.start2_sec;
+          let e_sec = currentPerformance === 'polymathy' ? l.end_sec : l.end2_sec;
+          iframe.src = `https://www.youtube.com/embed/${vid}?start=${Math.floor(s_sec)}&end=${Math.ceil(e_sec)}&playsinline=1&enablejsapi=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&autoplay=1`;
           iframe.style.display = 'block';
           
           if (btn) {
@@ -494,17 +503,18 @@ function setPerformance(perf) {
     function replayVideo() {
       if (metronomeIsPlaying) playMetronome(); // Stop metronome if playing
       
-      if (currentPerformance === 'polymathy') {
+      if (currentPerformance === 'polymathy' || currentPerformance === 'greekhistory') {
         const iframe = document.getElementById('mainVideoIframe');
         if (iframe.style.display === 'none') {
           loadPerformance();
           return;
         }
         const l = data[currentIdx];
+        let s_sec = currentPerformance === 'polymathy' ? l.start_sec : l.start2_sec;
         iframe.contentWindow.postMessage(JSON.stringify({
           event: 'command',
           func: 'seekTo',
-          args: [l.start_sec, true]
+          args: [s_sec, true]
         }), '*');
         iframe.contentWindow.postMessage(JSON.stringify({
           event: 'command',
@@ -807,7 +817,7 @@ function playMetronome() {
     const btn = document.getElementById('playVideoBtn');
     if (btn) {
       btn.innerHTML = svgPlayVideo;
-      btn.title = currentPerformance === 'polymathy' ? "Play Video" : "Play Audio";
+      btn.title = (currentPerformance === 'polymathy' || currentPerformance === 'greekhistory') ? "Play Video" : "Play Audio";
     }
   }
   

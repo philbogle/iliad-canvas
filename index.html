@@ -252,11 +252,18 @@
               <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Hypotactic.com. Clear metrical reading (Erasmian pronunciation).</div>
             </div>
           </label>
-          <label style="display: flex; align-items: center; cursor: pointer; padding: 0.5rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);" onclick="setPerformance('polymathy')">
+          <label style="display: flex; align-items: center; cursor: pointer; padding: 0.5rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); margin-bottom: 0.5rem;" onclick="setPerformance('polymathy')">
             <input type="radio" name="perf" value="polymathy" id="radioPolymathy" style="margin-right: 0.75rem;">
             <div>
               <div style="font-weight: bold; color: var(--text-main);">polýMATHY (Luke Ranieri)</div>
               <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Memory recitation. Restored 3-pitch chanting (Reconstructed Attic).</div>
+            </div>
+          </label>
+          <label style="display: flex; align-items: center; cursor: pointer; padding: 0.5rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);" onclick="setPerformance('greekhistory')">
+            <input type="radio" name="perf" value="greekhistory" id="radioGreekHistory" style="margin-right: 0.75rem;">
+            <div>
+              <div style="font-weight: bold; color: var(--text-main);">Greek History</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Lines 1-21 Sung (Restored Archaic Greek).</div>
             </div>
           </label>
         </div>
@@ -272,7 +279,7 @@
   </div>
 
   <script src="data.js"></script>
-  <script src="app.js?v=20"></script>
+  <script src="app.js?v=21"></script>
 </body>
 
 </html>
