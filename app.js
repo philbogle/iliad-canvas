@@ -12,7 +12,7 @@
 const svgPlayVideo = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`;
 const svgReplayVideo = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg>`;
 let currentTranslation = localStorage.getItem("iliad_translation") || "murray";
-let currentPerformance = localStorage.getItem("iliad_performance") || "polymathy";
+let currentPerformance = localStorage.getItem("iliad_performance") || "greekhistory";
 
 /**
  * Opens the Translation/Options modal and sets the active translation radio button.
@@ -118,17 +118,7 @@ function setPerformance(perf) {
 
       
 
-      const urlParams = new URLSearchParams(window.location.search);
-      const isAdv = urlParams.get('adv') === '1';
-      if (isAdv) {
-        const label = document.getElementById('labelGreekHistory');
-        if (label) label.style.display = 'flex';
-      } else if (currentPerformance === 'greekhistory') {
-        currentPerformance = 'polymathy';
-        localStorage.setItem('iliad_performance', 'polymathy');
-      }
-
-      const savedPerf = localStorage.getItem('iliad_performance') || 'polymathy';
+      const savedPerf = localStorage.getItem('iliad_performance') || 'greekhistory';
       currentPerformance = savedPerf;
       const perfRadio = document.getElementById(savedPerf === 'chamberlain' ? 'radioChamberlain' : savedPerf === 'greekhistory' ? 'radioGreekHistory' : 'radioPolymathy');
       if (perfRadio) perfRadio.checked = true;
