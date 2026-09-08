@@ -123,6 +123,13 @@ function setPerformance(perf) {
       const perfRadio = document.getElementById(savedPerf === 'chamberlain' ? 'radioChamberlain' : savedPerf === 'greekhistory' ? 'radioGreekHistory' : 'radioPolymathy');
       if (perfRadio) perfRadio.checked = true;
       
+      const savedTheater = localStorage.getItem('iliad_theater') === '1';
+      if (savedTheater) {
+        document.body.classList.add('theater-mode');
+        const cb = document.getElementById('theaterCheckbox');
+        if (cb) cb.checked = true;
+      }
+      
       const savedTempo = localStorage.getItem('iliad_tempo');
       if (savedTempo) {
         const slider = document.getElementById('tempoSlider');
@@ -459,7 +466,7 @@ function setPerformance(perf) {
           let vid = currentPerformance === 'polymathy' ? l.video_id : l.video2_id;
           let s_sec = currentPerformance === 'polymathy' ? l.start_sec : l.start2_sec;
           let e_sec = currentPerformance === 'polymathy' ? l.end_sec : l.end2_sec;
-          iframe.src = `https://www.youtube.com/embed/${vid}?start=${Math.floor(s_sec)}&end=${Math.ceil(e_sec)}&playsinline=1&enablejsapi=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&autoplay=1`;
+          iframe.src = `https://www.youtube.com/embed/${vid}?start=${Math.floor(s_sec)}&end=${Math.ceil(e_sec)}&playsinline=1&enablejsapi=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=3&autoplay=1`;
           iframe.onload = () => {
             if (iframe.src) {
               iframe.contentWindow.postMessage(JSON.stringify({
@@ -467,11 +474,36 @@ function setPerformance(perf) {
                 func: 'seekTo',
                 args: [s_sec, true]
               }), '*');
+
               iframe.contentWindow.postMessage(JSON.stringify({
                 event: 'command',
                 func: 'playVideo',
                 args: []
               }), '*');
+              setTimeout(() => {
+                if (iframe.contentWindow) {
+                  iframe.contentWindow.postMessage(JSON.stringify({
+                    event: 'command',
+                    func: 'unloadModule',
+                    args: ['captions']
+                  }), '*');
+                  iframe.contentWindow.postMessage(JSON.stringify({
+                    event: 'command',
+                    func: 'setOption',
+                    args: ['captions', 'track', {}]
+                  }), '*');
+                }
+              }, 500);
+              setTimeout(() => {
+                if (iframe.contentWindow) {
+                  iframe.contentWindow.postMessage(JSON.stringify({
+                    event: 'command',
+                    func: 'unloadModule',
+                    args: ['captions']
+                  }), '*');
+                }
+              }, 1500);
+
             }
           };
           iframe.style.display = 'block';
@@ -530,6 +562,15 @@ function setPerformance(perf) {
           func: 'seekTo',
           args: [s_sec, true]
         }), '*');
+        setTimeout(() => {
+          if (iframe.contentWindow) {
+            iframe.contentWindow.postMessage(JSON.stringify({
+              event: 'command',
+              func: 'unloadModule',
+              args: ['captions']
+            }), '*');
+          }
+        }, 100);
         iframe.contentWindow.postMessage(JSON.stringify({
           event: 'command',
           func: 'playVideo',
@@ -847,6 +888,12 @@ function playMetronome() {
 /**
  * Toggles theater mode for the video.
  */
-function toggleTheaterMode() {
-  document.body.classList.toggle('theater-mode');
+function toggleTheaterMode(isChecked) {
+  if (isChecked) {
+    document.body.classList.add('theater-mode');
+    localStorage.setItem('iliad_theater', '1');
+  } else {
+    document.body.classList.remove('theater-mode');
+    localStorage.setItem('iliad_theater', '0');
+  }
 }
