@@ -470,6 +470,20 @@ function setPerformance(perf) {
           let s_sec = currentPerformance === 'polymathy' ? l.start_sec : l.start2_sec;
           let e_sec = currentPerformance === 'polymathy' ? l.end_sec : l.end2_sec;
           iframe.src = `https://www.youtube.com/embed/${vid}?start=${Math.floor(s_sec)}&end=${Math.ceil(e_sec)}&playsinline=1&enablejsapi=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&autoplay=1`;
+          iframe.onload = () => {
+            if (iframe.src) {
+              iframe.contentWindow.postMessage(JSON.stringify({
+                event: 'command',
+                func: 'seekTo',
+                args: [s_sec, true]
+              }), '*');
+              iframe.contentWindow.postMessage(JSON.stringify({
+                event: 'command',
+                func: 'playVideo',
+                args: []
+              }), '*');
+            }
+          };
           iframe.style.display = 'block';
           
           if (btn) {
