@@ -843,3 +843,10 @@ function playMetronome() {
   
   scheduler();
 }
+
+/**
+ * Toggles theater mode for the video.
+ */
+function toggleTheaterMode() {
+  document.body.classList.toggle('theater-mode');
+}

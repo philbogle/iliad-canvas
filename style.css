@@ -883,3 +883,20 @@
   visibility: visible;
   opacity: 1;
 }
+
+/* Theater Mode */
+body.theater-mode .unified-hero-card {
+  grid-template-columns: 1fr;
+}
+body.theater-mode .hero-video-col {
+  width: 100%;
+  order: -1;
+}
+body.theater-mode .player-container {
+  max-width: 100%;
+  max-height: 70vh;
+  aspect-ratio: 16/9;
+}
+body.theater-mode .player-container img {
+  object-fit: contain !important;
+}
