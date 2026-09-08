@@ -270,7 +270,7 @@ function setPerformance(perf) {
         } else if (currentPerformance === 'greekhistory') {
           thumb.src = `https://img.youtube.com/vi/${l.video2_id}/hqdefault.jpg`;
           creditLink.href = `https://youtube.com/watch?v=${l.video2_id}`;
-          creditLink.textContent = "Greek History";
+          creditLink.textContent = "Perkʷunós";
         } else {
           // For Chamberlain, use a generic audio-centric or plain background.
           // We can use a data URL SVG for a nice audio placeholder.

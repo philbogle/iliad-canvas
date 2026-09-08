@@ -5,7 +5,7 @@
 A web app for learning and reciting the opening lines of Homer's *Iliad* (Book 1, Lines 1-21).
 
 The application features:
-- **Performance Audio Options**: An interactive player that allows you to switch between three vocal performances: Luke Ranieri's (polýMATHY) restored 3-pitch chanting, David Chamberlain's clear metrical reading (Erasmian), and the "Greek History" channel's archaic sung recitation.
+- **Performance Audio Options**: An interactive player that allows you to switch between three vocal performances: Luke Ranieri's (polýMATHY) restored 3-pitch chanting, David Chamberlain's clear metrical reading (Erasmian), and the Perkʷunós' archaic sung recitation.
 - Metrical scansion breakdowns showing long/short syllables and dactylic hexameter feet.
 - **Built-in Web Audio Metronome**: A metronome that generates metrical beats synced with visual scansion highlighting to help you practice reciting in rhythm.
 - Interlinear word-for-word definitions with popup deep-dives.
@@ -20,6 +20,7 @@ I want to extend my thanks to the following authoritative sources that made this
 
 - **[Ben Crowell](https://bitbucket.org/ben-crowell/greek_pronunciation/src/master/index.md)**: Whose comprehensive guide to Greek pronunciation provides deep information on reconstructed Attic vs. Erasmian pronunciation, tonal accents, and sound recordings of informed readings of the Iliad.
 - **[Luke Ranieri (polýMATHY)](https://www.youtube.com/@polymathy)**: The audio and video rely on Luke's `#KephalosChallenge` recitations and his 3-pitch restored chanting method. His full recording of [Iliad Book 1, lines 1-100](https://luke-ranieri.myshopify.com/products/iliad-100-homers-iliad-book-1-lines-1-100) is available on his store.
+- **Perkʷunós**: For their beautifully sung recitation of the first 21 lines in restored Archaic Greek ([video link](https://youtu.be/KX4yuMN6pPI)).
 - **[Wikimedia Commons](https://commons.wikimedia.org/)**: The audio files in the pronunciation guide were sourced from their extensive public domain repository of IPA pronunciation audio.
 - **[The Perseids Project](https://perseids.org/) (Tufts University)**: All of the automated grammatical parsing (Part of Speech, Voice, Mood, Case) and dictionary Lemmas were fetched using their Morpheus API.
 - **David Chamberlain ([Hypotactic](https://hypotactic.com/homer/iliad1.html))**: The dactylic hexameter scansion logic (accurate syllable lengths, positional lengthening, and hiatus) was sourced directly from their metrical CSV datasets. His clear, line-by-line audio recitations of the Greek text are also featured natively in the app.
