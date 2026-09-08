@@ -5,7 +5,7 @@ const data = [
     "video_id": "-XkCyIRmdFg",
     "video2_id": "KX4yuMN6pPI",
     "start_sec": 36,
-    "start2_sec": 20.5,
+    "start2_sec": 21.5,
     "end_sec": 43,
     "end2_sec": 26.79,
     "greek": "Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος",
