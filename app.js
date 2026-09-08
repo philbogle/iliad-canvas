@@ -118,6 +118,16 @@ function setPerformance(perf) {
 
       
 
+      const urlParams = new URLSearchParams(window.location.search);
+      const isAdv = urlParams.get('adv') === '1';
+      if (isAdv) {
+        const label = document.getElementById('labelGreekHistory');
+        if (label) label.style.display = 'flex';
+      } else if (currentPerformance === 'greekhistory') {
+        currentPerformance = 'polymathy';
+        localStorage.setItem('iliad_performance', 'polymathy');
+      }
+
       const savedPerf = localStorage.getItem('iliad_performance') || 'polymathy';
       currentPerformance = savedPerf;
       const perfRadio = document.getElementById(savedPerf === 'chamberlain' ? 'radioChamberlain' : savedPerf === 'greekhistory' ? 'radioGreekHistory' : 'radioPolymathy');
