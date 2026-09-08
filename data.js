@@ -1335,7 +1335,7 @@ const data = [
     "start_sec": 51,
     "start2_sec": 56.21,
     "end_sec": 58,
-    "end2_sec": 62.0,
+    "end2_sec": 62.5,
     "greek": "Ἀτρεΐδης τε ἄναξ ἀνδρῶν καὶ δῖος Ἀχιλλεύς.",
     "ipa": "[a.tre.íː.dɛːs te á.naks an.dró͜òːn kai̯ dí͜ìː.os a.kʰil.leús]",
     "translit_phonetic": "ah-treh-ÉE-days teh ÁH-nahks ahn-DRÓHN kye DÉE-os ah-kil-LEÚS",
