@@ -25,19 +25,20 @@
   <!-- Top Nav with Integrated Line Selector -->
   <nav>
     <div class="nav-container">
-      <a href="index.html" class="brand-title" style="text-decoration: none; color: inherit;">Homer's Iliad</a>
+      <div style="flex: 1; min-width: max-content;">
+        <a href="index.html" class="brand-title" style="text-decoration: none; color: inherit;">Homer's Iliad</a>
+      </div>
 
-      <div style="display: flex; align-items: center;">
-        <div class="header-line-picker">
-          <button class="arrow-btn" id="prevBtn" onclick="prevLine()" title="Previous (←)">❮</button>
-          <div class="line-pills" id="linePills"></div>
-          <button class="arrow-btn" id="nextBtn" onclick="nextLine()" title="Next (→)">❯</button>
-        </div>
+      <div class="header-line-picker" style="display: flex; justify-content: center; margin: 0 1rem;">
+        <button class="arrow-btn" id="prevBtn" onclick="prevLine()" title="Previous (←)">❮</button>
+        <div class="line-pills" id="linePills"></div>
+        <button class="arrow-btn" id="nextBtn" onclick="nextLine()" title="Next (→)">❯</button>
+      </div>
 
-        <div class="menu-container">
-          <button class="hamburger-btn"
-            onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
-          <div id="dropdown" class="dropdown-menu">
+      <div class="menu-container" style="flex: 1; display: flex; justify-content: flex-end; position: relative;">
+        <button class="hamburger-btn"
+          onclick="document.getElementById('dropdown').classList.toggle('show')">☰</button>
+        <div id="dropdown" class="dropdown-menu">
             <a href="javascript:void(0)" onclick="openTranslationModal()">Options</a>
             <a href="javascript:void(0)" onclick="openCredits()">Help</a>
             <hr style="margin: 0.25rem 0; border: none; border-top: 1px solid var(--border-subtle);">
@@ -45,7 +46,6 @@
             <a href="pronunciation.html">Pronunciation Guide</a>
           </div>
         </div>
-      </div>
     </div>
   </nav>
 
