@@ -2035,7 +2035,7 @@ const data = [
         "pos": "Noun • Dative Singular Masculine",
         "gloss": "king",
         "root": "Lemma: βασιλεύς",
-        "note": "Dative with χολωθεὶς, referring to Agamemnon. From cholos (wrath, bile). Cognate with English cholera, choleric, melancholy."
+        "note": "Dative with χολωθεὶς, referring to Agamemnon."
       },
       {
         "greek": "χολωθεὶς",
@@ -2044,7 +2044,7 @@ const data = [
         "pos": "Verb • Aorist Passive Participle Nominative Singular Masculine",
         "gloss": "having been angered",
         "root": "χολόω (to anger)",
-        "note": "Aorist participle expressing cause."
+        "note": "Aorist participle expressing cause. From cholos (wrath, bile). Cognate with English cholera, choleric, melancholy."
       }
     ]
   },
