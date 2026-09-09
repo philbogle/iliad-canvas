@@ -1736,7 +1736,7 @@ const data = [
         "pos": "Pronoun • Interrogative Nominative Singular Masculine",
         "gloss": "who?",
         "root": "*kʷis (who, what)",
-        "note": "Interrogative pronoun starting the question."
+        "note": "Interrogative pronoun starting the question. Cognate with Latin quis, English who / what."
       },
       {
         "greek": "τ᾽",
@@ -1745,7 +1745,7 @@ const data = [
         "pos": "Particle • Enclitic",
         "gloss": "and",
         "root": "*kʷe (and)",
-        "note": "Elided form of τε."
+        "note": "Elided form of τε. Cognate with Latin -que."
       },
       {
         "greek": "ἄρ",
@@ -1790,7 +1790,7 @@ const data = [
         "pos": "Verb • Aorist Active Indicative Singular 3rd",
         "gloss": "brought together / drove",
         "root": "Lemma: συνίημι",
-        "note": "Often used of throwing together in conflict."
+        "note": "Often used of throwing together in conflict. From syn- (together) + hiemi (throw). Root of synthesis, syntax."
       },
       {
         "greek": "μάχεσθαι",
@@ -1981,7 +1981,7 @@ const data = [
         "pos": "Proper Noun • Genitive Singular Feminine",
         "gloss": "of Leto",
         "root": "",
-        "note": "Mother of Apollo."
+        "note": "Mother of Apollo. Leto."
       },
       {
         "greek": "καὶ",
@@ -2035,7 +2035,7 @@ const data = [
         "pos": "Noun • Dative Singular Masculine",
         "gloss": "king",
         "root": "Lemma: βασιλεύς",
-        "note": "Dative with χολωθεὶς, referring to Agamemnon."
+        "note": "Dative with χολωθεὶς, referring to Agamemnon. From cholos (wrath, bile). Cognate with English cholera, choleric, melancholy."
       },
       {
         "greek": "χολωθεὶς",
@@ -2250,7 +2250,7 @@ const data = [
         "pos": "Noun • Accusative Singular Feminine",
         "gloss": "disease",
         "root": "Lemma: νόσος",
-        "note": "Ionic form of νόσος. Apollo's plague sent upon the Greek camp."
+        "note": "Ionic form of νόσος. Apollo's plague sent upon the Greek camp. Root of nosocomial, nostalgia."
       },
       {
         "greek": "ἀνὰ",
@@ -2268,7 +2268,7 @@ const data = [
         "pos": "Noun • Accusative Singular Masculine",
         "gloss": "army",
         "root": "Lemma: στρατός",
-        "note": "The encamped army of the Greeks at Troy."
+        "note": "The encamped army of the Greeks at Troy. Cognate with English strategy, stratagem."
       },
       {
         "greek": "ὦρσε",
@@ -2277,7 +2277,7 @@ const data = [
         "pos": "Verb • Aorist Active Indicative Singular 3rd",
         "gloss": "roused",
         "root": "Lemma: ὄρνυμι",
-        "note": "Aorist of ὄρνυμι. The plague was actively 'roused' or 'stirred up' by Apollo."
+        "note": "Aorist of ὄρνυμι. The plague was actively 'roused' or 'stirred up' by Apollo. Cognate with Latin orior (to rise), English origin, orient."
       },
       {
         "greek": "κακήν",
@@ -2522,7 +2522,7 @@ const data = [
         "pos": "Verb • Aorist Active Indicative Singular 3rd",
         "gloss": "dishonored",
         "root": "Lemma: ἀτιμάω",
-        "note": "Aorist of ἀτιμάζω. The core offense of Agamemnon: dishonoring a priest."
+        "note": "Aorist of ἀτιμάζω. The core offense of Agamemnon: dishonoring a priest. From a- (without) + time (honor). Root of timocracy."
       },
       {
         "greek": "ἀρητῆρα",
@@ -2782,7 +2782,7 @@ const data = [
         "pos": "Preposition",
         "gloss": "to/upon",
         "root": "Lemma: ἐπί",
-        "note": "Preposition indicating motion towards."
+        "note": "Preposition indicating motion towards. Root of epicenter, epidermis, epilogue."
       },
       {
         "greek": "νῆας",
@@ -2791,7 +2791,7 @@ const data = [
         "pos": "Noun • Accusative Plural Feminine",
         "gloss": "ships",
         "root": "Lemma: ναῦς",
-        "note": "Accusative plural of ναῦς (ships)."
+        "note": "Accusative plural of ναῦς (ships). Cognate with Latin navis, English navy, nautical, astronaut."
       },
       {
         "greek": "Ἀχαιῶν",
@@ -3006,7 +3006,7 @@ const data = [
         "pos": "Verb participle • Future Middle Participle Nominative Singular Masculine",
         "gloss": "about to ransom",
         "root": "Lemma: λύω",
-        "note": "Future middle participle of λύω, expressing purpose: 'in order to ransom'."
+        "note": "Future middle participle of λύω, expressing purpose: 'in order to ransom'. Root of analysis, paralysis."
       },
       {
         "greek": "τε",
@@ -3024,7 +3024,7 @@ const data = [
         "pos": "Noun • Accusative Singular Feminine",
         "gloss": "daughter",
         "root": "Lemma: θυγάτηρ",
-        "note": "Accusative of θυγάτηρ (daughter), referring to Chryseis."
+        "note": "Accusative of θυγάτηρ (daughter), referring to Chryseis. Cognate with English daughter, German Tochter, Sanskrit duhitṛ."
       },
       {
         "greek": "φέρων",
@@ -3033,7 +3033,7 @@ const data = [
         "pos": "Verb participle • Present Active Participle Nominative Singular Masculine",
         "gloss": "bringing",
         "root": "Lemma: φέρω",
-        "note": "Present participle of φέρω (bearing)."
+        "note": "Present participle of φέρω (bearing). Cognate with Latin fero, English bear, burden, Christopher."
       },
       {
         "greek": "τ᾽",
@@ -3042,7 +3042,7 @@ const data = [
         "pos": "Particle",
         "gloss": "and",
         "root": "Lemma: τε",
-        "note": "Elided form of τε."
+        "note": "Elided form of τε. Cognate with Latin -que."
       },
       {
         "greek": "ἀπερείσι᾽",
@@ -3060,7 +3060,7 @@ const data = [
         "pos": "Noun • Nominative Plural Neuter",
         "gloss": "ransom",
         "root": "Lemma: ἄποινα",
-        "note": "Ransom."
+        "note": "Ransom. From apo- (back) + poine (penalty). Cognate with Latin poena, English penalty, subpoena."
       }
     ]
   },
@@ -3250,7 +3250,7 @@ const data = [
         "pos": "Noun • Accusative Plural Neuter",
         "gloss": "fillets/wreaths",
         "root": "Lemma: στέμμα",
-        "note": "The sacred woolen bands (stémmata) identifying him as a priest."
+        "note": "The sacred woolen bands (stémmata) identifying him as a priest. Root of stamen."
       },
       {
         "greek": "ἔχων",
@@ -3259,7 +3259,7 @@ const data = [
         "pos": "Verb participle • Present Active Participle Nominative Singular Masculine",
         "gloss": "holding / having",
         "root": "Lemma: ἔχω",
-        "note": "Present participle of ἔχω."
+        "note": "Present participle of ἔχω. Root of Hector, hectic, epoch."
       },
       {
         "greek": "ἐν",
@@ -3277,7 +3277,7 @@ const data = [
         "pos": "Noun • Dative Plural Feminine",
         "gloss": "hands",
         "root": "Lemma: χείρ",
-        "note": "Dative plural of χείρ (hands)."
+        "note": "Dative plural of χείρ (hands). Root of chiropractor, surgery, chirography."
       },
       {
         "greek": "ἑκηβόλου",
@@ -3485,7 +3485,7 @@ const data = [
         "pos": "Adjective • Dative Singular Masculine",
         "gloss": "golden",
         "root": "Lemma: χρύσεος",
-        "note": "Dative of χρύσεος (golden)."
+        "note": "Dative of χρύσεος (golden). Root of chrysalis, chrysanthemum."
       },
       {
         "greek": "ἀνὰ",
@@ -3503,7 +3503,7 @@ const data = [
         "pos": "Noun • Dative Singular Neuter",
         "gloss": "staff",
         "root": "Lemma: σκῆπτρον",
-        "note": "The staff or scepter marking religious or royal authority."
+        "note": "The staff or scepter marking religious or royal authority. Root of scepter."
       },
       {
         "greek": "καὶ",
@@ -3530,7 +3530,7 @@ const data = [
         "pos": "Adjective • Accusative Plural Masculine",
         "gloss": "all",
         "root": "Lemma: πᾶς",
-        "note": "Accusative plural of πᾶς (all)."
+        "note": "Accusative plural of πᾶς (all). Root of panacea, pandemic, pantheon."
       },
       {
         "greek": "Ἀχαιούς",
@@ -3764,7 +3764,7 @@ const data = [
         "pos": "Numeral",
         "gloss": "two",
         "root": "Lemma: δύο",
-        "note": "Two (dual)."
+        "note": "Two (dual). Cognate with Latin duo, English two, dual, duet."
       },
       {
         "greek": "κοσμήτορε",
@@ -3773,7 +3773,7 @@ const data = [
         "pos": "Noun • Nominative Dual Masculine",
         "gloss": "marshals/commanders",
         "root": "Lemma: κοσμήτωρ",
-        "note": "Dual vocative of κοσμήτωρ (marshallers or commanders)."
+        "note": "Dual vocative of κοσμήτωρ (marshallers or commanders). Root of cosmos, cosmetic (meaning order/arrangement)."
       },
       {
         "greek": "λαῶν",
@@ -3782,7 +3782,7 @@ const data = [
         "pos": "Noun • Genitive Plural Masculine",
         "gloss": "of the people",
         "root": "Lemma: λαός",
-        "note": "Genitive plural of λαός."
+        "note": "Genitive plural of λαός. Root of laity, lay."
       }
     ]
   },
@@ -4007,7 +4007,7 @@ const data = [
         "pos": "Pronoun • Nominative Plural Masculine",
         "gloss": "other",
         "root": "Lemma: ἄλλος",
-        "note": "Nominative plural (other)."
+        "note": "Nominative plural (other). Cognate with Latin alius, English else, alien, allomorph."
       },
       {
         "greek": "ἐϋκνήμιδες",
@@ -4233,7 +4233,7 @@ const data = [
         "pos": "Noun • Nominative Plural Masculine",
         "gloss": "gods",
         "root": "Lemma: θεός",
-        "note": "Nominative plural (gods)."
+        "note": "Nominative plural (gods). Root of theology, polytheism, atheist."
       },
       {
         "greek": "δοῖεν",
@@ -4242,7 +4242,7 @@ const data = [
         "pos": "Verb • Aorist Active Optative Plural 3rd",
         "gloss": "may they give",
         "root": "Lemma: δίδωμι",
-        "note": "Optative of δίδωμι, expressing a wish."
+        "note": "Optative of δίδωμι, expressing a wish. Cognate with Latin do, datum, English donate, dose, donor."
       },
       {
         "greek": "Ὀλύμπια",
@@ -4260,7 +4260,7 @@ const data = [
         "pos": "Noun • Accusative Plural Neuter",
         "gloss": "homes/halls",
         "root": "Lemma: δῶμα",
-        "note": "Elided form of δώματα (homes, mansions)."
+        "note": "Elided form of δώματα (homes, mansions). Cognate with Latin domus, English domestic, domicile."
       },
       {
         "greek": "ἔχοντες",
@@ -4477,7 +4477,7 @@ const data = [
         "pos": "Noun • Accusative Singular Feminine",
         "gloss": "city",
         "root": "Lemma: πόλις",
-        "note": "Accusative of πόλις (city)."
+        "note": "Accusative of πόλις (city). Root of politics, metropolis, police."
       },
       {
         "greek": "εὖ",
@@ -4711,7 +4711,7 @@ const data = [
         "pos": "Noun • Accusative Singular Masculine",
         "gloss": "child",
         "root": "Lemma: παῖς",
-        "note": "Accusative of παῖς (child)."
+        "note": "Accusative of παῖς (child). Root of pedagogy, pediatrics."
       },
       {
         "greek": "δ᾽",
@@ -4729,7 +4729,7 @@ const data = [
         "pos": "Pronoun • Dative Singular Masculine 1st",
         "gloss": "to me",
         "root": "Lemma: ἐγώ",
-        "note": "Dative of ἐγώ (to me)."
+        "note": "Dative of ἐγώ (to me). Cognate with Latin ego, English me, my, mine."
       },
       {
         "greek": "λύσαιτε",
@@ -4747,7 +4747,7 @@ const data = [
         "pos": "Adjective • Accusative Singular Feminine",
         "gloss": "dear",
         "root": "Lemma: φίλος",
-        "note": "Accusative feminine of φίλος (dear, one's own)."
+        "note": "Accusative feminine of φίλος (dear, one's own). Root of philosophy, philanthropy, bibliophile."
       },
       {
         "greek": "τὰ",
@@ -4774,7 +4774,7 @@ const data = [
         "pos": "Noun • Nominative Plural Neuter",
         "gloss": "ransom",
         "root": "Lemma: ἄποινα",
-        "note": "Ransom."
+        "note": "Ransom. From apo- (back) + poine (penalty). Cognate with Latin poena, English penalty, subpoena."
       },
       {
         "greek": "δέχεσθαι",
@@ -4981,7 +4981,7 @@ const data = [
         "pos": "Verb participle • Present Mediopassive Participle Nominative Plural Masculine",
         "gloss": "revering/standing in awe of",
         "root": "Lemma: ἅζομαι",
-        "note": "Present middle participle (revering, standing in awe of)."
+        "note": "Present middle participle (revering, standing in awe of). Cognate with hagios (holy), hagiography."
       },
       {
         "greek": "Διὸς",
