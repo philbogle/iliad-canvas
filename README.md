@@ -15,7 +15,7 @@ The application features:
 
 ## 📜 Credits, Thanks, & Disclaimer
 
-> **Disclaimer:** I am just beginning to learn Ancient Greek and built this canvas primarily as a personal study tool. The depth and functionality of this project are dependent on the work of classical educators and open-source linguistic projects. Because of my limited knowledge, there are inaccuracies. Bug reports, corrections, and pull requests are appreciated!
+> **Disclaimer:** I am just beginning to learn Ancient Greek and built this canvas primarily as a personal study tool. This project depends on the work of many scholars and open-source linguistic projects. Because of my limited knowledge, there are inaccuracies. Bug reports, corrections, and pull requests are appreciated!
 
 I want to extend my thanks to the following authoritative sources that made this canvas possible:
 
