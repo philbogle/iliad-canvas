@@ -5,12 +5,13 @@
 A web app for learning and reciting the opening lines of Homer's *Iliad* (Book 1, Lines 1-21).
 
 The application features:
-- **Performance Audio Options**: An interactive player that allows you to switch between three vocal performances: the Perkʷunós' archaic sung recitation (default), Luke Ranieri's (polýMATHY) restored 3-pitch chanting (Reconstructed Attic), and David Chamberlain's clear metrical reading (Erasmian).
-- Metrical scansion breakdowns showing long/short syllables and dactylic hexameter feet.
+- **Multiple performance audio options**: An interactive player that allows you to switch between three vocal performances: the Perkʷunós' archaic sung recitation (default), Luke Ranieri's (polýMATHY) restored 3-pitch chanting (Reconstructed Attic), and David Chamberlain's clear metrical reading (Erasmian).
+- **Multiple translations**: Toggleable view of three different English translations: Augustus Taber Murray's literal prose (1924), Ian Johnston's modern blank verse (2006), and Samuel Butler's classic readable prose (1898).
+- **Metrical scansion breakdowns**: Showing long/short syllables and dactylic hexameter feet.
 - **Built-in Web Audio Metronome**: A metronome that generates metrical beats synced with visual scansion highlighting to help you practice reciting in rhythm.
-- Interlinear word-for-word definitions with popup deep-dives.
-- An Options menu for toggling between three different English translations, adjusting the metronome playback speed, and changing the video layout.
-- Responsive design that works on mobile devices.
+- **Interlinear word-for-word definitions**: Complete with popup deep-dives into morphology and etymology.
+- **Options menu**: Toggle controls for adjusting the metronome playback speed and changing the video layout.
+- **Responsive design**: Fully functional layout that adapts to and works beautifully on mobile devices.
 
 ## 📜 Credits, Thanks, & Disclaimer
 
@@ -18,14 +19,14 @@ The application features:
 
 I want to extend my thanks to the following authoritative sources that made this canvas possible:
 
-- **Perkʷunós**: For their beautifully sung recitation of the first 21 lines in restored Archaic Greek ([video link](https://youtu.be/KX4yuMN6pPI)).
-- **[Luke Ranieri (polýMATHY)](https://www.youtube.com/@polymathy)**: This performance option relies on Luke's `#KephalosChallenge` recitations and his 3-pitch restored chanting method (Reconstructed Attic). His full recording of [Iliad Book 1, lines 1-100](https://luke-ranieri.myshopify.com/products/iliad-100-homers-iliad-book-1-lines-1-100) is available on his store.
-- **David Chamberlain ([Hypotactic](https://hypotactic.com/homer/iliad1.html))**: The dactylic hexameter scansion logic (accurate syllable lengths, positional lengthening, and hiatus) was sourced directly from their metrical CSV datasets. His clear, line-by-line audio recitations of the Greek text are also featured natively in the app.
-- **[Ben Crowell](https://bitbucket.org/ben-crowell/greek_pronunciation/src/master/index.md)**: Whose comprehensive guide to Greek pronunciation provides deep information on reconstructed Attic vs. Erasmian pronunciation, tonal accents, and sound recordings of informed readings of the Iliad.
-- **[Wikimedia Commons](https://commons.wikimedia.org/)**: The audio files in the pronunciation guide were sourced from their extensive public domain repository of IPA pronunciation audio.
-- **[The Perseids Project](https://perseids.org/) (Tufts University)**: All of the automated grammatical parsing (Part of Speech, Voice, Mood, Case) and dictionary Lemmas were fetched using their Morpheus API.
-- **[Perseus Digital Library](http://www.perseus.tufts.edu/hopper/)**: For hosting the canonical Oxford Classical Text (Monro & Allen, 1920) that forms the base Greek of this project.
-- **[Geoffrey Steadman](https://geoffreysteadman.com/homers-iliad-1-6/)**: Whose *Homer's Iliad 1* commentary served as a cross-reference for the literal word-for-word glosses.
+- **Perkʷunós**: His sung recitation of the first 21 lines in restored Archaic Greek ([video link](https://youtu.be/KX4yuMN6pPI)).
+- **[Luke Ranieri (polýMATHY)](https://www.youtube.com/@polymathy)**: His `#KephalosChallenge` recitations and his 3-pitch restored chanting method (Reconstructed Attic). His recording of [Iliad Book 1, lines 1-100](https://luke-ranieri.myshopify.com/products/iliad-100-homers-iliad-book-1-lines-1-100) is available on his store.
+- **David Chamberlain ([Hypotactic](https://hypotactic.com/homer/iliad1.html))**: His dactylic hexameter scansion logic sourced from his metrical CSV datasets, along with his audio recitations of the Greek text.
+- **[Ben Crowell](https://bitbucket.org/ben-crowell/greek_pronunciation/src/master/index.md)**: His guide to Greek pronunciation, which provides information on reconstructed Attic vs. Erasmian pronunciation, tonal accents, and audio recordings of the Iliad.
+- **[Wikimedia Commons](https://commons.wikimedia.org/)**: The public domain repository of IPA pronunciation audio used in the pronunciation guide.
+- **[The Perseids Project](https://perseids.org/) (Tufts University)**: The Morpheus API, used to fetch the grammatical parsing (Part of Speech, Voice, Mood, Case) and dictionary Lemmas.
+- **[Perseus Digital Library](http://www.perseus.tufts.edu/hopper/)**: Hosting of the Oxford Classical Text (Monro & Allen, 1920) that forms the base Greek of this project.
+- **[Geoffrey Steadman](https://geoffreysteadman.com/homers-iliad-1-6/)**: His *Homer's Iliad 1* commentary, which served as a cross-reference for the glosses.
 
 ## How this was created
 
